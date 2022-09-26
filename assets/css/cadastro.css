@@ -1,0 +1,145 @@
+.container{
+    display: grid;
+    grid-template-columns: 45% 55%;
+    box-shadow: 0 0 10px 0 #cecece;
+    width: 90%;
+    height: calc(120vh - 104px - 8rem);
+    margin: 0 auto;
+}
+
+.container__reconhecimento-facial{
+    background: -moz-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(169,166,166,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(169,166,166,1) 100%);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(169,166,166,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#a9a6a6",GradientType=1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.reconhecimento-facial__wait{
+   width: 50%;
+}
+
+.reconhecimento-facial__button{
+    position: absolute;
+    bottom: 2rem;
+    width: 85%;
+    height: 40px;
+    text-transform: uppercase;
+    font-family: var(--fonte);
+    font-size: 19px;
+    border-radius: 3px;
+    transition:  .4s all;
+    background-color: var(--cor-botao-escuro);
+    color: #fefefe;
+}
+
+.reconhecimento-facial__button:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.container__cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.cadastro__header{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.cadastro__title{
+    position: relative;
+    font-family: var(--fonte);
+    font-size: 35px;
+}
+
+.cadastro__title:before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 5px;
+    background-color: var(--vermelho);
+    bottom: -3px;
+    border-radius: 5px;
+}
+
+.cadastro__consultar{
+    background-color: var(--vermelho);
+    box-shadow: 0 4px 4px 0 #00000040;
+    padding: .3rem 1rem;
+    color: #fefefe;
+    font-size: 17px;
+    font-family: var(--fonte);
+    transition:  .4s all;
+    border-radius: 4px;
+    position: absolute;
+    right: 2rem;
+}
+
+.cadastro__consultar:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/*Parte do formulario de cadastro*/
+.cadastro__area{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    width: 100%;
+    gap: 2rem 4rem;
+    justify-content: center;
+}
+
+.area__dado{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: .7rem;
+}
+
+.dado__label{
+    font-family: var(--fonte);
+    font-size: 17px;
+    font-weight: 500;
+    color: #000;
+
+}
+
+.dado__input{
+    font-family: var(--fonte);
+    font-size: 17px;
+    border-radius: 39px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    padding: .4rem 1.2rem;
+}
+
+#enviar{
+    right: 40%;
+    position: absolute;
+    bottom: 3rem;
+    background-color: var(--vermelho);
+    padding: .5rem 2rem;
+    color: #fefefe;
+    font-size: 17px;
+    font-family: var(--fonte);
+    transition:  .4s all;
+    border-radius: 4px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 4px 0 #00000040;
+}
+
+#enviar:hover{
+    transform: scale(1.05);
+}
+

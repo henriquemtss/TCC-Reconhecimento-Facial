@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Poppins:wght@200;400;500;600&display=swap');
+
+:root{
+    --cor-fundo:#D6D4E2;
+    --vermelho:#F93535;
+    --cor-botao-escuro:#3D4B56;
+    --cor-fundo-icons:#A9A6A6;
+    --cor-fundo-container:#7A7A7A;
+    --fonte:'Poppins', sans-serif;
+}

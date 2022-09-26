@@ -1,0 +1,18 @@
+.header-login{
+    background: linear-gradient(269.56deg, #F93535 0.25%, #A9A6A6 64.85%);
+    width: 100vw;
+    height: 104px;
+    position: relative;
+    margin-bottom: 9rem;
+}
+
+.header-login__image{
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,0);
+}
+
