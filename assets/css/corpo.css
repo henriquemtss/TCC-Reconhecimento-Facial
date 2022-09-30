@@ -11,5 +11,19 @@
 }
 
 body{
-    min-height: 100vh;
+    height: 100vh;
+}
+
+body::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}
+
+body::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: rgba(80, 78, 74, 0.267);
+    border-radius: 20px;
 }
