@@ -2,25 +2,23 @@ const cam = document.getElementById('cam')
 
 const startVideo = () => {
     navigator.getUserMedia (
-        // AskPermissoes
+        
         {
            video: true,
            audio: true
         }, 
-        // callbackSuccess
+        
         function() {
             navigator.mediaDevices.enumerateDevices()
             .then(devices => {
                 console.log(devices)
                 if (Array.isArray(devices)) {
-                    // Tem Dispositivos...
+                   
                     devices.forEach(device => {
                         if(device.kind == 'videoinput'){
-                            //É Uma Camera
+                            
                             console.log(device);
-                            if(device.label.includes('VGA WebCam (04f2:b5e0)')){
-                            //if(device.label.includes('TESTE')){
-                                // Camera Certa
+                            if(device.label.includes('VGA WebCam (04f2:b5e0)')){                           
                                 navigator.getUserMedia(
                                     {video: {
                                         deviceId: device.deviceId,
@@ -34,7 +32,7 @@ const startVideo = () => {
                 }
             })
         },
-        // callbackErro
+        
         function(err) {
          console.log("O seguinte erro ocorreu: " + err);
         }
@@ -42,7 +40,7 @@ const startVideo = () => {
 }
 
 const loadLabels = () => {
-  //  const labels = ['Marcio Darlan']
+  
     const labels = ['1', '2', '3', '4', '5']
     return Promise.all(labels.map(async label => {
         const descriptions = []
@@ -52,7 +50,6 @@ const loadLabels = () => {
                 .detectSingleFace(img)
                 .withFaceLandmarks()
                 .withFaceDescriptor()
-                .withFaceExpressions()
             descriptions.push(detections.descriptor)
         }
         if (label === "1") {
@@ -77,8 +74,6 @@ Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('./assets/lib/face-api/models'),
     faceapi.nets.faceLandmark68Net.loadFromUri('./assets/lib/face-api/models'),
     faceapi.nets.faceRecognitionNet.loadFromUri('./assets/lib/face-api/models'),
-    faceapi.nets.faceExpressionNet.loadFromUri('./assets/lib/face-api/models'),
-    faceapi.nets.ageGenderNet.loadFromUri('./assets/lib/face-api/models'),
     faceapi.nets.ssdMobilenetv1.loadFromUri('./assets/lib/face-api/models'),
 ]).then(startVideo)
 
@@ -100,10 +95,8 @@ cam.addEventListener('play', async () => {
                 new faceapi.TinyFaceDetectorOptions()
             )
             .withFaceLandmarks()
-            .withFaceExpressions()
-            .withAgeAndGender()
             .withFaceDescriptors()
-        //console.log(detections)
+        
         const resizedDetections = faceapi.resizeResults(detections, canvasSize)
         const faceMatcher = new faceapi.FaceMatcher(labels, 0.6)
         const results = resizedDetections.map(d =>
@@ -111,21 +104,12 @@ cam.addEventListener('play', async () => {
         )
         canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
         faceapi.draw.drawDetections(canvas, resizedDetections)
-        faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
-        faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
-        resizedDetections.forEach(detection => {
-            const {age, gender, genderProbability } = detection
-            new faceapi.draw.DrawTextField([
-                `${parseInt(age, 10)} Years`,
-                //`${gender} (${(genderProbability).toFixed(2)})`
-                `${gender} (${parseInt(genderProbability * 100, 10)}%)`
-            ], detection.detection.box.topRight).draw(canvas)
-        })
+        
         results.forEach((result, index) => {
             const box = resizedDetections[index].detection.box
-            const {label, distance} = result
+            const {label} = result
             new faceapi.draw.DrawTextField([
-                `${label} (${parseInt(100-distance * 100, 10)}%)`
+                `${label}`
             ], box.bottomRight).draw(canvas)
         })
     }, 100) 

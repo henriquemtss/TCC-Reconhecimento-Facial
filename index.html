@@ -20,21 +20,24 @@
 
     <h1 class="titulo">Login Admin</h1>
 
-    <main class="main-login">
-        <div class="main-login__container">
-            <div class="container__box">
-                <label for="name">Nome:</label>
-                <input type="text" name="name">
+    <form action="cadastro.html" method="get">
+        <main class="main-login">
+            <div class="main-login__container">
+                <div class="container__box">
+                    <label for="name">Nome:</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="container__box">
+                    <label for="password">Senha:</label>
+                    <input type="text" name="password">
+                </div>
             </div>
-            <div class="container__box">
-                <label for="password">Senha:</label>
-                <input type="text" name="password">
+            <div class="main-login__buttons">
+                <button id="esqueci-senha">Esqueci minha senha</button>
+                <button id="entrar">Entrar</button>
             </div>
-        </div>
-        <div class="main-login__buttons">
-            <button id="esqueci-senha">Esqueci minha senha</button>
-            <button id="entrar">Entrar</button>
-        </div>
-    </main>
+        </main>
+
+    </form>
 </body>
 </html>
