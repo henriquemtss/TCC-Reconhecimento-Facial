@@ -3,7 +3,7 @@
     grid-template-columns: 45% 55%;
     box-shadow: 0 0 10px 0 #cecece;
     width: 90%;
-    height: calc(120vh - 104px - 8rem);
+    height: calc(100vh - 104px - 8rem);
     margin: 0 auto;
 }
 
@@ -64,14 +64,26 @@
     font-size: 35px;
 }
 
-.cadastro__title:before{
+.cadastro__title:after{
+    display:block;
     content: '';
-    position: absolute;
-    width: 50%;
-    height: 5px;
-    background-color: var(--vermelho);
-    bottom: -3px;
-    border-radius: 5px;
+    border-bottom: solid 2px var(--vermelho);  
+    transition: transform .3s ease-in-out;
+    animation: left-to-right 1s;
+}
+.cadastro__title:hover::after{
+
+}
+
+@keyframes left-to-right{
+    from{
+        transform: scaleX(0);  
+        transform-origin: 0% 50% ;
+    }
+    to{
+        transform: scaleX(1);  
+        transform-origin: 100% 0% ;
+    }
 }
 
 .cadastro__consultar{
@@ -90,6 +102,7 @@
 .cadastro__consultar:hover{
     cursor: pointer;
     transform: scale(1.05);
+    font-size: 18px;
 }
 
 /*Parte do formulario de cadastro*/
@@ -124,6 +137,10 @@
     padding: .4rem 1.2rem;
 }
 
+.dado__input:hover{
+    cursor: pointer;
+}
+
 #enviar{
     right: 40%;
     position: absolute;
@@ -141,5 +158,7 @@
 
 #enviar:hover{
     transform: scale(1.05);
+    cursor: pointer;
+    font-size: 18px;
 }
 
