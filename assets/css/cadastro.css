@@ -3,7 +3,7 @@
     grid-template-columns: 45% 55%;
     box-shadow: 0 0 10px 0 #cecece;
     width: 90%;
-    height: calc(100vh - 104px - 8rem);
+    height: calc(120vh - 104px - 8rem);
     margin: 0 auto;
 }
 
@@ -144,7 +144,7 @@
 #enviar{
     right: 40%;
     position: absolute;
-    bottom: 3rem;
+    bottom: 1rem;
     background-color: var(--vermelho);
     padding: .5rem 2rem;
     color: #fefefe;
