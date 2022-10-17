@@ -1,43 +1,71 @@
 const cam = document.getElementById('cam')
 
 const startVideo = () => {
-    navigator.getUserMedia (
-        
-        {
-           video: true,
-           audio: true
-        }, 
-        
-        function() {
-            navigator.mediaDevices.enumerateDevices()
-            .then(devices => {
-                console.log(devices)
-                if (Array.isArray(devices)) {
-                   
-                    devices.forEach(device => {
-                        if(device.kind == 'videoinput'){
-                            
-                            console.log(device);
-                            if(device.label.includes('VGA WebCam (04f2:b5e0)')){                           
-                                navigator.getUserMedia(
-                                    {video: {
-                                        deviceId: device.deviceId,
-                                    }},
-                                    stream => cam.srcObject = stream,
-                                    error => console.log(error)
-                                )
-                            }
-                        }
-                    })
+        // navigator.mediaDevices.getUserMedia({video: true}).then(function (mediaStream) {
+    //     const video = document.querySelector('#video');
+    //     video.srcObject = mediaStream;
+    //     video.play();
+    // });
+    navigator.mediaDevices.enumerateDevices()
+    .then(devices => {
+        console.log(devices)
+        if (Array.isArray(devices)) {
+           
+            devices.forEach(device => {
+                if(device.kind == 'videoinput'){
+                    
+                    console.log(device);
+                    //if(device.label.includes('VGA WebCam (04f2:b5e0)')){                           
+                        navigator.getUserMedia(
+                            {video: {
+                                deviceId: device.deviceId,
+                            }},
+                            stream => cam.srcObject = stream,
+                            error => console.log(error)
+                        )
+                    //}
                 }
             })
-        },
-        
-        function(err) {
-         console.log("O seguinte erro ocorreu: " + err);
         }
-    );
+    })
 }
+//     navigator.getUserMedia (
+        
+//         {
+//            video: true,
+//            audio: true
+//         }, 
+        
+//         function() {
+//             navigator.mediaDevices.enumerateDevices()
+//             .then(devices => {
+//                 console.log(devices)
+//                 if (Array.isArray(devices)) {
+                   
+//                     devices.forEach(device => {
+//                         if(device.kind == 'videoinput'){
+                            
+//                             console.log(device);
+//                             if(device.label.includes('VGA WebCam (04f2:b5e0)')){                           
+//                                 navigator.getUserMedia(
+//                                     {video: {
+//                                         deviceId: device.deviceId,
+//                                     }},
+//                                     stream => cam.srcObject = stream,
+//                                     error => console.log(error)
+//                                 )
+//                             }
+//                         }
+//                     })
+//                 }
+//             })
+//         },
+        
+//         function(err) {
+//          console.log("O seguinte erro ocorreu: " + err);
+//         }
+//     );
+// }
 
 const loadLabels = () => {
   
