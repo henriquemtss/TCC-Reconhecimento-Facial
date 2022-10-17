@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="assets/css/tab_cadastro.css">
     <script src="assets/javascript/tab.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
+    <link rel="stylesheet" href="popup.css">
     <title>Reconhecimento facial - Cadastro</title>
 </head>
 <body>
@@ -196,12 +198,15 @@
                                 <option value="seg-em">2º Série - Ensino Médio</option>
                                 <option value="ter-em">3º Série - Ensino Médio</option>
                             </select>
-                        </div>
-                        
+                        </div>                        
                         <input type="submit" value="Enviar" id="enviar">
                     </form>
                 </div>
             </section>
+            <div id="confirm">
+                <div class="message" id="texto"></div>
+                <button class="yes">OK</button>
+            </div>            
         </main> 
     <script src="assets/javascript/splash.js"></script>
 </body>
