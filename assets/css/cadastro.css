@@ -3,7 +3,7 @@
     grid-template-columns: 45% 55%;
     box-shadow: 0 0 10px 0 #cecece;
     width: 90%;
-    height: calc(120vh - 104px - 8rem);
+    height: calc(110vh - 104px - 8rem);
     margin: 0 auto;
 }
 
