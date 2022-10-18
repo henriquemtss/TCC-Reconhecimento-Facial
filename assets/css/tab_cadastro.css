@@ -1,6 +1,7 @@
 .tab{
     background-color: var(--cor-fundo);
     border-bottom: none;
+    display: flex;
     width: 100%;
 }
 
@@ -14,9 +15,8 @@
     padding: 10px 128.3px;
     font-weight: bold;
     color: var(--cor-botao-escuro);
-    width: 49.69%;
+    width: inherit;
     font-family: var(--fonte); 
-    margin: 0;
 }
 
 .tab button:hover{

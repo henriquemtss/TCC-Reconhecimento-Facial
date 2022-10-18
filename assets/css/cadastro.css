@@ -138,7 +138,7 @@
 }
 
 .dado__input:hover{
-    cursor: pointer;
+    cursor:auto;
 }
 
 #enviar{
