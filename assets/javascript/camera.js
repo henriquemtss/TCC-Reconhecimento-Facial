@@ -5,8 +5,10 @@ function loadCamera(){
 	var video = document.querySelector("#webCamera");
 	if (document.getElementById('webCamera').style.display == 'none') {
 		document.getElementById('webCamera').style.display = 'block';
+		document.getElementById('noCamera').style.display = 'none';
 	  } else {
 		document.getElementById('webCamera').style.display = 'none';
+		document.getElementById('noCamera').style.display = 'block';
 	  }
 	//As opções abaixo são necessárias para o funcionamento correto no iOS
 	video.setAttribute('autoplay', '');
