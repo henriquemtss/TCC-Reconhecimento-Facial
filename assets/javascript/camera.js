@@ -3,13 +3,7 @@ function loadCamera(){
 	click++;
 	//Captura elemento de vídeo
 	var video = document.querySelector("#webCamera");
-	if (document.getElementById('webCamera').style.display == 'none') {
-		document.getElementById('webCamera').style.display = 'block';
-		document.getElementById('noCamera').style.display = 'none';
-	  } else {
-		document.getElementById('webCamera').style.display = 'none';
-		document.getElementById('noCamera').style.display = 'block';
-	  }
+	
 	//As opções abaixo são necessárias para o funcionamento correto no iOS
 	video.setAttribute('autoplay', '');
 	video.setAttribute('muted', '');
@@ -22,6 +16,15 @@ function loadCamera(){
 		.then( function(stream) {
 			//Definir o elemento víde a carregar o capturado pela webcam
 			video.srcObject = stream;
+			//if (document.getElementById('webCamera').style.display == 'none') {
+				document.getElementById('webCamera').style.display = 'block';
+				document.getElementById('noCamera').style.display = 'none';
+				document.getElementById('reconhecer').style.display = 'none';
+				document.getElementById('capturar').style.display = 'block';
+			// } else {
+			// 	document.getElementById('webCamera').style.display = 'none';
+			// 	document.getElementById('noCamera').style.display = 'block';
+			// }
 		})
 		.catch(function(error) {
 			alert("Não Será Possível Capturar Imagem, Recarregue a página e Tente Novamente. Caso o erro persista, contate o administrador!");
