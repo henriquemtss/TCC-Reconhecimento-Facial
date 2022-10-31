@@ -44,8 +44,8 @@
         <main class="main-login">
             <div class="main-login__container">
                 <div class="container__box">
-                    <label for="name">Nome:</label>
-                    <input class="box__input" type="text" name="name">
+                    <label for="usuario">Nome:</label>
+                    <input class="box__input" type="text" name="usuario">
                     <spam class="mensagem">Por favor preencha o campo!</spam>
                 </div>
                 <div class="container__box">
