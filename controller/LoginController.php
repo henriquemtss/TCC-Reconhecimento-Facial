@@ -29,22 +29,27 @@ if (isset($_GET['name']) || isset($_POST['password'])) {
 
         // $quantidade = $sql_query->num_rows;
         $conta = $result->fetch(PDO::FETCH_ASSOC);
+        if($conta['usuario'] == $nome){
+            if (password_verify($senha, $conta['senha']))  {
 
-        if (password_verify($senha, $conta['senha'])) {
-
-            if (!isset($_SESSION)) {
-                session_start();
+                if (!isset($_SESSION)) {
+                    session_start();
+                }
+    
+               
+                $_SESSION['id'] = $conta['id'];
+                $_SESSION['nome'] = $conta['nome'];
+                
+                session_set_cookie_params(0);
+                header("Location: ../view/cadastro.php");
+    
+                
+            } else {
+                $_SESSION['msg'] = "Falha ao logar.<Br/>  Usuario ou senha incorretos!";
+                header("Location: ../index.php");
             }
-
-           
-            $_SESSION['id'] = $conta['id'];
-            $_SESSION['nome'] = $conta['nome'];
-            // 
-            session_set_cookie_params(0);
-            header("Location: ../view/cadastro.php");
-
-            
-        }else {
+        }
+        else {
             $_SESSION['msg'] = "Falha ao logar.<Br/>  Usuario ou senha incorretos!";
             header("Location: ../index.php");
         }
