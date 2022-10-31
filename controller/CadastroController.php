@@ -72,7 +72,7 @@
                                     $res->bindValue(':curso', $formulario['curso']);
                                     $res->bindValue(':periodo', $formulario['periodo']);
                                     $res->execute();
-                                    $_SESSION['msg'] = "Cadastro concluido!";
+                                    $_SESSION['msgCadastro'] = "Cadastro concluido!";
                                     header("Location: ../view/cadastro.php");
     
     
