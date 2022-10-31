@@ -76,6 +76,7 @@
                         <div class="area__dado">
                             <label for="nome" class="dado__label">Nome</label>
                             <input type="text" name="nome" class="dado__input" placeholder="Digite seu Nome:">
+                            <!--  -->
                             <?php
 
                                 if (isset($_SESSION['msgNome'])) {
@@ -84,10 +85,12 @@
                                 }
 
                             ?>
+                            <!--  -->
                         </div>
                         <div class="area__dado">
                             <label for="email" class="dado__label">Email institucional</label>
                             <input type="text" name="email" class="dado__input" placeholder="Digite seu email institucional">
+                            <!--  -->
                             <?php
 
                                 if (isset($_SESSION['msgEmail'])) {
@@ -96,10 +99,12 @@
                                 }
 
                             ?>
+                            <!--  -->
                         </div>
                         <div class="area__dado">
                             <label for="rm" class="dado__label">RM</label>
                             <input type="text" name="rm" class="dado__input" placeholder="Digite seu RM">
+                            <!--  -->
                             <?php
 
                                 if (isset($_SESSION['msgRM'])) {
@@ -108,6 +113,7 @@
                                 }
 
                             ?>
+                            <!--  -->
                         </div>
                         <div class="area__dado">
                             <label for="cursos" class="dado__label">Cursos</label>
@@ -122,6 +128,7 @@
                                 <option value="em-nut">Ensino Médio Integrada a Nutrição</option>
                                 <option value="em-adm">Ensino Médio Integrada a Administração</option>
                             </select>
+                            <!--  -->
                             <?php
 
                                 if (isset($_SESSION['msgCurso'])) {
@@ -130,6 +137,7 @@
                                 }
 
                             ?>
+                            <!--  -->
                         </div>
                         <div class="area__dado">
                             <label for="periodo" class="dado__label">Período</label>
@@ -142,6 +150,7 @@
                                 <option value="seg-em">2º Série - Ensino Médio</option>
                                 <option value="ter-em">3º Série - Ensino Médio</option>
                             </select>
+                            <!--  -->
                             <?php
 
                                 if (isset($_SESSION['msgPeriodo'])) {
@@ -150,6 +159,7 @@
                                 }
 
                             ?>
+                            <!--  -->
                         </div>
                         
                     <input type="submit" value="Enviar" id="enviar" > <!-- onclick="functionAlert();"-->

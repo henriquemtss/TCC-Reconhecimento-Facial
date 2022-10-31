@@ -60,8 +60,7 @@
                             
                             }else{
                                 //verificação de campos concluida
-                                $bool = true;
-                                return $bool;
+                                return true;
                             }
 
                         }
@@ -95,6 +94,29 @@
             } catch (\Throwable $th) {
                 echo $th->getMessage();
             }
+        }
+
+        function verificarRMeEmail(){
+            $pdo = conectar();
+
+            $sql = "select * from Cadastro where email = :email or rm = :rm limit 1;";
+            $res = $pdo->prepare($sql);
+            $res->bindValue(':email', $this->email);
+            $res->bindValue(':rm', $this->rm);
+            $res->execute();
+
+            $cadastroExistente = $res->fetch(PDO::FETCH_ASSOC);
+
+            if (!is_null($cadastroExistente['email'])) {
+                $_SESSION['msgEmail'] = "Email ja utilizado!";
+                header("Location: ../View/cadastro.php");  
+            }
+            if (!is_null($cadastroExistente['rm'])) {
+                $_SESSION['msgRM'] = "RM ja utilizado!";
+                header("Location: ../View/cadastro.php");  
+            }
+
+            return true;
         }
 
     }

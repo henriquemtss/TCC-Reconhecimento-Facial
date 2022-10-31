@@ -14,9 +14,15 @@
 
 
     if ($cadastro->verificarCampos()) {
-       
-        $cadastro->Cadastrar();
+
+        if ($cadastro->verificarRMeEmail()) {
+            
+        }
+
     }
+    
+       
+    $cadastro->Cadastrar();
 
 
 
