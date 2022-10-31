@@ -45,12 +45,12 @@ if (isset($_GET['name']) || isset($_POST['password'])) {
     
                 
             } else {
-                $_SESSION['msg'] = "Falha ao logar.<Br/>  Usuario ou senha incorretos!";
+                $_SESSION['msgLogin'] = "Falha ao logar.<Br/>  Usuario ou senha incorretos!";
                 header("Location: ../index.php");
             }
         }
         else {
-            $_SESSION['msg'] = "Falha ao logar.<Br/>  Usuario ou senha incorretos!";
+            $_SESSION['msgLogin'] = "Falha ao logar.<Br/>  Usuario ou senha incorretos!";
             header("Location: ../index.php");
         }
 

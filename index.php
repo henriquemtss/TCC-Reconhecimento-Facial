@@ -32,7 +32,14 @@
     </header>
 
     <h1 class="titulo">Login Admin</h1>
+    <?php
 
+        if (isset($_SESSION['msgLogin'])) {
+            echo $_SESSION['msgLogin'];
+            unset($_SESSION['msgLogin']);
+        }
+
+        ?> 
     <form action="Controller/LoginController.php" method="get">
         <main class="main-login">
             <div class="main-login__container">
@@ -46,11 +53,13 @@
                     <input class="box__input" type="password" name="password">
                     <spam class="mensagem">Por favor preencha o campo!</spam>
                 </div>
+
             </div>
             <div class="main-login__buttons">
                 <button id="esqueci-senha">Esqueci minha senha</button>
                 <button id="entrar">Entrar</button>
             </div>
+
         </main>
 
     </form>

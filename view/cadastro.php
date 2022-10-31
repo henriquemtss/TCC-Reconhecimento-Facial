@@ -1,6 +1,11 @@
 <?php
     include "../Controller/Protect.php";
 
+    if (isset($_SESSION['msg'])) {
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    }
+
 ?>
 
 
@@ -67,23 +72,47 @@
                         <h1 class="cadastro__title">Cadastrar</h1>
                         <button class="cadastro__consultar">Consultar<button>
                     </div>
-                    <form class="cadastro__area">
+                    <form class="cadastro__area" action="../Controller/CadastroController.php" method="GET">
                         <div class="area__dado">
                             <label for="nome" class="dado__label">Nome</label>
                             <input type="text" name="nome" class="dado__input" placeholder="Digite seu Nome:">
+                            <?php
+
+                                if (isset($_SESSION['msgNome'])) {
+                                    echo $_SESSION['msgNome'];
+                                    unset($_SESSION['msgNome']);
+                                }
+
+                            ?>
                         </div>
                         <div class="area__dado">
                             <label for="email" class="dado__label">Email institucional</label>
                             <input type="text" name="email" class="dado__input" placeholder="Digite seu email institucional">
+                            <?php
+
+                                if (isset($_SESSION['msgEmail'])) {
+                                    echo $_SESSION['msgEmail'];
+                                    unset($_SESSION['msgEmail']);
+                                }
+
+                            ?>
                         </div>
                         <div class="area__dado">
                             <label for="rm" class="dado__label">RM</label>
                             <input type="text" name="rm" class="dado__input" placeholder="Digite seu RM">
+                            <?php
+
+                                if (isset($_SESSION['msgRM'])) {
+                                    echo $_SESSION['msgRM'];
+                                    unset($_SESSION['msgRM']);
+                                }
+
+                            ?>
                         </div>
                         <div class="area__dado">
                             <label for="cursos" class="dado__label">Cursos</label>
                             
-                            <select name="cursos" id="cursos-select" class="dado__input">
+                            <select name="curso" id="cursos-select" class="dado__input">
                                 <option value="">Selecione o Curso</option>
                                 <option value="quim">Técnico em Química</option>
                                 <option value="nut">Técnico em Nutrição</option>
@@ -93,10 +122,18 @@
                                 <option value="em-nut">Ensino Médio Integrada a Nutrição</option>
                                 <option value="em-adm">Ensino Médio Integrada a Administração</option>
                             </select>
+                            <?php
+
+                                if (isset($_SESSION['msgCurso'])) {
+                                    echo $_SESSION['msgCurso'];
+                                    unset($_SESSION['msgCurso']);
+                                }
+
+                            ?>
                         </div>
                         <div class="area__dado">
                             <label for="periodo" class="dado__label">Período</label>
-                            <select name="cursos" id="periodo-select" class="dado__input">
+                            <select name="periodo" id="periodo-select" class="dado__input">
                                 <option value="">Selecione o Período</option>
                                 <option value="pr-modulo">1º Módulo - Técnico</option>
                                 <option value="seg-modulo">2º Módulo - Técnico</option>
@@ -105,9 +142,18 @@
                                 <option value="seg-em">2º Série - Ensino Médio</option>
                                 <option value="ter-em">3º Série - Ensino Médio</option>
                             </select>
+                            <?php
+
+                                if (isset($_SESSION['msgPeriodo'])) {
+                                    echo $_SESSION['msgPeriodo'];
+                                    unset($_SESSION['msgPeriodo']);
+                                }
+
+                            ?>
                         </div>
+                        
+                    <input type="submit" value="Enviar" id="enviar" > <!-- onclick="functionAlert();"-->
                     </form>
-                    <input type="submit" value="Enviar" id="enviar" onclick="functionAlert();">
                 </div>
 
                 <div id="seg" class="conteudo">
@@ -117,7 +163,7 @@
                         <h1 class="cadastro__title">Cadastrar</h1>
                         <button class="cadastro__consultar">Consultar<button>
                     </div>
-                    <form class="cadastro__area">
+                    <form class="cadastro__area"  action="../Controller/CadastroController.php" method="GET">
                         <div class="area__dado">
                             <label for="nome" class="dado__label">Nome</label>
                             <input type="text" name="nome" class="dado__input" placeholder="Digite seu Nome:">
@@ -135,14 +181,15 @@
                                 <option value="fun-adm">Administração</option>
                             </select>
                         </div>
+                        
+                    <input type="submit" value="Enviar" id="enviar" > <!--onclick="functionAlert();"-->
                     </form>
-                    <input type="submit" value="Enviar" id="enviar" onclick="functionAlert();">
                 </div>
             </section>
-            <div id="confirm">
+            <!-- <div id="confirm">
                 <div class="message" id="texto"></div>
                 <button class="yes">OK</button>
-            </div>            
+            </div>             -->
         </main> 
     <script src="../assets/javascript/splash.js"></script>
 </body>
