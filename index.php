@@ -35,7 +35,7 @@
     <?php
 
         if (isset($_SESSION['msgLogin'])) {
-            echo $_SESSION['msgLogin'];
+            echo '<spam class = "erroMsg">' . $_SESSION['msgLogin'] . '</spam>';
             unset($_SESSION['msgLogin']);
         }
 

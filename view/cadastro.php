@@ -24,6 +24,7 @@
     <script src="../assets/javascript/tab.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/javascript/popup.js"></script>
+    <script type="text/javascript" src="../assets/javascript/camera.js"></script>
     <link rel="stylesheet" href="../assets/css/popup.css">
     <title>Reconhecimento facial - Cadastro</title>
 </head>
@@ -51,9 +52,13 @@
         </header>
 
         <main class="container">
+
             <section class="container__reconhecimento-facial">
-                <img src="./assets/imagens/logo.png" alt="Tela de aguardo" class="reconhecimento-facial__wait">
+                <img src="../assets/imagens/logo.png" alt="Tela de aguardo" class="reconhecimento-facial__wait" id="noCamera">
                 <button class="reconhecimento-facial__button">Fazer Reconhecimento facial</button>
+                <video id="webCamera"  style="display: none; width: 80%;"></video>
+                <button class="reconhecimento-facial__button" onclick="loadCamera()" id="reconhecer">Fazer Reconhecimento facial</button>
+                <button class="reconhecimento-facial__button" id="capturar" style="display: none;">Capturar de Imagem</button>
             </section>
 
             <section class="container__cadastro">
@@ -190,6 +195,15 @@
                                 <option value="fun-seg">Seguranças</option>
                                 <option value="fun-adm">Administração</option>
                             </select>
+                        </div>
+                        
+                        <div class="area__dado">
+                            <label for="tel" class="dado__label">Telefone</label>
+                            <input type="text" name="telefone" id="telefone" class="dado__input" placeholder="Digite seu DDD + Telefone" maxlength="15">
+                        </div>
+                        <div class="area__dado">
+                            <label for="mail" class="dado__label">E-mail</label>
+                            <input type="text" name="mail" class="dado__input" placeholder="Digite seu E-mail">
                         </div>
                         
                     <input type="submit" value="Enviar" id="enviar" > <!--onclick="functionAlert();"-->

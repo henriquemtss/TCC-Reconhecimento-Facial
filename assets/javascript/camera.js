@@ -1,21 +1,33 @@
+var click = 0;
 function loadCamera(){
+	click++;
 	//Captura elemento de vídeo
 	var video = document.querySelector("#webCamera");
-		//As opções abaixo são necessárias para o funcionamento correto no iOS
-		video.setAttribute('autoplay', '');
-	    video.setAttribute('muted', '');
-	    video.setAttribute('playsinline', '');
-	    //--
+	
+	//As opções abaixo são necessárias para o funcionamento correto no iOS
+	video.setAttribute('autoplay', '');
+	video.setAttribute('muted', '');
+	video.setAttribute('playsinline', '');
+	//--
 	
 	//Verifica se o navegador pode capturar mídia
-	if (navigator.mediaDevices.getUserMedia) {
+	if (click == 1 && navigator.mediaDevices.getUserMedia) {
 		navigator.mediaDevices.getUserMedia({audio: false, video: {facingMode: 'user'}})
 		.then( function(stream) {
 			//Definir o elemento víde a carregar o capturado pela webcam
 			video.srcObject = stream;
+			//if (document.getElementById('webCamera').style.display == 'none') {
+				document.getElementById('webCamera').style.display = 'block';
+				document.getElementById('noCamera').style.display = 'none';
+				document.getElementById('reconhecer').style.display = 'none';
+				document.getElementById('capturar').style.display = 'block';
+			// } else {
+			// 	document.getElementById('webCamera').style.display = 'none';
+			// 	document.getElementById('noCamera').style.display = 'block';
+			// }
 		})
 		.catch(function(error) {
-			alert("Oooopps... Falhou :'(");
+			alert("Não Será Possível Capturar Imagem, Recarregue a página e Tente Novamente. Caso o erro persista, contate o administrador!");
 		});
 	}
 }
@@ -71,9 +83,4 @@ function sendSnapShot(base64){
 		}
 		
 		request.send("base_img="+base64); // Enviar dados
-}
-
-
-loadCamera();
-
-                
+}            

@@ -121,3 +121,12 @@ button:hover{
     display: block;
     color: red;
 }
+
+.erroMsg{
+    text-align: center;
+    width: 100vw;
+    margin: 1rem 0;
+    color: red;
+    display: flex;
+    justify-content: center;
+}
