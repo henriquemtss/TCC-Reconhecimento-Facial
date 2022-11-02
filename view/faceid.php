@@ -1,9 +1,9 @@
-<!--
+
     <?php
     include "../Controller/Protect.php";
 
     ?>
--->
+
 
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@
     <!--Conteúdo principal-->
     <main>
         <!--Tag aside para definir o lado da página onde ficará a câmera-->
-        <aside>
+        <aside class="main__camera">
             <div class="area">
                 <video 
                     autoplay
@@ -41,28 +41,28 @@
                     height="320"   
                     muted      
                         ></video>
-                        <script src="./assets/lib/face-api/face-api.min.js"></script>
-                        <script src="./assets/javascript/api.js"></script>
+                        <script src="../assets/lib/face-api/face-api.min.js"></script>
+                        <script src="../assets/javascript/api.js"></script>
             </div>
         </aside>
 
         <!--Tag semântica para definir o conteúdo independente do outro lado onde ficará as infos do aluno-->
-        <article>
+        <article class="main__cadastro">
             <div class="conteudo-right"></div>
 
-                <div class="profile-right"> </div>
+                <!--<div class="profile-right"> </div>-->
 
                 <div class="container__box">
-                    <input type="text" name="name" placeholder="Nome:">
+                    <input type="text" class="box__input" name="name" placeholder="Nome:">
                 </div>
                 <div class="container__box">
-                    <input type="text" name="rm" placeholder="RM:">
+                    <input type="text" class="box__input" name="rm" placeholder="RM:">
                 </div>
                 <div class="container__box">
-                    <input type="text" name="periodo" placeholder="Período:">
+                    <input type="text" class="box__input" name="periodo" placeholder="Período:">
                 </div>
                 <div class="container__box">
-                    <input type="text" name="curso" placeholder="Curso:">
+                    <input type="text" class="box__input" name="curso" placeholder="Curso:">
 
             </div>
 
