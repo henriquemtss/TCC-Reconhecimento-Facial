@@ -1,5 +1,5 @@
 <?php
-    include_once('../model/Cadastro.php');
+    include_once('../model/CadastroAluno.php');
 
     if (!isset($_SESSION)) {
         session_start();
@@ -9,7 +9,7 @@
 
     
 
-    $cadastro = new Cadastro($_GET['nome'], $_GET['rm'], $_GET['email'], $_GET['curso'], $_GET['periodo']);
+    $cadastro = new CadastroAluno($_GET['nomeAluno'], $_GET['rmAluno'], $_GET['emailAluno'], $_GET['cursoAluno'], $_GET['periodoAluno']);
 
 
 
