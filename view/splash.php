@@ -12,6 +12,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <meta http-equiv="refresh" content="3.0; cadastro.php">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +30,24 @@
     <title>Reconhecimento facial - Cadastro</title>
 </head>
 <body>
+<div class="splash">
+        <div class="intro">
+            <img src="../assets/imagens/logo.png" style="width: 35%;" alt="Etec logo">
+            <h1 class="logo">
+                <span class="logo-parts">I</span>
+                <span class="logo-parts">N</span>
+                <span class="logo-parts">I</span>
+                <span class="logo-parts">C</span>
+                <span class="logo-parts">I</span>
+                <span class="logo-parts">A</span>
+                <span class="logo-parts">N</span>
+                <span class="logo-parts">D</span>
+                <span class="logo-parts">O</span>
+            </h1>
+        </div>
+    </div>
+    <script src="../assets/javascript/splash.js"></script>
+</body>
         <header class="header-cadastro">
             <img src="../assets/imagens/logo_icon.png" alt="Logo Sistema Face ID" class="header-cadastro__image">
             <h1 class="header__title">Registros</h1>
@@ -149,6 +168,7 @@
                             ?>
                             <!--  -->
                         </div>
+                        
                         <input type="submit" value="Enviar" id="enviar" onclick="functionAlert();">
                     </form>
                 </div>
@@ -249,3 +269,7 @@
         </main> 
 </body>
 </html>
+
+<?php
+    //header("Location: ../view/cadastro.php");
+?>
