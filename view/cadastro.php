@@ -1,10 +1,20 @@
 <?php
     include "../Controller/Protect.php";
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    if(!isset($_SESSION['splash']))
+    {
+        $_SESSION['splash'] = true;
+
+        include('splash.php');
+    }
 
     if (isset($_SESSION['msgCadastro'])) {
         echo $_SESSION['msgCadastro'];
         unset($_SESSION['msgCadastro']);
     }
+        
 
 ?>
 
@@ -129,7 +139,7 @@
                         </div>
                         <div class="area__dado">
                             <label for="periodoAluno" class="dado__label">Período</label>
-                            <select name="periodo" id="periodo-select" class="dado__input">
+                            <select name="periodoAluno" id="periodo-select" class="dado__input">
                                 <option value="">Selecione o Período</option>
                                 <option value="pr-modulo">1º Módulo - Técnico</option>
                                 <option value="seg-modulo">2º Módulo - Técnico</option>
