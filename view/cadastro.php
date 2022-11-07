@@ -10,10 +10,10 @@
         include('splash.php');
     }
 
-    if (isset($_SESSION['msgCadastro'])) {
-        echo $_SESSION['msgCadastro'];
-        unset($_SESSION['msgCadastro']);
-    }
+    // if (isset($_SESSION['msgCadastro'])) {
+    //     echo $_SESSION['msgCadastro'];
+    //     unset($_SESSION['msgCadastro']);
+    // }
         
 
 ?>
@@ -218,7 +218,7 @@
                             ?>
                             <!--  -->
                         </div>
-                        
+                                
                         <div class="area__dado">
                             <label for="tel" class="dado__label">Telefone</label>
                             <input type="text" name="telefoneFuncionario" id="telefone" class="dado__input" placeholder="Digite seu DDD + Telefone" maxlength="15">
@@ -252,10 +252,20 @@
                     </form>
                 </div>
             </section>
-            <div id="confirm">
+            <?php
+                if (isset($_SESSION['msgCadastro'])) {
+                    echo '<div id="confirm">
+                    <div class="message" id="texto">' . $_SESSION['msgCadastro'] . '</div>
+                        <button class="yes">OK</button>
+                    </div>';
+                    unset($_SESSION['msgCadastro']);
+                }
+                
+            ?>
+            <!-- <div id="confirm">
                 <div class="message" id="texto"></div>
                 <button class="yes">OK</button>
-            </div>
+            </div> -->
         </main> 
 </body>
 </html>
