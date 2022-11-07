@@ -159,7 +159,7 @@
                             ?>
                             <!--  -->
                         </div>
-                        <input type="submit" value="Enviar" id="enviar" onclick="functionAlert();">
+                        <input type="submit" value="Enviar" id="enviar" >
                     </form>
                 </div>
 
@@ -248,7 +248,7 @@
                             <!--  -->
                         </div>
                         
-                        <input type="submit" value="Enviar" id="enviar" onclick="functionAlert();">
+                        <input type="submit" value="Enviar" id="enviar" >
                     </form>
                 </div>
             </section>

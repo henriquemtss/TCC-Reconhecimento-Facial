@@ -24,7 +24,7 @@
 
         if (strlen($this->rm) == 0) {
 
-            $_SESSION['msgRM'] = "prencha o campo RM!";
+            $_SESSION['msgRMAluno'] = "prencha o campo RM!";
            header("Location: ../View/cadastro.php");
 
           
@@ -37,7 +37,7 @@
              }else {
 
                 if (strlen($this->nome) == 0){
-                    $_SESSION['msgNome'] = "prencha o campo Nome!";
+                    $_SESSION['msgNomeAluno'] = "prencha o campo Nome!";
                     header("Location: ../view/cadastro.php");
     
                 }else{
