@@ -52,15 +52,25 @@ class CadastroFuncionario     {
                                 header("Location: ../View/cadastro.php");                        
                             
                             }else{
-                                //verificação de campos concluida
-                                return true;
+
+                                if (ValidadorCPF($this->cpf)) {
+                                    
+                                    return true;
+                                        
+                                    }else{
+
+                                        $_SESSION['msgCPFFuncionario'] = "CPF invalido!";
+                                        header("Location: ../View/cadastro.php");
+                                    }
+                                }
+                                
+                                
                             }
 
                         }
                     }
                 }
              }
-        }
 
 
         // 
@@ -99,19 +109,27 @@ class CadastroFuncionario     {
 
             $cadastroExistente = $res->fetch(PDO::FETCH_ASSOC);
 
+
+            
             if (!is_null($cadastroExistente['email'])) {
-                $_SESSION['msgEmail'] = "Email ja utilizado!";
-                header("Location: ../View/cadastro.php");  
-            }
-            if (!is_null($cadastroExistente['cpf'])) {
-                $_SESSION['msgRM'] = "CPF ja utilizado!";
-                header("Location: ../View/cadastro.php");  
-            }
+                    $_SESSION['msgEmailFuncionario'] = "Email ja utilizado!";
+                    header("Location: ../view/cadastro.php");
+                }
+                if (!is_null($cadastroExistente['cpf'])) {
+                    $_SESSION['msgCPFFuncionario'] = "CPF ja utilizado!";
+                    header("Location: ../view/cadastro.php");
+                }
 
             return true;
+            
+
+            
+
+            
         }
 
 
 
 // 
+
 }

@@ -24,7 +24,7 @@ create table CadastroAluno(
 
 create table CadastroFuncionario(
     nome varchar(140) not null,
-    CPF varchar(14) not null primary key,
+    cpf varchar(14) not null primary key,
     email varchar(100) not null unique key,
     funcao varchar(7) not null,
     telefone varchar(15) not null

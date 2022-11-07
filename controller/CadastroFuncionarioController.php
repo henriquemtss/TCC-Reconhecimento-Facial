@@ -1,5 +1,6 @@
 <?php
     include_once('../model/CadastroFuncionario.php');
+    include_once('../assets/lib/ValidadorCPF/ValidadorCpf.php');
 
     if (!isset($_SESSION)) {
         session_start();
@@ -16,13 +17,13 @@
     if ($cadastro->verificarCampos()) {
 
         if ($cadastro->verificarRMeEmail()) {
-            
+             $cadastro->Cadastrar();
         }
+    
 
     }
     
        
-    $cadastro->Cadastrar();
 
 
 
