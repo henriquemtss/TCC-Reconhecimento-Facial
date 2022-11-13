@@ -2,7 +2,7 @@
    
    include('DAO/conexao.php');
 
-    class Cadastro     {
+    class CadastroAluno     {
 
         var $nome;
         var $rm;
@@ -24,38 +24,38 @@
 
         if (strlen($this->rm) == 0) {
 
-            $_SESSION['msgRM'] = "prencha o campo RM!";
+            $_SESSION['msgRMAluno'] = "prencha o campo RM!";
            header("Location: ../View/cadastro.php");
 
           
            } else {
             
-                if (intval($this->rm) < 0 || intval($_GET['rm']) > 99999 ) {
+                if (intval($this->rm) < 0 || intval($this->rm) > 99999 ) {
             
-                $_SESSION['msgRM'] = "RM invalido!";
+                $_SESSION['msgRMAluno'] = "RM invalido!";
                 header("Location: ../View/cadastro.php");
              }else {
 
                 if (strlen($this->nome) == 0){
-                    $_SESSION['msgNome'] = "prencha o campo Nome!";
+                    $_SESSION['msgNomeAluno'] = "prencha o campo Nome!";
                     header("Location: ../view/cadastro.php");
     
                 }else{
     
                     if (strlen($this->email) == 0){
-                    $_SESSION['msgEmail'] = "prencha o campo Email!";
+                    $_SESSION['msgEmailAluno'] = "prencha o campo Email!";
                         header("Location: ../View/cadastro.php");
     
                     }else {
     
                         if (strlen($this->curso) == 0){                        
-                            $_SESSION['msgCurso'] = "prencha o campo Curso!";
+                            $_SESSION['msgCursoAluno'] = "prencha o campo Curso!";
                             header("Location: ../View/cadastro.php");
     
                         }else {
     
                             if (strlen($this->periodo) == 0){
-                                $_SESSION['msgPeriodo'] = "prencha o campo Período!";
+                                $_SESSION['msgPeriodoAluno'] = "prencha o campo Período!";
                                 header("Location: ../View/cadastro.php");                        
                             
                             }else{
@@ -79,7 +79,7 @@
 
             try {
                                     
-                $sql = "Insert into Cadastro(rm, nome, email, curso, periodo) values (:rm, :nome, :email, :curso, :periodo);";
+                $sql = "Insert into CadastroAluno (rm, nome, email, curso, periodo) values (:rm, :nome, :email, :curso, :periodo);";
                 $res = $pdo->prepare($sql);
                 $res->bindValue(':rm',$this->rm);
                 $res->bindValue(':nome', $this->nome);
@@ -99,7 +99,7 @@
         function verificarRMeEmail(){
             $pdo = conectar();
 
-            $sql = "select * from Cadastro where email = :email or rm = :rm limit 1;";
+            $sql = "select * from CadastroAluno where email = :email or rm = :rm limit 1;";
             $res = $pdo->prepare($sql);
             $res->bindValue(':email', $this->email);
             $res->bindValue(':rm', $this->rm);

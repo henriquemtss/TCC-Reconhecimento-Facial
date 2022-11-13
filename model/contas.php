@@ -37,7 +37,8 @@ class Contas
                 $_SESSION['id'] = $conta['id'];
                 $_SESSION['nome'] = $conta['nome'];
                 
-                session_set_cookie_params(0);
+                // session_set_cookie_params(0);
+                // header("Location: ../View/splash.php");
                 header("Location: ../view/cadastro.php");
 
          } else {

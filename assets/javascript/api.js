@@ -73,7 +73,7 @@ const loadLabels = () => {
     return Promise.all(labels.map(async label => {
         const descriptions = []
         for (let i = 1; i <= 3; i++) {
-            const img = await faceapi.fetchImage(`./assets/lib/face-api/labels/${label}/${i}.jpg`)
+            const img = await faceapi.fetchImage(`../assets/lib/face-api/labels/${label}/${i}.jpg`)
             const detections = await faceapi
                 .detectSingleFace(img)
                 .withFaceLandmarks()
@@ -99,10 +99,10 @@ const loadLabels = () => {
 }
 
 Promise.all([
-    faceapi.nets.tinyFaceDetector.loadFromUri('./assets/lib/face-api/models'),
-    faceapi.nets.faceLandmark68Net.loadFromUri('./assets/lib/face-api/models'),
-    faceapi.nets.faceRecognitionNet.loadFromUri('./assets/lib/face-api/models'),
-    faceapi.nets.ssdMobilenetv1.loadFromUri('./assets/lib/face-api/models'),
+    faceapi.nets.tinyFaceDetector.loadFromUri('../assets/lib/face-api/models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('../assets/lib/face-api/models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('../assets/lib/face-api/models'),
+    faceapi.nets.ssdMobilenetv1.loadFromUri('../assets/lib/face-api/models'),
 ]).then(startVideo)
 
 cam.addEventListener('play', async () => {
