@@ -1,4 +1,4 @@
-.profile-right{
+/* .profile-right{
     
     background-repeat: no-repeat;
     background-position: center;
@@ -12,26 +12,29 @@
     float:left;
     background-color:#c4c4c4;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-    }
+    } */
     
+    .conteudo-right{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .container__box{
+        width: 100%;
+    }
+
     /* Os 2 containners Unidos em 1 */
     .container__box input{
         font-family: var(--fonte);
-        color: var(--cor-botao-escuro);
-        height: 30px;
-        width: 400px;
-        font-size: 15px;
-        margin-right: 0px;
-        margin-left: 150px;
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        border: 1px solid;
-        border-radius: 20px;
-        outline: none;
+        font-size: 17px;
+        border-radius: 39px;
         box-shadow: 0px 4px 4px 0px #00000040;
-        border-color: rgba(204, 204, 204, 0.74);
-        padding: 0 0.5rem;
+        padding: .4rem 1.2rem;
+        outline: 1px solid rgba(0, 0, 0, 0.116);
+        border: none;
+        width: 100%;
+        transition: all .2s ease-in;
     }
 
 /* Alterar quando clicar */
@@ -40,9 +43,7 @@ input:focus{
     background-color: #dadada;
 }
 
-.button{
-    margin-left: 200px;
-}
+
 
 .btn-cadastrar{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -50,9 +51,6 @@ input:focus{
     width: 140px;
     height: 36px;
     font-size: 16px;
-    float: right;
-    margin-top: 69px;
-    margin-right: 20px;
     color: white;
     border: none;
     transition: .4s;
@@ -64,10 +62,7 @@ input:focus{
     width: 140px;
     height: 36px;
     font-size: 16px;
-    float: right;
-    margin-top: 69px;
     color: white;
-    margin-right: 160px;
     border: none;
     transition: .4s;
 }

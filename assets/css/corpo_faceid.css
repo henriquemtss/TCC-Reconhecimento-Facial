@@ -1,11 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
+    margin: 0;
     padding: 0px;
-    margin: 0px;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 main{
+    border-radius: 2px;
+    align-items: center;
     display: flex;
     flex: row;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 90vw;
+    min-height: calc(100vh - 60px - 2rem);
+    position: relative;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.185);
+    position: relative;
+}
+
+.btn-cadastrar, .btn-registros{
+    background-color: var(--vermelho);
+    box-shadow: 0 4px 4px 0 #00000040;
+    padding: .3rem 1rem;
+    color: #fefefe;
+    font-size: 17px;
+    font-family: var(--fonte);
+    transition:  .4s all;
+    border-radius: 4px;
+}
+
+.btn-cadastrar:hover, .btn-registros:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    font-size: 18px;
+}
+
+.main__camera{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55vw;
+    height: calc(100vh - 60px - 2rem);
+    background: radial-gradient(circle, #fefefe 0%, rgba(0, 0, 0, 0.486) 100%);
+    
+}
+
+.main__cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .7rem;
+    height: calc(100vh - 60px - 2rem);
+    width: 60%;
+    padding: 0 2rem;
+}
+
+.buttons{
+    margin-top: .5rem;
+    display: flex;
+    gap: .5rem;
+    width: 100%;
+    position: relative;
+    justify-content: center;
 }

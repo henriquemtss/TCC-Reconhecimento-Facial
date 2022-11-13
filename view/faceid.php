@@ -66,7 +66,7 @@
 
             </div>
 
-        <div class="button">
+        <div class="buttons">
 
             <a href="registro.html" target="_self">
                 <button class="btn-registros">Registros</button>

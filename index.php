@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="assets/css/variaveis.css">
     <link rel="stylesheet" href="assets/css/header-login.css">
     <link rel="stylesheet" href="assets/css/login.css">
-
+    <link rel="stylesheet" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/css/variaveis.css">
 
     <title>Reconhecimento facial - Login</title>
@@ -45,12 +45,12 @@
             <div class="main-login__container">
                 <div class="container__box">
                     <label for="usuario">Nome:</label>
-                    <input class="box__input" type="text" name="usuario">
+                    <input class="box__input input" type="text" name="usuario">
                     <spam class="mensagem">Por favor preencha o campo!</spam>
                 </div>
                 <div class="container__box">
                     <label for="password">Senha:</label>
-                    <input class="box__input" type="password" name="password">
+                    <input class="box__input input" type="password" name="password">
                     <spam class="mensagem">Por favor preencha o campo!</spam>
                 </div>
 
@@ -64,6 +64,6 @@
 
     </form>
 
-    <script src="assets/javascript/loginVerificacao.js"></script>
+    <script  type="module" src="assets/javascript/login.js"></script>
 </body>
 </html>
