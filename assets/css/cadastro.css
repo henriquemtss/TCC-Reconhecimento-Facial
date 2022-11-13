@@ -3,7 +3,7 @@
     grid-template-columns: 45% 55%;
     box-shadow: 0 0 10px 0 #cecece;
     width: 90%;
-    height: calc(120vh - 104px - 8rem);
+    height: calc(100vh - 60px - 2rem);
     margin: 0 auto;
 }
 
@@ -16,10 +16,12 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: hidden;
 }
 
 .reconhecimento-facial__wait{
-   width: 50%;
+    position: absolute;
+    width: 50%;
 }
 
 .reconhecimento-facial__button{
@@ -71,8 +73,8 @@
     transition: transform .3s ease-in-out;
     animation: left-to-right 1s;
 }
-.cadastro__title:hover::after{
-
+#webCamera{
+    width: 100%;
 }
 
 @keyframes left-to-right{
