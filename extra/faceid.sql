@@ -62,3 +62,5 @@ insert into registro values(12345, DATE_SUB(NOW(), interval +1 HOUR));
 -- select cadastroaluno.nome, cadastroaluno.rm, cadastroaluno.curso, cadastroaluno.periodo, registro.entradaSaida 
 -- from CadastroAluno inner join registro on cadastroaluno.rm = registro.rm
 -- order by registro.entradaSaida Desc;
+
+-- select cadastroaluno.nome, cadastroaluno.rm, cadastroaluno.curso, cadastroaluno.periodo, registro.entradaSaida from CadastroAluno inner join registro on cadastroaluno.rm = registro.rm order by registro.entradaSaida Desc;
