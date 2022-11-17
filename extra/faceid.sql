@@ -49,6 +49,8 @@ insert into niveisContas values
 -- (0, 'aluno');
 
 insert into Contas values(0,'admin', 'admin', '$2y$10$hxb5L22B/FJmZyLx.MM8JuJ8v7vXI1GjTMRva3LGgRdu5Ws8DtDo2', 1);
+insert into Contas values(0,'seg', 'seg', '$2y$10$vsxlxcWN3TzqQXvfRvkgHuCKFiEam2pxtVfx4RWkFUPhOOXthId1u', 2);
+insert into Contas values(0,'sec', 'sec', '$2y$10$wPsVn9xYdkpYlztGS8Dmc.Irfm6HdjE23MjziUxAioJnH/6ds2poy', 3);
 
 insert into cadastroaluno values('wes', 12345, 'wes@wes', 'nut', 'pr-modulo');
 
