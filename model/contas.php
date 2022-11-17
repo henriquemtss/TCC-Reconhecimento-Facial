@@ -39,7 +39,16 @@ class Contas
                 
                 // session_set_cookie_params(0);
                 // header("Location: ../View/splash.php");
-                header("Location: ../view/cadastro.php");
+                if ($conta['nivelConta'] == 1) {
+                    header("Location: ../view/cadastro.php");
+                }
+                if ($conta['nivelConta'] == 2) {
+                    header("Location: ../view/faceid.php");
+                }
+                if ($conta['nivelConta'] == 3) {
+                    header("Location: ../view/cadastro.php");
+                }
+                
 
          } else {
             $_SESSION['msgLogin'] = "Falha ao logar.<Br/>  Usuario ou senha incorretos!";

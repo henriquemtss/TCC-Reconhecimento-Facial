@@ -1,7 +1,15 @@
 
     <?php
     include "../Controller/Protect.php";
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    if(!isset($_SESSION['splash']))
+    {
+        $_SESSION['splash'] = true;
 
+        include('splash.php');
+    }
     ?>
 
 
