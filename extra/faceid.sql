@@ -60,4 +60,3 @@ insert into registro values(12345, DATE_SUB(NOW(), interval +1 HOUR));
 -- select cadastroaluno.nome, cadastroaluno.rm, cadastroaluno.curso, cadastroaluno.periodo, registro.entradaSaida 
 -- from CadastroAluno inner join registro on cadastroaluno.rm = registro.rm
 -- order by registro.entradaSaida Desc;
-insert into Contas values(0,'admin', 'admin', '$2y$10$hxb5L22B/FJmZyLx.MM8JuJ8v7vXI1GjTMRva3LGgRdu5Ws8DtDo2', 1);
