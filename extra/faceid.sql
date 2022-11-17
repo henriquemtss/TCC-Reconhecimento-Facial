@@ -34,12 +34,30 @@ create table CadastroFuncionario(
     telefone varchar(15) not null
 );
 
+create table registro (
+    rm int not null,
+    entradaSaida datetime not null,
+    foreign key(rm) references CadastroAluno(rm)
+);
+
 
 
 insert into niveisContas values
 (0, 'Administrador'), 
 (0, 'Seguranca'),
-(0, 'Secretaria'),
-(0, 'aluno');
+(0, 'Secretaria');
+-- (0, 'aluno');
 
+insert into Contas values(0,'admin', 'admin', '$2y$10$hxb5L22B/FJmZyLx.MM8JuJ8v7vXI1GjTMRva3LGgRdu5Ws8DtDo2', 1);
+
+insert into cadastroaluno values('wes', 12345, 'wes@wes', 'nut', 'pr-modulo');
+
+insert into registro values(12345, now());
+insert into registro values(12345, DATE_ADD(NOW(), interval +1 HOUR));
+insert into registro values(12345, DATE_SUB(NOW(), interval +1 HOUR));
+
+
+-- select cadastroaluno.nome, cadastroaluno.rm, cadastroaluno.curso, cadastroaluno.periodo, registro.entradaSaida 
+-- from CadastroAluno inner join registro on cadastroaluno.rm = registro.rm
+-- order by registro.entradaSaida Desc;
 insert into Contas values(0,'admin', 'admin', '$2y$10$hxb5L22B/FJmZyLx.MM8JuJ8v7vXI1GjTMRva3LGgRdu5Ws8DtDo2', 1);
