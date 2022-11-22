@@ -12,8 +12,14 @@ function functionAlert(msg, myYes) {
   var confirmBox = $("#confirm");
   //confirmBox.find(".message").text(msg);
   confirmBox.find(".yes").unbind().click(function() {
+      console.log("ashdjkfh")
      confirmBox.fadeOut();
   });
   confirmBox.find(".yes").click(myYes);
   confirmBox.fadeIn();
 }
+const confirmButton = document.querySelector("#confirm");
+const button = document.querySelector(".yes")
+button.addEventListener("click", function(){
+    confirmButton.style.display = "none";
+})

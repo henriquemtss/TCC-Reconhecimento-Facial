@@ -33,12 +33,22 @@
     <link rel="stylesheet" href="../assets/css/tab_cadastro.css">
     <script src="../assets/javascript/tab.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../assets/javascript/popup.js"></script>
     <script type="text/javascript" src="../assets/javascript/camera.js"></script>
     <link rel="stylesheet" href="../assets/css/popup.css">
     <title>Reconhecimento facial - Cadastro</title>
 </head>
 <body>
+        <?php
+            if (isset($_SESSION['msgCadastro'])) {
+                echo '<div id="confirm">
+                <div class="message" id="texto">' . $_SESSION['msgCadastro'] . '</div>
+                    <button class="yes">OK</button>
+                </div>';
+                unset($_SESSION['msgCadastro']);
+            }
+            
+        ?>
+
         <header class="header-cadastro">
             <img src="../assets/imagens/logo_icon.png" alt="Logo Sistema Face ID" class="header-cadastro__image">
             <h1 class="header__title">Registros</h1>
@@ -263,17 +273,9 @@
                     </form>
                 </div>
             </section>
-            <?php
-                if (isset($_SESSION['msgCadastro'])) {
-                    echo '<div id="confirm">
-                    <div class="message" id="texto">' . $_SESSION['msgCadastro'] . '</div>
-                        <button class="yes">OK</button>
-                    </div>';
-                    unset($_SESSION['msgCadastro']);
-                }
-                
-            ?>
+
         </main> 
         <script type="module" src="../assets/javascript/cadastro.js"></script>
+        <script type="text/javascript" src="../assets/javascript/popup.js"></script>
 </body>
 </html>
