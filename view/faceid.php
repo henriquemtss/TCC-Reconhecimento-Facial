@@ -76,10 +76,10 @@
 
         <div class="buttons">
 
-            <a href="registro.html" target="_self">
+            <a href="registro.php" target="_self">
                 <button class="btn-registros">Registros</button>
             </a>
-            <a href="cadastro.html" target="_self">
+            <a href="cadastro.php" target="_self">
                 <button class="btn-cadastrar">Cadastrar</button>
             </a>
         </div>

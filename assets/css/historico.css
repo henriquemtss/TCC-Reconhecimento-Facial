@@ -29,9 +29,11 @@ body{
 }
 
 .voltar{
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
-    background-color: red;
+    background-color: rgb(252, 57, 57);
     box-shadow: 0px 4px 4px 0px #00000040;
     height: 48px;
     width: 48px;
@@ -40,7 +42,6 @@ body{
     position: fixed;
     bottom: 35px;
     left: 40px;
-
 }
 
 .voltar:hover{
