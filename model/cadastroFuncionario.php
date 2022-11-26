@@ -1,6 +1,6 @@
 <?php
 
-include('DAO/conexao.php');
+include('DAO/CadastroFuncionarioDAO.php');
 
 class CadastroFuncionario     {
 
@@ -9,6 +9,7 @@ class CadastroFuncionario     {
     var $email;
     var $telefone;
     var $funcao;
+    var $cadastroFuncionarioDAO;
 
     function __construct($nome, $cpf, $email, $telefone, $funcao)
     {
@@ -17,6 +18,7 @@ class CadastroFuncionario     {
         $this->email = $email;
         $this->telefone = $telefone;
         $this->funcao = $funcao;
+        $this->cadastroFuncionarioDAO = new CadastroFuncionarioDAO();
     }
 
 
@@ -76,55 +78,14 @@ class CadastroFuncionario     {
         // 
 
         function Cadastrar(){
-            
-            $pdo = conectar();
-
-            try {
-                                    
-                $sql = "Insert into CadastroFuncionario (nome, cpf, email, telefone, funcao) values (:nome, :cpf, :email, :telefone, :funcao);";
-                $res = $pdo->prepare($sql);
-                $res->bindValue(':nome',$this->nome);
-                $res->bindValue(':cpf', $this->cpf);
-                $res->bindValue(':email', $this->email);
-                $res->bindValue(':telefone', $this->telefone);
-                $res->bindValue(':funcao', $this->funcao);
-                $res->execute();
-                $_SESSION['msgCadastro'] = "Cadastro concluido!";
-                header("Location: ../view/cadastro.php");
-
-
-            } catch (\Throwable $th) {
-                echo $th->getMessage();
-            }
+            $this->cadastroFuncionarioDAO->cadastrar($this->nome, $this->cpf, $this->email, $this->telefone, $this->funcao);
         }
 
-        function verificarRMeEmail(){
-            $pdo = conectar();
-
-            $sql = "select * from CadastroFuncionario where cpf = :cpf or email = :email limit 1;";
-            $res = $pdo->prepare($sql);
-            $res->bindValue(':email', $this->email);
-            $res->bindValue(':cpf', $this->cpf);
-            $res->execute();
-
-            $cadastroExistente = $res->fetch(PDO::FETCH_ASSOC);
-
-
+        function verificarEmailECPF(){
             
-            if (!is_null($cadastroExistente['email'])) {
-                    $_SESSION['msgEmailFuncionario'] = "Email ja utilizado!";
-                    header("Location: ../view/cadastro.php");
-                }
-                if (!is_null($cadastroExistente['cpf'])) {
-                    $_SESSION['msgCPFFuncionario'] = "CPF ja utilizado!";
-                    header("Location: ../view/cadastro.php");
-                }
-
-            return true;
-            
-
-            
-
+            if($this->cadastroFuncionarioDAO->verificarEmailECPF($this->email, $this->cpf)){
+                return true;
+            }
             
         }
 

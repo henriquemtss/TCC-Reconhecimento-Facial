@@ -16,7 +16,7 @@
 
     if ($cadastro->verificarCampos()) {
 
-        if ($cadastro->verificarRMeEmail()) {
+        if ($cadastro->verificarEmailECPF()) {
              $cadastro->Cadastrar();
         }
     

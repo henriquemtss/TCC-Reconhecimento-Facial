@@ -1,6 +1,6 @@
 <?php
    
-   include('DAO/conexao.php');
+   include('DAO/cadastroAlunoDAO.php');
 
     class CadastroAluno     {
 
@@ -9,6 +9,7 @@
         var $email;
         var $curso;
         var $periodo;
+        var $cadastroAlunoDAO;
 
         function __construct($nome, $rm, $email, $curso, $periodo)
         {
@@ -17,6 +18,7 @@
             $this->email = $email;
             $this->curso = $curso;
             $this->periodo = $periodo;
+            $this->cadastroAlunoDAO = new CadastroAlunoDAO();
         }
 
 
@@ -74,49 +76,16 @@
 
 
         function Cadastrar(){
-            
-            $pdo = conectar();
-
-            try {
-                                    
-                $sql = "Insert into CadastroAluno (rm, nome, email, curso, periodo) values (:rm, :nome, :email, :curso, :periodo);";
-                $res = $pdo->prepare($sql);
-                $res->bindValue(':rm',$this->rm);
-                $res->bindValue(':nome', $this->nome);
-                $res->bindValue(':email', $this->email);
-                $res->bindValue(':curso', $this->curso);
-                $res->bindValue(':periodo', $this->periodo);
-                $res->execute();
-                $_SESSION['msgCadastro'] = "Cadastro concluido!";
-                header("Location: ../view/cadastro.php");
-
-
-            } catch (\Throwable $th) {
-                echo $th->getMessage();
-            }
+            $this->cadastroAlunoDAO->Cadastrar($this->rm, $this->nome, $this->email, $this->curso, $this->periodo);
         }
 
         function verificarRMeEmail(){
-            $pdo = conectar();
-
-            $sql = "select * from CadastroAluno where email = :email or rm = :rm limit 1;";
-            $res = $pdo->prepare($sql);
-            $res->bindValue(':email', $this->email);
-            $res->bindValue(':rm', $this->rm);
-            $res->execute();
-
-            $cadastroExistente = $res->fetch(PDO::FETCH_ASSOC);
-
-            if (!is_null($cadastroExistente['email'])) {
-                $_SESSION['msgEmail'] = "Email ja utilizado!";
-                header("Location: ../View/cadastro.php");  
+            
+            if ($this->cadastroAlunoDAO->verificarRMeEmail($this->rm, $this->email)) {
+                return true;
             }
-            if (!is_null($cadastroExistente['rm'])) {
-                $_SESSION['msgRM'] = "RM ja utilizado!";
-                header("Location: ../View/cadastro.php");  
-            }
-
-            return true;
+            
+            
         }
 
     }

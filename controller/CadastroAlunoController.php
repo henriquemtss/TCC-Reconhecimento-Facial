@@ -16,13 +16,13 @@
     if ($cadastro->verificarCampos()) {
 
         if ($cadastro->verificarRMeEmail()) {
-            
+            $cadastro->Cadastrar();
         }
 
     }
     
        
-    $cadastro->Cadastrar();
+    
 
 
 
