@@ -78,7 +78,7 @@
                 <div id="aluno" class="conteudo">
                     <div class="cadastro__header">
                         <h1 class="cadastro__title">Cadastrar</h1>
-                        <button class="cadastro__consultar">Consultar<button>
+                        <a href="consulta.php" class="cadastro__consultar">Consultar</a>
                     </div>
                     <form class="cadastro__area alunoForm" action="../Controller/CadastroAlunoController.php" method="GET">
                         <div class="area__dado">
@@ -184,7 +184,7 @@
                     <!--Inicio Cadastro Funcionários-->
                     <div class="cadastro__header">
                         <h1 class="cadastro__title">Cadastrar</h1>
-                        <button class="cadastro__consultar">Consultar<button>
+                        <a href="consulta.php" class="cadastro__consultar">Consultar</a>
                     </div>
                     <form class="cadastro__area funcionarioForm"  action="../Controller/CadastroFuncionarioController.php" method="GET">
                         <div class="area__dado">

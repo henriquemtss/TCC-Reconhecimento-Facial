@@ -57,7 +57,7 @@ font-size: 35px;
 #voltarIcon:hover{
     transform: scale(1.05);
     cursor: pointer;
-    }
+}
 
 @media screen and (max-width:768px) {
 
