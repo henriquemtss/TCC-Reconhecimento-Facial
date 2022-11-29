@@ -77,7 +77,6 @@ function retakeSnapShot(denovo){
 		document.getElementById('take').style.display = 'block';
 		document.getElementById('save').style.display = 'none';
 		document.getElementById('again').style.display = 'none';
-		
 	} else if (denovo === again2) {
 		document.getElementById('second').style.display = 'block';
 		document.getElementById('canvas2').style.display = 'none';
@@ -131,7 +130,7 @@ function saveSnapShot(salvar){
 
 function sendSnapShot(base64){	
 	var request = new XMLHttpRequest();
-		request.open('POST', 'save_photos.php', true);
+		request.open('POST', '../model/save_photos.php', true);
 		request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 		
 		request.onload = function() {
@@ -145,11 +144,6 @@ function sendSnapShot(base64){
 					alert(data.error);
 					return false;
 				}
-				
-				//Mostrar informações
-				//document.querySelector("#imagemConvertida").setAttribute("src", data.img);
-				//document.querySelector("#caminhoImagem a").setAttribute("href", data.img);
-				//document.querySelector("#caminhoImagem a").innerHTML = data.img.split("/")[1];
 			} else {
 				alert( "Erro ao salvar. Tipo:" + request.status );
 			}

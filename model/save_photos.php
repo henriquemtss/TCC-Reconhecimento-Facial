@@ -10,21 +10,21 @@
 
 
 	//Tirar 3 fotos para cada pasta
-	if ($cont == 1 && !file_exists($cont)) {
-		mkdir($cont);
+	if ($cont == 1 && !file_exists("../assets/lib/face-api/labels/{$cont}")) {
+		mkdir("../assets/lib/face-api/{$cont}");
 	}
-	while (file_exists("{$cont}/{$name}.jpg")) {
+	while (file_exists("../assets/lib/face-api/labels/{$cont}/{$name}.jpg")) {
 		$name++;
 		if ($name == 4) {
 			$cont++;
 			$name = 1;
 		}
-		if (!file_exists($cont)) {
-			mkdir($cont);
+		if (!file_exists("../assets/lib/face-api/labels/{$cont}")) {
+			mkdir("../assets/lib/face-api/labels/{$cont}");
 			$name = 1;
 		}
 	}
-	$path = "{$cont}/{$name}.jpg";	
+	$path = "../assets/lib/face-api/labels/{$cont}/{$name}.jpg";	
 		//data
 		$data = explode(',', $data);
 		

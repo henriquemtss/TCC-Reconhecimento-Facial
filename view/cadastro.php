@@ -93,7 +93,7 @@
                     <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="again3" onclick="retakeSnapShot(again3)"> Cancelar</button>
                 </form>
 			<!--Scripts-->
-			<script src="script.js"></script>
+			<script src="../assets/javascript/takeFoto.js"></script>
 		    </div>
             </section>
 
