@@ -31,7 +31,7 @@
         <img src="assets/imagens/logo.png" alt="Logo Sistema Face ID" class="header-login__image">
     </header>
 
-    <h1 class="titulo">Login Admin</h1>
+    <h1 class="titulo">Login</h1>
     <?php
 
         if (isset($_SESSION['msgLogin'])) {
@@ -44,13 +44,13 @@
         <main class="main-login">
             <div class="main-login__container">
                 <div class="container__box">
-                    <label for="usuario">Nome:</label>
-                    <input class="box__input input" type="text" name="usuario">
+                    <label for="usuario"></label>
+                    <input placeholder="Digite o Usuário" class="box__input input" type="text" name="usuario">
                     <spam class="mensagem">Por favor preencha o campo!</spam>
                 </div>
                 <div class="container__box">
-                    <label for="password">Senha:</label>
-                    <input class="box__input input" type="password" name="password">
+                    <label for="password"></label>
+                    <input placeholder="Digite a Senha" class="box__input input" type="password" name="password">
                     <spam class="mensagem">Por favor preencha o campo!</spam>
                 </div>
 
