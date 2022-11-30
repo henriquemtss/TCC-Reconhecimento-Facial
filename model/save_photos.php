@@ -6,34 +6,49 @@
 	}
 
 	$result = [];
-	$data = str_replace(" ","+",$_POST['base_img']); //O envio do dado pelo XMLHttpRequest tende a trocar o + por espaço, por isso a necessidade de substituir.
+	$replaced = str_replace(" ","+",$_POST['base_img']); //O envio do dado pelo XMLHttpRequest tende a trocar o + por espaço, por isso a necessidade de substituir.
+	$folder = substr($replaced, -5);
+	$data = explode(',',$replaced);
 
-
-	//Tirar 3 fotos para cada pasta
-	if ($cont == 1 && !file_exists("../assets/lib/face-api/labels/{$cont}")) {
-		mkdir("../assets/lib/face-api/{$cont}");
-	}
-	while (file_exists("../assets/lib/face-api/labels/{$cont}/{$name}.jpg")) {
-		$name++;
-		if ($name == 4) {
-			$cont++;
-			$name = 1;
-		}
-		if (!file_exists("../assets/lib/face-api/labels/{$cont}")) {
-			mkdir("../assets/lib/face-api/labels/{$cont}");
-			$name = 1;
+	if (file_exists("../assets/lib/face-api/labels/{$folder}")) {
+		foreach(scandir("../assets/lib/face-api/labels/{$folder}") as $item){
+			if($item != '.' AND $item != '..'){
+				$cont += 1;
+			}
 		}
 	}
-	$path = "../assets/lib/face-api/labels/{$cont}/{$name}.jpg";	
+	//die("{\"error\": \"$folder\"}");
+
+	if(substr($replaced, -6, 1) === 'A') {
+		//Tirar 3 fotos para cada pasta
+		if (!file_exists("../assets/lib/face-api/labels/{$folder}")) {
+			mkdir("../assets/lib/face-api/labels/{$folder}");
+		} else if(substr($replaced, -6, 1) === 'A' AND $cont < 4) {
+			while (file_exists("../assets/lib/face-api/labels/{$folder}/{$name}.jpg")) {
+				$name++;
+			}
+		} else if (substr($replaced, -6, 1) === 'B' AND $cont === 4) {
+			$mask = "*.jpg";
+			array_map("unlink", glob('../assets/lib/face-api/labels/'.$folder.'/'.$mask));
+			rmdir("../assets/lib/face-api/labels/{$folder}");
+			mkdir("../assets/lib/face-api/labels/{$folder}");
+		} else {
+			die("{\"error\": \"Flopou! Usuário Já Cadastrado!\"}");
+		}
+		
+	}
+	
+	$path = "../assets/lib/face-api/labels/{$folder}/{$name}.jpg";	
 		//data
-		$data = explode(',', $data);
+		//$data = explode(',', $data);
 		
 		//Save data
 		file_put_contents($path, base64_decode(trim($data[1])));
-		
+
+		die("{\"error\": \" $cont\"}");
 		//Print Data
-		$result['img'] = $path;
-		echo json_encode($result, JSON_PRETTY_PRINT);	
+		//$result['img'] = $path;
+		//echo json_encode($result, JSON_PRETTY_PRINT);	
 
 	//while nao criou aumentar $cont		
 ?>

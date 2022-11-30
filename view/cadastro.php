@@ -21,7 +21,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+<head id="A">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,10 +64,10 @@
                 </video>
                 <form target="POST" method="save_photos.php">
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
-                    <button style="width: 86%; background-color: #3D4B56; padding-top: 5px; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="recognize" onclick="reconhecer()">FAZER RECONHECIMENTO FACIAL</button>
+                    <button class="reconhecimento-facial__button" type="button" id="recognize" onclick="reconhecer()">FAZER RECONHECIMENTO FACIAL</button>
                     <button style="width: 86%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="active" onclick="loadCameraOne(active)">Primeira Foto</button>
                     <button style="width: 86%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="take" onclick="takeSnapShot(take)">Tirar foto</button>
-                    <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 49%" class="reconhecimento-facial__button" type="button" id="save" onclick="saveSnapShot(save)"> salvar</button>
+                    <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 49%" class="reconhecimento-facial__button" type="button" id="save" onclick="saveSnapShot(save, A)"> salvar</button>
                     <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="again" onclick="retakeSnapShot(again)"> Cancelar</button>
                 </form>
     
@@ -78,7 +78,7 @@
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
                     <button style="width: 86%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="active2" onclick="loadCameraOne(active2)">Segunda Foto</button>
                     <button style="width: 86%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="take2" onclick="takeSnapShot(take2)">Tirar foto</button>
-                    <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 49%" class="reconhecimento-facial__button" type="button" id="save2" onclick="saveSnapShot(save2)"> salvar</button>
+                    <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 49%" class="reconhecimento-facial__button" type="button" id="save2" onclick="saveSnapShot(save2, A)"> salvar</button>
                     <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="again2" onclick="retakeSnapShot(again2)"> Cancelar</button>
                 </form>
     
@@ -89,7 +89,7 @@
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
                     <button style="width: 86%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="active3" onclick="loadCameraOne(active3)">Terceira Foto</button>
                     <button style="width: 86%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="take3" onclick="takeSnapShot(take3)">Tirar foto</button>
-                    <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 49%" class="reconhecimento-facial__button" type="button" id="save3" onclick="saveSnapShot(save3)"> salvar</button>
+                    <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 49%" class="reconhecimento-facial__button" type="button" id="save3" onclick="saveSnapShot(save3, A)"> salvar</button>
                     <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="again3" onclick="retakeSnapShot(again3)"> Cancelar</button>
                 </form>
 			<!--Scripts-->
@@ -146,7 +146,7 @@
                         </div>
                         <div class="area__dado">
                             <label for="rm" class="dado__label">RM</label>
-                            <input type="text" name="rmAluno" class="inputAluno dado__input" placeholder="Digite seu RM">
+                            <input type="text" name="rmAluno" class="inputAluno dado__input" placeholder="Digite seu RM" id="rmAluno">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php

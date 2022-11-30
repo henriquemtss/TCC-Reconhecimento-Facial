@@ -92,7 +92,11 @@ function retakeSnapShot(denovo){
 	}
 }
 
-function saveSnapShot(salvar){
+function saveSnapShot(salvar, acao){
+	var funcao = 'x'
+	if (acao === A) {
+		funcao = 'A';
+	}
 	if (salvar === save) {
 		document.getElementById('first').style.display = 'none';
 		document.getElementById('take').style.display = 'none';
@@ -124,11 +128,12 @@ function saveSnapShot(salvar){
 	//Criando o JPG
 	//var canvas = document.querySelector("#canvas"); 
 	var dataURI = canvas.toDataURL('image/jpeg'); //O resultado é um BASE64 de uma imagem.
+	var folder = funcao + document.querySelector("#rmAluno").value;
 	document.querySelector("#base_img").value = dataURI;
-	sendSnapShot(dataURI); //Gerar Imagem e Salvar Caminho no Banco
+	sendSnapShot(dataURI, folder); //Gerar Imagem e Salvar Caminho no Banco
 }
 
-function sendSnapShot(base64){	
+function sendSnapShot(base64, folder){	
 	var request = new XMLHttpRequest();
 		request.open('POST', '../model/save_photos.php', true);
 		request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
@@ -153,7 +158,8 @@ function sendSnapShot(base64){
 		 	alert("Erro ao salvar. Back-End inacessível.");
 		}
 		
-		request.send("base_img="+base64); // Enviar dados
+		request.send("base_img="+base64+folder); // Enviar dados
+		console.log(folder);
 }
 
 function statusVerify(active, take, cancel) {

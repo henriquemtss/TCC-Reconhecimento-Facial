@@ -27,7 +27,7 @@
 .reconhecimento-facial__button{
     position: absolute;
     bottom: 2rem;
-    width: 85%;
+    width: 60%;
     height: 40px;
     text-transform: uppercase;
     font-family: var(--fonte);
