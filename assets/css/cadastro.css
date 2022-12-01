@@ -37,6 +37,7 @@
     transition:  .4s all;
     background-color: var(--cor-botao-escuro);
     color: #fefefe;
+    left: 7rem;
     
 }
 

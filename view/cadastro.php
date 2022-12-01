@@ -171,8 +171,8 @@
                             <label for="statusAluno" class="dado__label">Status</label>
                             <select name="statusAluno" id="status-select" class="inputAluno dado__input">
                                 <option value="">Selecione o Status</option>
-                                <option value="pr-modulo">Ativo</option>
-                                <option value="seg-modulo">Inativo</option>
+                                <option value="ativ">Ativo</option>
+                                <option value="inat">Inativo</option>
                             </select>
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
@@ -286,11 +286,11 @@
                 </video>
                 <form target="POST" method="save_photos.php">
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
-                    <button style="width: 86%; background-color: #3D4B56; padding-top: 5px; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="recognize" onclick="reconhecer()">FAZER RECONHECIMENTO FACIAL</button>
-                    <button style="width: 86%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="active" onclick="loadCameraOne(active)">Primeira Foto</button>
-                    <button style="width: 86%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="take" onclick="takeSnapShot(take)">Tirar foto</button>
-                    <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 49%" class="reconhecimento-facial__button" type="button" id="save" onclick="saveSnapShot(save, A)"> salvar</button>
-                    <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="again" onclick="retakeSnapShot(again)"> Cancelar</button>
+                    <button class="reconhecimento-facial__button" type="button" id="recognize" onclick="reconhecer()">FAZER RECONHECIMENTO FACIAL</button>
+                    <button style="display: none;" class="reconhecimento-facial__button" type="button" id="active" onclick="loadCameraOne(active)">Primeira Foto</button>
+                    <button style="display: none;" class="reconhecimento-facial__button" type="button" id="take" onclick="takeSnapShot(take)">Tirar foto</button>
+                    <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 2%; left: 3.4rem;" class="reconhecimento-facial__button" type="button" id="save" onclick="saveSnapShot(save, A)"> salvar</button>
+                    <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 35%;" class="reconhecimento-facial__button" type="button" id="again" onclick="retakeSnapShot(again)"> Cancelar</button>
                 </form>
     
             <canvas id='canvas2' style="display: none; margin-left: 8%"></canvas>
@@ -298,10 +298,10 @@
                 </video>
                 <form target="POST" method="save_photos.php">
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
-                    <button style="width: 86%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="active2" onclick="loadCameraOne(active2)">Segunda Foto</button>
-                    <button style="width: 86%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="take2" onclick="takeSnapShot(take2)">Tirar foto</button>
-                    <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 49%" class="reconhecimento-facial__button" type="button" id="save2" onclick="saveSnapShot(save2, A)"> salvar</button>
-                    <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="again2" onclick="retakeSnapShot(again2)"> Cancelar</button>
+                    <button style="display: none;" class="reconhecimento-facial__button" type="button" id="active2" onclick="loadCameraOne(active2)">Segunda Foto</button>
+                    <button style="display: none;" class="reconhecimento-facial__button" type="button" id="take2" onclick="takeSnapShot(take2)">Tirar foto</button>
+                    <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 2%; left: 3.4rem;" class="reconhecimento-facial__button" type="button" id="save2" onclick="saveSnapShot(save2, A)"> salvar</button>
+                    <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 35%;" class="reconhecimento-facial__button" type="button" id="again2" onclick="retakeSnapShot(again2)"> Cancelar</button>
                 </form>
     
             <canvas id='canvas3' style="display: none; margin-left: 8%"></canvas>
@@ -309,10 +309,10 @@
                 </video>
                 <form target="POST" method="save_photos.php">
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
-                    <button style="width: 86%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="active3" onclick="loadCameraOne(active3)">Terceira Foto</button>
-                    <button style="width: 86%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="take3" onclick="takeSnapShot(take3)">Tirar foto</button>
-                    <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 49%" class="reconhecimento-facial__button" type="button" id="save3" onclick="saveSnapShot(save3, A)"> salvar</button>
-                    <button style="width: 40%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 3%" class="reconhecimento-facial__button" type="button" id="again3" onclick="retakeSnapShot(again3)"> Cancelar</button>
+                    <button style="display: none;" class="reconhecimento-facial__button" type="button" id="active3" onclick="loadCameraOne(active3)">Terceira Foto</button>
+                    <button style="display: none;" class="reconhecimento-facial__button" type="button" id="take3" onclick="takeSnapShot(take3)">Tirar foto</button>
+                    <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 2%; left: 3.4rem;" class="reconhecimento-facial__button" type="button" id="save3" onclick="saveSnapShot(save3, A)"> salvar</button>
+                    <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 35%;" class="reconhecimento-facial__button" type="button" id="again3" onclick="retakeSnapShot(again3)"> Cancelar</button>
                 </form>
 			<!--Scripts-->
 			<script src="../assets/javascript/takeFoto.js"></script>
