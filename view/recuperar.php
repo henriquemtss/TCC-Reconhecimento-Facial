@@ -9,8 +9,10 @@
 
         $res = $pdo->query("SELECT * from codigolink where codigo = '$codigo' AND data > Now();");
         $resul = $res->fetch(PDO::FETCH_ASSOC);
-
-        $emailCriptografado = base64_decode($resul['emailCriptografado']);
+        if (!empty($resul)) {
+            $emailCriptografado = base64_decode($resul['emailCriptografado']);
+        }
+        
 
         if (isset($resul['codigo'])) {
             //
