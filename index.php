@@ -56,8 +56,8 @@
 
             </div>
             <div class="main-login__buttons">
-                <button id="esqueci-senha">Esqueci minha senha</button>
-                <button id="entrar">Entrar</button>
+                <button id="esqueci-senha" name="esqueciMinhaSenha">Esqueci minha senha</button>
+                <button id="entrar" name="entrar">Entrar</button>
             </div>
 
         </main>

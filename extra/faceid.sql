@@ -14,6 +14,7 @@ create table  Contas(
     usuario varchar(140) not null,
     senha varchar(160) not null,
     nivelConta int not null,
+    email varchar(150) not null unique key,
     foreign key(nivelconta) references niveisContas(id)
 );
 
@@ -40,6 +41,13 @@ create table registro (
     foreign key(rm) references CadastroAluno(rm)
 );
 
+create table codigoLink(
+    id int not null primary key auto_increment,
+    codigo varchar(250),
+    data datetime,
+    emailCriptografado varchar(250)
+);
+
 
 
 insert into niveisContas values
@@ -48,9 +56,9 @@ insert into niveisContas values
 (0, 'Secretaria');
 -- (0, 'aluno');
 
-insert into Contas values(0,'admin', 'admin', '$2y$10$hxb5L22B/FJmZyLx.MM8JuJ8v7vXI1GjTMRva3LGgRdu5Ws8DtDo2', 1);
-insert into Contas values(0,'seg', 'seg', '$2y$10$vsxlxcWN3TzqQXvfRvkgHuCKFiEam2pxtVfx4RWkFUPhOOXthId1u', 2);
-insert into Contas values(0,'sec', 'sec', '$2y$10$wPsVn9xYdkpYlztGS8Dmc.Irfm6HdjE23MjziUxAioJnH/6ds2poy', 3);
+insert into Contas values(0,'admin', 'admin', '$2y$10$hxb5L22B/FJmZyLx.MM8JuJ8v7vXI1GjTMRva3LGgRdu5Ws8DtDo2', 1, 'testandoophpmaile@gmail.com');
+insert into Contas values(0,'seg', 'seg', '$2y$10$vsxlxcWN3TzqQXvfRvkgHuCKFiEam2pxtVfx4RWkFUPhOOXthId1u', 2, 'Email@teste');
+insert into Contas values(0,'sec', 'sec', '$2y$10$wPsVn9xYdkpYlztGS8Dmc.Irfm6HdjE23MjziUxAioJnH/6ds2poy', 3, 'Email@teste2');
 
 insert into cadastroaluno values('wes', 12345, 'wes@wes', 'nut', 'pr-modulo');
 insert into cadastroaluno values('Victor Laguna Rodrigues', 21589, 'laguna.vitorc@gmail.com', 'DS', 'seg-modulo');
@@ -59,10 +67,3 @@ insert into registro values(12345, now());
 insert into registro values(12345, DATE_ADD(NOW(), interval +1 HOUR));
 insert into registro values(12345, DATE_SUB(NOW(), interval +1 HOUR));
 insert into registro values(21589, DATE_SUB(NOW(), interval +3 HOUR));
-
-
--- select cadastroaluno.nome, cadastroaluno.rm, cadastroaluno.curso, cadastroaluno.periodo, registro.entradaSaida 
--- from CadastroAluno inner join registro on cadastroaluno.rm = registro.rm
--- order by registro.entradaSaida Desc;
-
--- select cadastroaluno.nome, cadastroaluno.rm, cadastroaluno.curso, cadastroaluno.periodo, registro.entradaSaida from CadastroAluno inner join registro on cadastroaluno.rm = registro.rm order by registro.entradaSaida Desc;

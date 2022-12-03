@@ -38,6 +38,7 @@ if (!isset($_SESSION)) {
     }
 
         if (isset($_GET['botaoPesquisa'])) {
+            unset($_GET['botaoPesquisa']);
             $consultaController = new consultaController();
             if(!empty($consultaController->pesquisarAlunoPorRM($_GET['pesquisa']))){
                 $_SESSION['resultado'] = $consultaController->pesquisarAlunoPorRM($_GET['pesquisa']);
