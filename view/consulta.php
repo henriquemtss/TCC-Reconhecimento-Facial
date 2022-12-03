@@ -9,6 +9,7 @@
 
         include('splash.php');
     }
+    print_r($_SESSION['resultado']);
 ?>
 
 <!DOCTYPE html>
@@ -32,10 +33,14 @@
 
     <main class="consulta">
         <h1 class="consulta__titulo">Consulte</h1>
+        <form action="../Controller/ConsultaController.php" method="get">
         <div class="consulta__container">
+        
             <input type="search" name="pesquisa" id="consulta__pesquisa" placeholder="Digite o RM" required>
-            <button class="consulta__botao">Pesquisar</button>
+            <button class="consulta__botao" name="botaoPesquisa">Pesquisar</button>
+        
         </div>
+        </form>
         
         <table class="consulta__resultado">
             <tr class="resultado__campos">
