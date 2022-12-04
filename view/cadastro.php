@@ -167,18 +167,7 @@
                             ?>
                             <!--  -->
                         </div>
-                        <div class="area__dado">
-                            <label for="statusAluno" class="dado__label">Status</label>
-                            <select name="statusAluno" id="status-select" class="inputAluno dado__input">
-                                <option value="">Selecione o Status</option>
-                                <option value="ativ">Ativo</option>
-                                <option value="inat">Inativo</option>
-                            </select>
-                            <span class="mensagem">Preencha o campo</span>
-                            <!--  -->
-                            
-                            <!--  -->
-                        </div>
+                        
                         <input type="submit" value="Enviar" id="enviar" class="enviarAluno">
                     </form>
                 </div>

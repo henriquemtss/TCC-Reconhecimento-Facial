@@ -24,7 +24,8 @@ create table CadastroAluno(
     rm int(5) not null primary key check (rm > 0 and rm <= 99999 ),
     email varchar(100) not null unique key,
     curso varchar(7) not null,
-    periodo varchar(10) not null
+    periodo varchar(10) not null,
+    status varchar(10) not null default 'Ativo'
 );
 
 create table CadastroFuncionario(
