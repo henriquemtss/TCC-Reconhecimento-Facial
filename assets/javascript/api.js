@@ -1,11 +1,6 @@
 const cam = document.getElementById('cam')
 
 const startVideo = () => {
-        // navigator.mediaDevices.getUserMedia({video: true}).then(function (mediaStream) {
-    //     const video = document.querySelector('#video');
-    //     video.srcObject = mediaStream;
-    //     video.play();
-    // });
     navigator.mediaDevices.enumerateDevices()
     .then(devices => {
         console.log(devices)
@@ -13,63 +8,23 @@ const startVideo = () => {
            
             devices.forEach(device => {
                 if(device.kind == 'videoinput'){
-                    
-                    console.log(device);
-                    //if(device.label.includes('VGA WebCam (04f2:b5e0)')){                           
-                        navigator.getUserMedia(
-                            {video: {
-                                deviceId: device.deviceId,
-                            }},
-                            stream => cam.srcObject = stream,
-                            error => console.log(error)
-                        )
-                    //}
+                    console.log(device);                        
+                    navigator.getUserMedia(
+                        {video: {
+                            deviceId: device.deviceId,
+                        }},
+                        stream => cam.srcObject = stream,
+                        error => console.log(error)
+                    )
                 }
             })
         }
     })
 }
-//     navigator.getUserMedia (
-        
-//         {
-//            video: true,
-//            audio: true
-//         }, 
-        
-//         function() {
-//             navigator.mediaDevices.enumerateDevices()
-//             .then(devices => {
-//                 console.log(devices)
-//                 if (Array.isArray(devices)) {
-                   
-//                     devices.forEach(device => {
-//                         if(device.kind == 'videoinput'){
-                            
-//                             console.log(device);
-//                             if(device.label.includes('VGA WebCam (04f2:b5e0)')){                           
-//                                 navigator.getUserMedia(
-//                                     {video: {
-//                                         deviceId: device.deviceId,
-//                                     }},
-//                                     stream => cam.srcObject = stream,
-//                                     error => console.log(error)
-//                                 )
-//                             }
-//                         }
-//                     })
-//                 }
-//             })
-//         },
-        
-//         function(err) {
-//          console.log("O seguinte erro ocorreu: " + err);
-//         }
-//     );
-// }
 
 const loadLabels = () => {
-  
-    const labels = ['1', '2', '3', '4', '5']
+
+    const labels = JSON.parse(sessionStorage.getItem("folders"));
     return Promise.all(labels.map(async label => {
         const descriptions = []
         for (let i = 1; i <= 3; i++) {
@@ -80,20 +35,6 @@ const loadLabels = () => {
                 .withFaceDescriptor()
             descriptions.push(detections.descriptor)
         }
-        if (label === "1") {
-            label = "margot robbie"
-        } else if (label === "2") {
-            label = "Arnold Schwarzenegger"
-        } else if (label === "3") {
-            label = "Neymar"
-        } 
-        else if (label === "4") {
-            label = "Henrique"
-        } 
-        else if (label === "5") {
-            label = "Marcio"
-        } 
-
         return new faceapi.LabeledFaceDescriptors(label, descriptions)
     }))
 }
@@ -136,8 +77,44 @@ cam.addEventListener('play', async () => {
         results.forEach((result, index) => {
             const box = resizedDetections[index].detection.box
             const {label} = result
+
+            // Buscar RM no Banco
+            var nome;
+            var request = new XMLHttpRequest();
+		    request.open('POST', '../model/busca_pessoa.php', true);
+		    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+		    request.onload = function() {
+			if (request.status >= 200 && request.status < 400) {
+                console.log(request.responseText);
+                document.getElementById("nome").value = JSON.parse(request.responseText).nome
+                if (JSON.parse(request.responseText).rm != 1) {
+                    document.getElementById("rm").value = JSON.parse(request.responseText).rm
+                } else {
+                    document.getElementById("rm").value = ""
+                }
+                document.getElementById("periodo").value = JSON.parse(request.responseText).periodo
+                document.getElementById("curso").value = JSON.parse(request.responseText).curso
+				if(nome.error){
+					alert(nome.error);
+					return false;
+			    }
+			} else {
+				alert( "Erro ao localizar. Tipo:" + request.status );
+			}
+            };
+            request.onerror = function() {
+                alert("Erro ao localizar. Back-End inacessível.");
+            }
+            if (label > 1) {
+                request.send("RM="+label);
+            } else {
+                request.send("RM="+1);
+            }
+           nome = document.getElementById("nome").value
+            //
+
             new faceapi.draw.DrawTextField([
-                `${label}`
+                `${nome}`
             ], box.bottomRight).draw(canvas)
         })
     }, 100) 

@@ -1,18 +1,39 @@
 
     <?php
-    include "../Controller/Protect.php";
-    if (!isset($_SESSION)) {
-        session_start();
-    }
-    if(!isset($_SESSION['splash']))
-    {
-        $_SESSION['splash'] = true;
+        include "../Controller/Protect.php";
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        if(!isset($_SESSION['splash']))
+        {
+            $_SESSION['splash'] = true;
 
-        include('splash.php');
-    }
+            include('splash.php');
+        }
+        ?>
+        <?php
+        $pastas = [];
+        foreach (scandir("../assets/lib/face-api/labels/") as $object){
+            if ($object != '.' AND $object != '..'){
+                $pastas[] = $object;
+                for ($i=1; $i < 4; $i++) { 
+                    if (!file_exists("../assets/lib/face-api/labels/".$object."/".$i.".jpg")) {
+                        echo  "<script> alert('Arquivo Perdido! RM: ' + $object + '/' + $i + '.jpg');</script>";
+                        //echo "Arquivo Perdido".$object;
+                    }
+                }
+            }
+        } 
     ?>
-
-
+    <script>
+        //alert("Pastas Encontradas: \n" +<?php echo json_encode ($pastas); ?>);
+        var pastas = <?php echo json_encode ($pastas); ?>;
+        var labels = [];
+        for(var i = 0; i < pastas.length; i++){
+            labels[i] = pastas[i];
+        }
+        sessionStorage.setItem("folders", JSON.stringify(labels));
+    </script>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -61,16 +82,16 @@
                 <!--<div class="profile-right"> </div>-->
 
                 <div class="container__box">
-                    <input type="text" class="box__input" name="name" placeholder="Nome:">
+                    <input type="text" class="box__input" name="name" placeholder="Nome:" id="nome">
                 </div>
                 <div class="container__box">
-                    <input type="text" class="box__input" name="rm" placeholder="RM:">
+                    <input type="text" class="box__input" name="rm" placeholder="RM:" id="rm">
                 </div>
                 <div class="container__box">
-                    <input type="text" class="box__input" name="periodo" placeholder="Período:">
+                    <input type="text" class="box__input" name="periodo" placeholder="Período:" id="periodo">
                 </div>
                 <div class="container__box">
-                    <input type="text" class="box__input" name="curso" placeholder="Curso:">
+                    <input type="text" class="box__input" name="curso" placeholder="Curso:" id="curso">
 
             </div>
 
