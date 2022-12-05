@@ -28,6 +28,18 @@ create table CadastroAluno(
     status varchar(10) not null default 'Ativo'
 );
 
+#CADASTROS PARA TESTE -> ACRESCENTEM MAIS
+#INSERT INTO CadastroAluno (nome, rm, email, curso, periodo) 
+#VALUES
+#('', 1, '', '', ''),
+#('Arnold Schwarzenegger', 2, '2', 'Quimica', 'Manha'),
+#('Neymar', 3, '3', 'Administracao', 'Tarde'),
+#('Henrique', 4, '4', 'Desenvolvimento de Sistemas', 'Noturno'),
+#('Marcinho', 5, '5', 'Desenvolvimento de Sistemas', 'Noturno'),
+#('Scarlett Johansson', 6, '6', 'Vingadores', 'Noturno'),
+#('Margot Robbie', 7, '7', 'Nutricao', 'Noturno');
+#('Megan Fox', 8, '8', 'Quimica', 'Matutino');
+
 create table CadastroFuncionario(
     nome varchar(140) not null,
     cpf varchar(14) not null primary key,
@@ -48,8 +60,6 @@ create table codigoLink(
     data datetime,
     emailCriptografado varchar(250)
 );
-
-
 
 insert into niveisContas values
 (0, 'Administrador'), 
