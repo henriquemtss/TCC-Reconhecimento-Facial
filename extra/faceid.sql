@@ -23,8 +23,8 @@ create table CadastroAluno(
     nome varchar(140) not null,
     rm int(5) not null primary key check (rm > 0 and rm <= 99999 ),
     email varchar(100) not null unique key,
-    curso varchar(7) not null,
-    periodo varchar(10) not null,
+    curso varchar(50) not null,
+    periodo varchar(50) not null,
     status varchar(10) not null default 'Ativo'
 );
 
@@ -37,8 +37,9 @@ create table CadastroAluno(
 #('Henrique', 4, '4', 'Desenvolvimento de Sistemas', 'Noturno'),
 #('Marcinho', 5, '5', 'Desenvolvimento de Sistemas', 'Noturno'),
 #('Scarlett Johansson', 6, '6', 'Vingadores', 'Noturno'),
-#('Margot Robbie', 7, '7', 'Nutricao', 'Noturno');
-#('Megan Fox', 8, '8', 'Quimica', 'Matutino');
+#('Margot Robbie', 7, '7', 'Nutricao', 'Noturno'),
+#('Megan Fox', 8, '8', 'Quimica', 'Matutino'),
+#('Van Dame', 99999, '99999', 'Tecnico em Quimica', '1 Modulo - Tecnico');
 
 create table CadastroFuncionario(
     nome varchar(140) not null,
