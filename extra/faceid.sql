@@ -28,10 +28,15 @@ create table CadastroAluno(
     status varchar(10) not null default 'Ativo'
 );
 
+#Cadstro Para Evitar Erro Quando Nao Há Ninguem Na Camera
+#CADASTROS PARA TESTE -> ACRESCENTEM MAIS
+INSERT INTO CadastroAluno (nome, rm, email, curso, periodo) 
+VALUES
+('', 1, '', '', '');
+
 #CADASTROS PARA TESTE -> ACRESCENTEM MAIS
 #INSERT INTO CadastroAluno (nome, rm, email, curso, periodo) 
 #VALUES
-#('', 1, '', '', ''),
 #('Arnold Schwarzenegger', 2, '2', 'Quimica', 'Manha'),
 #('Neymar', 3, '3', 'Administracao', 'Tarde'),
 #('Henrique', 4, '4', 'Desenvolvimento de Sistemas', 'Noturno'),

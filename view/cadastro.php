@@ -124,13 +124,13 @@
                             <select name="cursoAluno" id="cursos-select" class="inputAluno dado__input">
                                 
                                 <option value="">Selecione o Curso</option>
-                                <option value="quim">Técnico em Química</option>
-                                <option value="nut">Técnico em Nutrição</option>
-                                <option value="ds">Técnico em Desenvolvimento de Sistemas</option>
-                                <option value="adm">Técnico em Administração</option>
-                                <option value="em-quim">Ensino Médio Integrada a Química</option>
-                                <option value="em-nut">Ensino Médio Integrada a Nutrição</option>
-                                <option value="em-adm">Ensino Médio Integrada a Administração</option>
+                                <option value="Técnico em Química">Técnico em Química</option>
+                                <option value="Técnico em Nutrição">Técnico em Nutrição</option>
+                                <option value="Técnico em Desenvolvimento de Sistemas">Técnico em Desenvolvimento de Sistemas</option>
+                                <option value="Técnico em Administração">Técnico em Administração</option>
+                                <option value="Ensino Médio Integrada a Química">Ensino Médio Integrada a Química</option>
+                                <option value="Ensino Médio Integrada a Nutrição">Ensino Médio Integrada a Nutrição</option>
+                                <option value="Ensino Médio Integrada a Administração">Ensino Médio Integrada a Administração</option>
                             </select>
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
@@ -148,12 +148,12 @@
                             <label for="periodoAluno" class="dado__label">Período</label>
                             <select name="periodoAluno" id="periodo-select" class="inputAluno dado__input">
                                 <option value="">Selecione o Período</option>
-                                <option value="pr-modulo">1º Módulo - Técnico</option>
-                                <option value="seg-modulo">2º Módulo - Técnico</option>
-                                <option value="ter-modulo">3º Módulo - Técnico</option>
-                                <option value="pr-em">1º Série - Ensino Médio</option>
-                                <option value="seg-em">2º Série - Ensino Médio</option>
-                                <option value="ter-em">3º Série - Ensino Médio</option>
+                                <option value="1º Módulo - Técnico">1º Módulo - Técnico</option>
+                                <option value="2º Módulo - Técnico">2º Módulo - Técnico</option>
+                                <option value="3º Módulo - Técnico">3º Módulo - Técnico</option>
+                                <option value="1º Série - Ensino Médio">1º Série - Ensino Médio</option>
+                                <option value="2º Série - Ensino Médio">2º Série - Ensino Médio</option>
+                                <option value="3º Série - Ensino Médio">3º Série - Ensino Médio</option>
                             </select>
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
@@ -215,8 +215,8 @@
                             <label for="funcaoFuncionario" class="dado__label">Função</label>
                             <select name="funcaoFuncionario" id="periodo-select" class="inputFuncionario dado__input">
                                 <option value="">Selecione a Função</option>
-                                <option value="fun-seg">Seguranças</option>
-                                <option value="fun-adm">Administração</option>
+                                <option value="Seguranças">Seguranças</option>
+                                <option value="Administração">Administração</option>
                             </select>
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
