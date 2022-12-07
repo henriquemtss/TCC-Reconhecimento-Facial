@@ -7,7 +7,11 @@
 
 	$result = [];
 	$replaced = str_replace(" ","+",$_POST['base_img']); //O envio do dado pelo XMLHttpRequest tende a trocar o + por espaço, por isso a necessidade de substituir.
-	$folder = substr($replaced, -5);
+	if (substr($replaced, -6, 1) === 'A') {
+		$folder = substr($replaced, -5);
+	} else {
+		$folder = substr($replaced, -14);
+	}
 	$data = explode(',',$replaced);
 
 	if (file_exists("../assets/lib/face-api/labels/{$folder}")) {
@@ -17,13 +21,12 @@
 			}
 		}
 	}
-	//die("{\"error\": \"$folder\"}");
 
-	if(substr($replaced, -6, 1) === 'A') {
+	if(substr($replaced, -6, 1) === 'A' || substr($replaced, -15, 1) === 'A') {
 		//Tirar 3 fotos para cada pasta
 		if (!file_exists("../assets/lib/face-api/labels/{$folder}")) {
 			mkdir("../assets/lib/face-api/labels/{$folder}");
-		} else if(substr($replaced, -6, 1) === 'A' AND $cont < 4) {
+		} else if(substr($replaced, -6, 1) === 'A' || substr($replaced, -15, 1) === 'A' AND $cont < 4) {
 			while (file_exists("../assets/lib/face-api/labels/{$folder}/{$name}.jpg")) {
 				$name++;
 			}

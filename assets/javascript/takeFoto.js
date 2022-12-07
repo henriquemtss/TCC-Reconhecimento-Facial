@@ -1,6 +1,7 @@
 function reconhecer(){
 	document.getElementById('active').style.display = 'block';
 	document.getElementById('recognize').style.display = 'none';
+	var modo = $('.conteudo').find('.active').attr('rmAluno');
 }
 function loadCameraOne(ativar){
 	if (ativar === active) {
@@ -128,7 +129,15 @@ function saveSnapShot(salvar, acao){
 	//Criando o JPG
 	//var canvas = document.querySelector("#canvas"); 
 	var dataURI = canvas.toDataURL('image/jpeg'); //O resultado é um BASE64 de uma imagem.
-	var folder = funcao + document.querySelector("#rmAluno").value;
+
+	if(document.getElementById('tabpadrao').classList.contains("ativo")){
+		var folder = funcao + document.querySelector("#rmAluno").value;
+		alert('Numero aluno: ' + folder);
+	} else {
+		var folder = funcao + document.querySelector("#cpfSeg").value;
+		alert('Numero Funcionario: ' + folder);
+	}
+	//var folder = funcao + document.querySelector("#rmAluno").value;
 	document.querySelector("#base_img").value = dataURI;
 	sendSnapShot(dataURI, folder); //Gerar Imagem e Salvar Caminho no Banco
 }
