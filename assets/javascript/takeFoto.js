@@ -1,7 +1,6 @@
 function reconhecer(){
 	document.getElementById('active').style.display = 'block';
 	document.getElementById('recognize').style.display = 'none';
-	var modo = $('.conteudo').find('.active').attr('rmAluno');
 }
 function loadCameraOne(ativar){
 	if (ativar === active) {
@@ -123,6 +122,7 @@ function saveSnapShot(salvar, acao){
 		document.getElementById('take3').style.display = 'none';
 		document.getElementById('save3').style.display = 'none';
 		document.getElementById('again3').style.display = 'none';
+		document.getElementById('enviar').style.display = 'block';
 		//Criando o JPG
 		var canvas = document.querySelector("#canvas3"); 
 	}

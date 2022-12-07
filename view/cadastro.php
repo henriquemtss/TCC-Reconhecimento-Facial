@@ -34,6 +34,7 @@
     <script src="../assets/javascript/tab.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/javascript/camera.js"></script>
+    <script type="text/javascript" src="../assets/javascript/popup.js"></script>
     <link rel="stylesheet" href="../assets/css/popup.css">
     <title>Reconhecimento facial - Cadastro</title>
 </head>
@@ -168,7 +169,8 @@
                             <!--  -->
                         </div>
                         
-                        <input type="submit" value="Enviar" id="enviar" class="enviarAluno">
+                        <button class="reconhecimento-facial__button" type="button" id="recognize" onclick="reconhecer()" style="background-color: #F93535; color-contrast(3.72); margin-left: 10%">FAZER RECONHECIMENTO FACIAL</button>
+                        <input type="submit" value="Enviar" id="enviar" class="enviarAluno" style="display: none">
                     </form>
                 </div>
 
@@ -275,7 +277,7 @@
                 </video>
                 <form target="POST" method="save_photos.php">
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
-                    <button class="reconhecimento-facial__button" type="button" id="recognize" onclick="reconhecer()">FAZER RECONHECIMENTO FACIAL</button>
+                    
                     <button style="display: none;" class="reconhecimento-facial__button" type="button" id="active" onclick="loadCameraOne(active)">Primeira Foto</button>
                     <button style="display: none;" class="reconhecimento-facial__button" type="button" id="take" onclick="takeSnapShot(take)">Tirar foto</button>
                     <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 2%; left: 3.4rem;" class="reconhecimento-facial__button" type="button" id="save" onclick="saveSnapShot(save, A)"> salvar</button>
