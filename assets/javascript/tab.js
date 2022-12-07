@@ -1,6 +1,6 @@
 window.onload = function(){
     document.getElementById('tabpadrao').click(); 
-    id('telefone').onkeyup = function(){
+    id('telFunc').onkeyup = function(){
 		mascara( this, mtel );
 	}   
 };

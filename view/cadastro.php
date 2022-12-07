@@ -62,7 +62,7 @@
                 <!--Inicio Nav Tab-->
                 <div class="tab">
                     <button id="tabpadrao" class="tab-button" onclick="abrirTab(event, 'aluno')">Alunos</button>
-		            <button  class="tab-button" onclick="abrirTab(event, 'seg')">Funcionários</button>
+		            <button id="Other"  class="tab-button" onclick="abrirTab(event, 'seg')">Funcionários</button>
 		            
                 </div>
 
@@ -76,7 +76,7 @@
                     <form class="cadastro__area alunoForm" action="../Controller/CadastroAlunoController.php" method="GET">
                         <div class="area__dado">
                             <label for="nome" class="dado__label">Nome</label>
-                            <input type="text" name="nomeAluno" class="inputAluno dado__input" placeholder="Digite seu Nome">
+                            <input type="text" name="nomeAluno" class="inputAluno dado__input" placeholder="Digite seu Nome" id ="nomeAluno">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php
@@ -91,7 +91,7 @@
                         </div>
                         <div class="area__dado">
                             <label for="email" class="dado__label">Email institucional</label>
-                            <input type="text" name="emailAluno" class="inputAluno dado__input" placeholder="Digite seu email institucional">
+                            <input type="text" name="emailAluno" class="inputAluno dado__input" placeholder="Digite seu email institucional" id ="emailAluno">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php
@@ -184,7 +184,7 @@
                     <form class="cadastro__area funcionarioForm"  action="../Controller/CadastroFuncionarioController.php" method="GET">
                         <div class="area__dado">
                             <label for="nome" class="dado__label">Nome</label>
-                            <input type="text" name="nomeFuncionario" class="inputFuncionario dado__input" placeholder="Digite seu Nome:">
+                            <input type="text" name="nomeFuncionario" class="inputFuncionario dado__input" placeholder="Digite seu Nome:" id="nomeSeg">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php
@@ -215,7 +215,7 @@
                         </div>
                         <div class="area__dado">
                             <label for="funcaoFuncionario" class="dado__label">Função</label>
-                            <select name="funcaoFuncionario" id="periodo-select" class="inputFuncionario dado__input">
+                            <select name="funcaoFuncionario" id="funcao" class="inputFuncionario dado__input">
                                 <option value="">Selecione a Função</option>
                                 <option value="Seguranças">Seguranças</option>
                                 <option value="Administração">Administração</option>
@@ -235,7 +235,7 @@
                                 
                         <div class="area__dado">
                             <label for="tel" class="dado__label">Telefone</label>
-                            <input type="text" name="telefoneFuncionario" id="telefone" class="inputFuncionario dado__input" placeholder="Digite seu DDD + Telefone" maxlength="15">
+                            <input type="text" name="telefoneFuncionario" id="telFunc" class="inputFuncionario dado__input" placeholder="Digite seu DDD + Telefone" maxlength="15">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php
@@ -250,7 +250,7 @@
                         </div>
                         <div class="area__dado">
                             <label for="mail" class="dado__label">E-mail</label>
-                            <input type="text" name="emailFuncionario" class="inputFuncionario dado__input" placeholder="Digite seu E-mail">
+                            <input type="text" name="emailFuncionario" class="inputFuncionario dado__input" placeholder="Digite seu E-mail" id="emailFuncionario">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php
@@ -263,8 +263,8 @@
                             ?>
                             <!--  -->
                         </div>
-                        
-                        <input type="submit" value="Enviar" id="enviar" class="enviarFuncionario">
+                        <button class="reconhecimento-facial__button" type="button" id="recognize2" onclick="reconhecer()" style="background-color: #F93535; color-contrast(3.72); margin-left: 10%">FAZER RECONHECIMENTO FACIAL</button>
+                        <input type="submit" value="Enviar" id="enviar2" class="enviarFuncionario" style="display: none">
                     </form>
                 </div>
             </section>

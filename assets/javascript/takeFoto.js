@@ -1,6 +1,23 @@
 function reconhecer(){
 	document.getElementById('active').style.display = 'block';
 	document.getElementById('recognize').style.display = 'none';
+	document.getElementById('recognize2').style.display = 'none';
+	if(document.getElementById('tabpadrao').classList.contains("ativo")){
+		document.getElementById("rmAluno").disabled = true;
+		document.getElementById("nomeAluno").disabled = true;
+		document.getElementById("emailAluno").disabled = true;
+		document.getElementById("cursos-select").disabled = true;
+		document.getElementById("periodo-select").disabled = true;
+		document.getElementById('Other').disabled = true;
+	} else {
+		document.getElementById('tabpadrao').disabled = true;
+		document.getElementById("nomeSeg").disabled = true;
+		document.getElementById("cpfSeg").disabled = true;
+		document.getElementById("funcao").disabled = true;
+		document.getElementById("telFunc").disabled = true;
+		document.getElementById("emailFuncionario").disabled = true;
+		
+	}
 }
 function loadCameraOne(ativar){
 	if (ativar === active) {
@@ -123,6 +140,7 @@ function saveSnapShot(salvar, acao){
 		document.getElementById('save3').style.display = 'none';
 		document.getElementById('again3').style.display = 'none';
 		document.getElementById('enviar').style.display = 'block';
+		document.getElementById('enviar2').style.display = 'block';
 		//Criando o JPG
 		var canvas = document.querySelector("#canvas3"); 
 	}
