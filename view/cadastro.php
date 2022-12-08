@@ -106,7 +106,7 @@
                         </div>
                         <div class="area__dado">
                             <label for="rm" class="dado__label">RM</label>
-                            <input type="text" name="rmAluno" class="inputAluno dado__input" placeholder="Digite seu RM" id="rmAluno">
+                            <input maxlength="5"; type="text" name="rmAluno" class="inputAluno dado__input" placeholder="Digite seu RM" id="rmAluno">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php
