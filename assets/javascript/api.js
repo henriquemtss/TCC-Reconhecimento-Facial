@@ -87,13 +87,24 @@ cam.addEventListener('play', async () => {
 			if (request.status >= 200 && request.status < 400) {
                 console.log(request.responseText);
                 document.getElementById("nome").value = JSON.parse(request.responseText).nome
-                if (JSON.parse(request.responseText).rm != 1) {
-                    document.getElementById("rm").value = JSON.parse(request.responseText).rm
+                document.getElementById("periodo").style.display = 'block';
+                document.getElementById("curso").style.display = 'block';
+                document.getElementById('rm').style.display = 'block';
+                document.getElementById("funcao").style.display = 'none';
+                document.getElementById("periodo").value = JSON.parse(request.responseText).periodo;
+                document.getElementById("curso").value = JSON.parse(request.responseText).curso;
+                if (JSON.parse(request.responseText).rm > 1 && JSON.parse(request.responseText).rm < 99999) {
+                    document.getElementById("rm").value = JSON.parse(request.responseText).rm;
+                } else if (JSON.parse(request.responseText).cpf > 99999) {
+                    document.getElementById("funcao").style.display = 'block';
+                    document.getElementById("funcao").value = JSON.parse(request.responseText).funcao;
+                    document.getElementById('periodo').style.display = 'none';
+                    document.getElementById('rm').style.display = 'none';
+                    document.getElementById('curso').style.display = 'none';
                 } else {
                     document.getElementById("rm").value = ""
                 }
-                document.getElementById("periodo").value = JSON.parse(request.responseText).periodo
-                document.getElementById("curso").value = JSON.parse(request.responseText).curso
+                
 				if(nome.error){
 					alert(nome.error);
 					return false;

@@ -24,7 +24,8 @@ function loadCameraOne(ativar){
 	if (ativar === active) {
 		var video = document.querySelector("#first");
 		//console.log("Camera Um")
-		statusVerify(document.getElementById('active'), document.getElementById('take') );
+		//statusVerify(document.getElementById('active'), document.getElementById('take'));
+		statusVerify1();
 		//document.getElementById('logoHolder').style.display = 'flex';
 		document.getElementById('first').style.display = 'block';
 	} else if (ativar === active2) {
@@ -203,7 +204,15 @@ function statusVerify(active, take, cancel) {
 		cancel.style.display = 'none' ? 
 		cancel.style.display = 'block' : 
 		cancel.style.display = 'none' ;
-
 	}
-	
+}
+
+function statusVerify1() {
+	document.getElementById('active').style.display = 'block' ? 
+	document.getElementById('active').style.display = 'none' : 
+	document.getElementById('active').style.display = 'block' ;
+
+	document.getElementById('take').style.display = 'none' ? 
+	document.getElementById('take').style.display = 'block' : 
+	document.getElementById('take').style.display = 'none' ;
 }

@@ -92,7 +92,10 @@
                 </div>
                 <div class="container__box">
                     <input type="text" class="box__input" name="curso" placeholder="Curso:" id="curso">
-
+                </div>
+                <div class="container__box">
+                    <input type="text" class="box__input" name="funcao" placeholder="Função:" id="funcao" style="display: none">
+                </div>
             </div>
 
         <div class="buttons">
