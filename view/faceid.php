@@ -15,11 +15,18 @@
         $pastas = [];
         foreach (scandir("../assets/lib/face-api/labels/") as $object){
             if ($object != '.' AND $object != '..'){
-                $pastas[] = $object;
+                $x = 0;
+                //$pastas[] = $object;
                 for ($i=1; $i < 4; $i++) { 
                     if (!file_exists("../assets/lib/face-api/labels/".$object."/".$i.".jpg")) {
                         echo  "<script> alert('Arquivo Perdido! RM: ' + $object + '/' + $i + '.jpg');</script>";
                         //echo "Arquivo Perdido".$object;
+                    } else if (file_exists("../assets/lib/face-api/labels/".$object."/".$i.".jpg")) {
+                        $x++;
+                        if ($x == 3) {
+                            $pastas[] = $object;
+                            $x = 0;
+                        }
                     }
                 }
             }
