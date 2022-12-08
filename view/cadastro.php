@@ -71,7 +71,10 @@
                 <div id="aluno" class="conteudo">
                     <div class="cadastro__header">
                         <h1 class="cadastro__title">Cadastrar</h1>
-                        <a href="consulta.php" class="cadastro__consultar">Consultar</a>
+                        <a href="consulta.php" class="cadastro__consultar" id="Consultar">Consultar</a>
+                        <button class="cadastro__consultar" onclick="editar()" style="display: none" id="editar">
+                        Editar
+                        </button>
                     </div>
                     <form class="cadastro__area alunoForm" action="../Controller/CadastroAlunoController.php" method="GET">
                         <div class="area__dado">
@@ -121,8 +124,7 @@
                         </div>
                         <div class="area__dado">
                             <label for="cursos" class="dado__label">Cursos</label>
-                            
-                            <select name="cursoAluno" id="cursos-select" class="inputAluno dado__input">
+                            <select name="curAlu" id="curAlu" class="inputAluno dado__input" onchange="myFunction(curAlu)">
                                 
                                 <option value="">Selecione o Curso</option>
                                 <option value="Técnico em Química">Técnico em Química</option>
@@ -133,6 +135,7 @@
                                 <option value="Ensino Médio Integrada a Nutrição">Ensino Médio Integrada a Nutrição</option>
                                 <option value="Ensino Médio Integrada a Administração">Ensino Médio Integrada a Administração</option>
                             </select>
+                            <input name="cursoAluno" id="cursos-select" class="inputAluno dado__input" style="display: none">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php
@@ -146,8 +149,8 @@
                             <!--  -->
                         </div>
                         <div class="area__dado">
-                            <label for="periodoAluno" class="dado__label">Período</label>
-                            <select name="periodoAluno" id="periodo-select" class="inputAluno dado__input">
+                            <label for="perAlu" class="dado__label" >Período</label>
+                            <select name="perAlu" id="perSel" class="inputAluno dado__input" onchange="myFunction(perSel)">
                                 <option value="">Selecione o Período</option>
                                 <option value="1º Módulo - Técnico">1º Módulo - Técnico</option>
                                 <option value="2º Módulo - Técnico">2º Módulo - Técnico</option>
@@ -156,6 +159,7 @@
                                 <option value="2º Série - Ensino Médio">2º Série - Ensino Médio</option>
                                 <option value="3º Série - Ensino Médio">3º Série - Ensino Médio</option>
                             </select>
+                            <input name="periodoAluno" id="periodo-select" class="inputAluno dado__input" style="display: none">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php
@@ -179,7 +183,11 @@
                     <!--Inicio Cadastro Funcionários-->
                     <div class="cadastro__header">
                         <h1 class="cadastro__title">Cadastrar</h1>
-                        <a href="consulta.php" class="cadastro__consultar">Consultar</a>
+                        <a href="consulta.php" class="cadastro__consultar" id="Consultar2">Consultar</a>
+                        <link rel="stylesheet" href="../assets/css/consulta.css">
+                        <button class="cadastro__consultar" onclick="editar()" style="display: none" id="editar2">
+                        Editar
+                        </button>
                     </div>
                     <form class="cadastro__area funcionarioForm"  action="../Controller/CadastroFuncionarioController.php" method="GET">
                         <div class="area__dado">
@@ -214,12 +222,13 @@
                             <!--  -->
                         </div>
                         <div class="area__dado">
-                            <label for="funcaoFuncionario" class="dado__label">Função</label>
-                            <select name="funcaoFuncionario" id="funcao" class="inputFuncionario dado__input">
+                            <label for="funFun" class="dado__label">Função</label>
+                            <select name="funFun" id="funFun" class="inputFuncionario dado__input" onchange="myFunction(funFun)">
                                 <option value="">Selecione a Função</option>
                                 <option value="Seguranças">Seguranças</option>
                                 <option value="Administração">Administração</option>
                             </select>
+                            <input name="funcaoFuncionario" id="funcao" class="inputFuncionario dado__input" style="display: none">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php

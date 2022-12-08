@@ -1,17 +1,66 @@
+function myFunction(funcao) {
+	if (funcao === curAlu) {
+		var x = document.getElementById("curAlu").value;
+		document.getElementById("cursos-select").value = x;
+	} else if (funcao === perSel) {
+		var x = document.getElementById("perSel").value;
+		document.getElementById("periodo-select").value = x;
+	} else {
+		var x = document.getElementById("funFun").value;
+		document.getElementById("funcao").value = x;
+	}
+  }
+function editar() {
+	document.getElementById('editar').style.display = 'none';
+	document.getElementById('editar2').style.display = 'none';
+	document.getElementById('recognize').style.display = 'block';
+	document.getElementById('recognize2').style.display = 'block';
+	document.getElementById('Consultar').style.display = 'block';
+	document.getElementById('Consultar2').style.display = 'block';
+	document.getElementById("rmAluno").readOnly = false;
+	document.getElementById("nomeAluno").readOnly = false;
+	document.getElementById("emailAluno").readOnly = false;
+	document.getElementById("cursos-select").style.display = 'none';
+	document.getElementById("periodo-select").style.display = 'none';
+	document.getElementById("funcao").style.display = 'none';
+	document.getElementById("funcao").style.display = 'none';
+	document.getElementById('Other').disabled = false;
+	document.getElementById('enviar').style.display = 'none';
+	document.getElementById('tabpadrao').disabled = false;
+	document.getElementById("nomeSeg").readOnly = false;
+	document.getElementById("cpfSeg").readOnly = false;
+	document.getElementById("funcao").readOnly = false;
+	document.getElementById("telFunc").readOnly = false;
+	document.getElementById("emailFuncionario").readOnly = false;
+	document.getElementById("perSel").style.display = 'block';
+	document.getElementById("curAlu").style.display = 'block';
+	document.getElementById("funFun").style.display = 'block';
+}
+
 function reconhecer(){
 	document.getElementById('active').style.display = 'block';
 	document.getElementById('recognize').style.display = 'none';
 	document.getElementById('recognize2').style.display = 'none';
+	document.getElementById('Consultar').style.display = 'none';
+	document.getElementById('Consultar2').style.display = 'none';
+	document.getElementById('editar').style.display = 'block';
+	document.getElementById('editar2').style.display = 'block';
 	if(document.getElementById('tabpadrao').classList.contains("ativo")){
 		//Desabilitar Inputs
+		document.getElementById("curAlu").style.display = 'none';
+		document.getElementById("perSel").style.display = 'none';
+		document.getElementById("cursos-select").style.display = 'block';
+		document.getElementById("cursos-select").readOnly = true;
+		document.getElementById("periodo-select").style.display = 'block';
+		document.getElementById("periodo-select").readOnly = true;
 		document.getElementById("rmAluno").readOnly = true;
 		document.getElementById("nomeAluno").readOnly = true;
 		document.getElementById("emailAluno").readOnly = true;
-		document.getElementById("cursos-select").readOnly = true;
-		document.getElementById("periodo-select").readOnly = true;
 		document.getElementById('Other').disabled = true;
 	} else {
 		//Desabilitar Inputs
+		document.getElementById("funFun").style.display = 'none';
+		document.getElementById("funcao").style.display = 'block';
 		document.getElementById('tabpadrao').disabled = true;
 		document.getElementById("nomeSeg").readOnly = true;
 		document.getElementById("cpfSeg").readOnly = true;
@@ -80,6 +129,8 @@ function takeSnapShot(tirar){
 		document.getElementById('take3').style.display = 'none';
 		document.getElementById('save3').style.display = 'block';
 		document.getElementById('again3').style.display = 'block';
+		document.getElementById('enviar').style.display = 'block';
+		document.getElementById('enviar2').style.display = 'block';
 	}
 	 
 	canvas.height = 300;
