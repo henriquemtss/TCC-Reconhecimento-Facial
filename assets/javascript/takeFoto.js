@@ -11,6 +11,8 @@ function myFunction(funcao) {
 	}
   }
 function editar() {
+	desabilitarCameras();
+	document.getElementById('active').style.display = 'none';
 	document.getElementById('editar').style.display = 'none';
 	document.getElementById('editar2').style.display = 'none';
 	document.getElementById('recognize').style.display = 'block';
@@ -72,9 +74,7 @@ function reconhecer(){
 function loadCameraOne(ativar){
 	if (ativar === active) {
 		var video = document.querySelector("#first");
-		//console.log("Camera Um")
 		statusVerify(document.getElementById('active'), document.getElementById('take') );
-		//document.getElementById('logoHolder').style.display = 'flex';
 		document.getElementById('first').style.display = 'block';
 	} else if (ativar === active2) {
 		var video = document.querySelector("#second");
@@ -97,7 +97,6 @@ function loadCameraOne(ativar){
 			video.srcObject = stream;
 		})
 		.catch(function(error) {
-			//alert("Oooopps... Falhou :'(");
 			alert("Não Será Possível Capturar Imagem, Recarregue a página e Tente Novamente. Caso o erro persista, contate o administrador!");
 		});
 	}
@@ -174,6 +173,7 @@ function saveSnapShot(salvar, acao){
 		document.getElementById('again').style.display = 'none';
 		document.getElementById('second').style.display = 'block';
 		document.getElementById('active2').style.display = 'block';
+		document.getElementById('editar').style.display = 'none';
 		//Criando o JPG
 		var canvas = document.querySelector("#canvas"); 
 	} else if (salvar === save2) {
@@ -257,4 +257,22 @@ function statusVerify(active, take, cancel) {
 
 	}
 	
+}
+
+function desabilitarCameras() {
+		document.getElementById('first').style.display = 'none';
+		document.getElementById('canvas').style.display = 'none';
+		document.getElementById('take').style.display = 'none';
+		document.getElementById('save').style.display = 'none';
+		document.getElementById('again').style.display = 'none';
+		document.getElementById('second').style.display = 'none';
+		document.getElementById('canvas2').style.display = 'none';
+		document.getElementById('take2').style.display = 'none';
+		document.getElementById('save2').style.display = 'none';
+		document.getElementById('again2').style.display = 'none';
+		document.getElementById('third').style.display = 'none';
+		document.getElementById('canvas3').style.display = 'none';
+		document.getElementById('take3').style.display = 'none';
+		document.getElementById('save3').style.display = 'none';
+		document.getElementById('again3').style.display = 'none';
 }
