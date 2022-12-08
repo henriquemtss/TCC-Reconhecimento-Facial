@@ -26,7 +26,7 @@
         } 
     ?>
     <script>
-        //alert("Pastas Encontradas: \n" +<?php echo json_encode ($pastas); ?>);
+        alert("Pastas Encontradas: \n" +<?php echo json_encode ($pastas); ?>);
         var pastas = <?php echo json_encode ($pastas); ?>;
         var labels = [];
         for(var i = 0; i < pastas.length; i++){

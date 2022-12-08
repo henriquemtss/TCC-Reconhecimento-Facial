@@ -53,6 +53,13 @@ create table CadastroFuncionario(
     funcao varchar(7) not null,
     telefone varchar(15) not null
 );
+INSERT INTO CadastroFuncionario (nome, cpf, email, funcao, telefone) 
+VALUES
+('', 1, '', '', '');
+
+#INSERT INTO CadastroFuncionario (nome, cpf, email, funcao, telefone) 
+#VALUES
+#('Joao', 11144477735, 'joao@joao', 'zelador', '55123456789');
 
 create table registro (
     rm int not null,

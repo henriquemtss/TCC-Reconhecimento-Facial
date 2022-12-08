@@ -3,20 +3,19 @@ function reconhecer(){
 	document.getElementById('recognize').style.display = 'none';
 	document.getElementById('recognize2').style.display = 'none';
 	if(document.getElementById('tabpadrao').classList.contains("ativo")){
-		//document.getElementById("rmAluno").disabled = true;
-		//document.getElementById("nomeAluno").disabled = true;
-		//document.getElementById("emailAluno").disabled = true;
-		//document.getElementById("cursos-select").disabled = true;
-		//document.getElementById("periodo-select").disabled = true;
-		//document.getElementById('Other').disabled = true;
+		document.getElementById("rmAluno").readOnly = true;
+		document.getElementById("nomeAluno").readOnly = true;
+		document.getElementById("emailAluno").readOnly = true;
+		document.getElementById("cursos-select").readOnly = true;
+		document.getElementById("periodo-select").readOnly = true;
+		document.getElementById('Other').disabled = true;
 	} else {
-		// document.getElementById('tabpadrao').disabled = true;
-		// document.getElementById("nomeSeg").disabled = true;
-		// document.getElementById("cpfSeg").disabled = true;
-		// document.getElementById("funcao").disabled = true;
-		// document.getElementById("telFunc").disabled = true;
-		// document.getElementById("emailFuncionario").disabled = true;
-		
+		document.getElementById('tabpadrao').disabled = true;
+		document.getElementById("nomeSeg").readOnly = true;
+		document.getElementById("cpfSeg").readOnly = true;
+		document.getElementById("funcao").readOnly = true;
+		document.getElementById("telFunc").readOnly = true;
+		document.getElementById("emailFuncionario").readOnly = true;
 	}
 }
 function loadCameraOne(ativar){
