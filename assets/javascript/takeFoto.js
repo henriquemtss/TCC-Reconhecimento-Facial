@@ -3,6 +3,7 @@ function reconhecer(){
 	document.getElementById('recognize').style.display = 'none';
 	document.getElementById('recognize2').style.display = 'none';
 	if(document.getElementById('tabpadrao').classList.contains("ativo")){
+		//Desabilitar Inputs
 		document.getElementById("rmAluno").readOnly = true;
 		document.getElementById("nomeAluno").readOnly = true;
 		document.getElementById("emailAluno").readOnly = true;
@@ -10,6 +11,7 @@ function reconhecer(){
 		document.getElementById("periodo-select").readOnly = true;
 		document.getElementById('Other').disabled = true;
 	} else {
+		//Desabilitar Inputs
 		document.getElementById('tabpadrao').disabled = true;
 		document.getElementById("nomeSeg").readOnly = true;
 		document.getElementById("cpfSeg").readOnly = true;
