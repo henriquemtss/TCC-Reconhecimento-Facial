@@ -56,6 +56,7 @@
     <script src="../assets/javascript/clock.js" type="text/javascript"></script>
 </head>
 <body>
+    
     <!--Cabeçalho da página-->
     <header class="header">
         <img src="../assets/imagens/logo_icon.png" alt="Logo Sistema Face ID" class="header-cadastro__image">

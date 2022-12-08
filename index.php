@@ -45,7 +45,7 @@
             <div class="main-login__container">
                 <div class="container__box">
                     <label for="usuario"></label>
-                    <input placeholder="Digite o Usuário" class="box__input input" type="text" name="usuario">
+                    <input placeholder="Digite o Usuário" class="box__input input" type="text" name="usuario" autofocus>
                     <spam class="mensagem">Por favor preencha o campo!</spam>
                 </div>
                 <div class="container__box">
