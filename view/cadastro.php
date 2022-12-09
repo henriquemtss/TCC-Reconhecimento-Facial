@@ -135,7 +135,7 @@
                                 <option value="Ensino Médio Integrada a Nutrição">Ensino Médio Integrada a Nutrição</option>
                                 <option value="Ensino Médio Integrada a Administração">Ensino Médio Integrada a Administração</option>
                             </select>
-                            <input name="cursoAluno" id="cursos-select" class="inputAluno dado__input" style="display: none">
+                            <input name="cursoAluno" id="cursos-select" class="inputAluno dado__input" style="display: none" value="Escolher Curso">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php
@@ -159,7 +159,7 @@
                                 <option value="2º Série - Ensino Médio">2º Série - Ensino Médio</option>
                                 <option value="3º Série - Ensino Médio">3º Série - Ensino Médio</option>
                             </select>
-                            <input name="periodoAluno" id="periodo-select" class="inputAluno dado__input" style="display: none">
+                            <input name="periodoAluno" id="periodo-select" class="inputAluno dado__input" style="display: none" value="Escolher Periodo">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php
@@ -228,7 +228,7 @@
                                 <option value="Seguranças">Seguranças</option>
                                 <option value="Administração">Administração</option>
                             </select>
-                            <input name="funcaoFuncionario" id="funcao" class="inputFuncionario dado__input" style="display: none">
+                            <input name="funcaoFuncionario" id="funcao" class="inputFuncionario dado__input" style="display: none" value="Escolher Funcao">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php
@@ -282,7 +282,7 @@
             <div class="area">
             <img style="width: 50%; margin-left: 25%" id='logoHolder' src="../assets/imagens/logo.png" alt="Logo Sistema Face ID" class="">
                 <canvas id='canvas' style="display: none; margin-left: 8%"></canvas>
-                <video autoplay="true" id="first" style="height: 300px; width: 400px; display: none; background-color:black; margin-left: 8%">
+                <video class="img-flip" autoplay="true" id="first" style="height: 300px; width: 400px; display: none; background-color:black; margin-left: 9.5%">
                 </video>
                 <form target="POST" method="save_photos.php">
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
@@ -294,7 +294,7 @@
                 </form>
     
             <canvas id='canvas2' style="display: none; margin-left: 8%"></canvas>
-                <video autoplay="true" id="second" style="height: 300px; width: 400px; display: none; background-color:black; margin-left: 8%">
+                <video class="img-flip" autoplay="true" id="second" style="height: 300px; width: 400px; display: none; background-color:black; margin-left: 9.5%">
                 </video>
                 <form target="POST" method="save_photos.php">
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
@@ -305,7 +305,7 @@
                 </form>
     
             <canvas id='canvas3' style="display: none; margin-left: 8%"></canvas>
-                <video autoplay="true" id="third" style="height: 300px; width: 400px; display: none; background-color:black; margin-left: 8%">
+                <video class="img-flip" autoplay="true" id="third" style="height: 300px; width: 400px; display: none; background-color:black; margin-left: 9.5%">
                 </video>
                 <form target="POST" method="save_photos.php">
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>

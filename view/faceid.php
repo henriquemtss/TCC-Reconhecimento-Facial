@@ -72,6 +72,7 @@
         <aside class="main__camera">
             <div class="area">
                 <video 
+                    class="img-flip"
                     autoplay
                     id="cam"
                     width="480"

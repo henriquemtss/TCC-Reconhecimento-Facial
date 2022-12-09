@@ -70,3 +70,7 @@ canvas {
 	height: 100%;
 	
 }
+
+.img-flip{
+	transform: scaleX(-1);
+ }
