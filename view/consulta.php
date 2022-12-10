@@ -38,14 +38,14 @@
 
     <main class="consulta">
         <h1 class="consulta__titulo">Consulte</h1>
-        <form action="../Controller/ConsultaController.php" method="get">
-        <div class="consulta__container">
-        
-            <input type="search" name="pesquisa" id="consulta__pesquisa" placeholder="Digite o RM" required>
-            <button class="consulta__botao" name="botaoPesquisa">Pesquisar</button>
-        
-        </div>
-        </form>
+        <section>
+            <div class="consulta__container">
+            
+                <input type="search" name="pesquisa" id="consulta__pesquisa" placeholder="Digite o RM">
+                <button class="consulta__botao" name="botaoPesquisa">Pesquisar</button>
+            
+            </div>
+        </section>
         
         <table class="consulta__resultado">
             <tr class="resultado__campos">
@@ -53,11 +53,11 @@
                 <th class="campos">Curso</th>
                 <th class="campos">Status</th>
             </tr>
-            <tr class="resultado__puxado">
+            <!-- <tr class="resultado__puxado">
                 <td class="puxado__nome"></td>
                 <td class="puxado__curso"></td>
                 <td class="puxado__status"></td>
-            </tr>
+            </tr> -->
         </table>
 
         <a href="cadastro.php" target="_self">
@@ -68,5 +68,9 @@
         </button>
     </a>
     </main>
+
+    
+    <script src = "../assets/javascript/JQuery/jquery-3.5.1.min.js"></script>
+    <script src="../assets/javascript/pesquisa.js"></script>
 </body>
 </html>

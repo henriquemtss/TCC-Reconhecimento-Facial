@@ -11,7 +11,6 @@ include ('conexao.php');
             $resul = $res->fetch(PDO::FETCH_ASSOC);
             return $resul;
 
-
            }
 
     }

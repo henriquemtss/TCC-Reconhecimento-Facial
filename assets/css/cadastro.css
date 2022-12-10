@@ -1,23 +1,33 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .container{
-    display: grid;
-    grid-template-columns: 45% 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: 0 0 10px 0 #cecece;
     width: 90%;
     height: calc(100vh - 60px - 2rem);
-    margin: 0 auto;
+    position: relative;
+}
+
+.container section{
+    width: 50%;
+    height: 100%;
 }
 
 .container__reconhecimento-facial{
     background: -moz-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(169,166,166,1) 100%);
     background: -webkit-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(169,166,166,1) 100%);
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(169,166,166,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#a9a6a6",GradientType=1);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    margin-left: 17%;
 }
 
 .reconhecimento-facial__wait{
@@ -28,22 +38,24 @@
 .reconhecimento-facial__button{
     position: absolute;
     bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
     width: 60%;
     height: 40px;
     text-transform: uppercase;
     font-family: var(--fonte);
-    font-size: 19px;
+    font-size: 18px;
     border-radius: 3px;
-    transition:  .4s all;
+    transition:  .4s;
     background-color: var(--cor-botao-escuro);
     color: #fefefe;
-    left: 7rem;
-    
+    cursor: pointer;
 }
 
 .reconhecimento-facial__button:hover{
-    transform: scale(1.05);
-    cursor: pointer;
+    height: 45px;
+    width: 62%;
+    font-size: 20px;
 }
 
 .container__cadastro{
@@ -51,8 +63,6 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    
-    
 }
 
 .cadastro__header{
@@ -104,7 +114,7 @@
     transition:  .4s all;
     border-radius: 4px;
     position: absolute;
-    left: 30rem;
+    right: 3rem;
 }
 
 .cadastro__consultar:hover{
@@ -120,7 +130,6 @@
     width: 100%;
     gap: 2rem 6rem;
     justify-content: center;
-    margin-left: 5%;
 }
 
 .area__dado{
@@ -193,17 +202,20 @@
 }
 
 #recognize{
-    right: 35%;
-    position: absolute;
-    bottom: 1rem;
     background-color: var(--vermelho);
     color: #fefefe;
-    font-size: 17px;
     font-family: var(--fonte);
     transition:  .4s all;
     border-radius: 4px;
     text-transform: uppercase;
     box-shadow: 0 4px 4px 0 #00000040;
+}
+
+.buttonCamera{
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /*Mensagens de erro e sucesso*/

@@ -28,23 +28,23 @@ create table CadastroAluno(
     status varchar(10) not null default 'Ativo'
 );
 
-#Cadstro Para Evitar Erro Quando Nao Há Ninguem Na Camera
-#CADASTROS PARA TESTE -> ACRESCENTEM MAIS
+-- Cadstro Para Evitar Erro Quando Nao Há Ninguem Na Camera
+-- CADASTROS PARA TESTE -> ACRESCENTEM MAIS
 INSERT INTO CadastroAluno (nome, rm, email, curso, periodo) 
 VALUES
 ('', 1, '', '', '');
 
-#CADASTROS PARA TESTE -> ACRESCENTEM MAIS
-#INSERT INTO CadastroAluno (nome, rm, email, curso, periodo) 
-#VALUES
-#('Arnold Schwarzenegger', 2, '2', 'Quimica', 'Manha'),
-#('Neymar', 3, '3', 'Administracao', 'Tarde'),
-#('Henrique', 4, '4', 'Desenvolvimento de Sistemas', 'Noturno'),
-#('Marcinho', 5, '5', 'Desenvolvimento de Sistemas', 'Noturno'),
-#('Scarlett Johansson', 6, '6', 'Vingadores', 'Noturno'),
-#('Margot Robbie', 7, '7', 'Nutricao', 'Noturno'),
-#('Megan Fox', 8, '8', 'Quimica', 'Matutino'),
-#('Van Dame', 99999, '99999', 'Tecnico em Quimica', '1 Modulo - Tecnico');
+CADASTROS PARA TESTE -> ACRESCENTEM MAIS
+INSERT INTO CadastroAluno (nome, rm, email, curso, periodo) 
+VALUES
+('Arnold Schwarzenegger', 2, '2', 'Quimica', 'Manha'),
+('Neymar', 3, '3', 'Administracao', 'Tarde'),
+('Henrique', 4, '4', 'Desenvolvimento de Sistemas', 'Noturno'),
+('Marcinho', 5, '5', 'Desenvolvimento de Sistemas', 'Noturno'),
+('Scarlett Johansson', 6, '6', 'Vingadores', 'Noturno'),
+('Margot Robbie', 7, '7', 'Nutricao', 'Noturno'),
+('Megan Fox', 8, '8', 'Quimica', 'Matutino'),
+('Van Dame', 99999, '99999', 'Tecnico em Quimica', '1 Modulo - Tecnico');
 
 create table CadastroFuncionario(
     nome varchar(140) not null,
@@ -57,9 +57,9 @@ INSERT INTO CadastroFuncionario (nome, cpf, email, funcao, telefone)
 VALUES
 ('', 1, '', '', '');
 
-#INSERT INTO CadastroFuncionario (nome, cpf, email, funcao, telefone) 
-#VALUES
-#('Joao', 11144477735, 'joao@joao', 'zelador', '55123456789');
+INSERT INTO CadastroFuncionario (nome, cpf, email, funcao, telefone) 
+VALUES
+('Joao', 11144477735, 'joao@joao', 'zelador', '55123456789');
 
 create table registro (
     rm int not null,
