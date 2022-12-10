@@ -280,9 +280,9 @@
 
             <section class="container__reconhecimento-facial">
             <div class="area">
-            <img style="width: 50%; margin-left: 25%" id='logoHolder' src="../assets/imagens/logo.png" alt="Logo Sistema Face ID" class="">
-                <canvas id='canvas' style="display: none; margin-left: 8%"></canvas>
-                <video class="img-flip" autoplay="true" id="first" style="height: 300px; width: 400px; display: none; background-color:black; margin-left: 9.5%">
+            <img style="width: 50%;" id='logoHolder' src="../assets/imagens/logo.png" alt="Logo Sistema Face ID" class="">
+                <canvas id='canvas' style="display: none;"></canvas>
+                <video class="img-flip" autoplay="true" id="first" style="display: none; background-color:black;">
                 </video>
                 <form target="POST" method="save_photos.php">
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
@@ -293,8 +293,8 @@
                     <button style="display: none;" class="reconhecimento-facial__button buttonCamera" type="button" id="again" onclick="retakeSnapShot(again)"> Cancelar</button>
                 </form>
     
-            <canvas id='canvas2' style="display: none; margin-left: 8%"></canvas>
-                <video class="img-flip" autoplay="true" id="second" style="height: 300px; width: 400px; display: none; background-color:black; margin-left: 9.5%">
+            <canvas id='canvas2' style="display: none;"></canvas>
+                <video class="img-flip" autoplay="true" id="second" style="display: none; background-color:black;">
                 </video>
                 <form target="POST" method="save_photos.php">
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
@@ -304,8 +304,8 @@
                     <button style="display: none;" class="reconhecimento-facial__button buttonCamera" type="button" id="again2" onclick="retakeSnapShot(again2)"> Cancelar</button>
                 </form>
     
-            <canvas id='canvas3' style="display: none; margin-left: 8%"></canvas>
-                <video class="img-flip" autoplay="true" id="third" style="height: 300px; width: 400px; display: none; background-color:black; margin-left: 9.5%">
+            <canvas id='canvas3' style="display: none;"></canvas>
+                <video class="img-flip" autoplay="true" id="third" style="display: none; background-color:black;">
                 </video>
                 <form target="POST" method="save_photos.php">
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
