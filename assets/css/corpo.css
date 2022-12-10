@@ -5,7 +5,7 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
-    outline: 0;
+    border: 0;
     border: none;
     box-sizing: border-box;
     
@@ -28,32 +28,4 @@ body::-webkit-scrollbar-track{
 body::-webkit-scrollbar-thumb{
     background-color: rgba(80, 78, 74, 0.267);
     border-radius: 20px;
-}
-
-/*Mensagens de erro e sucesso*/
-
-.mensagem{
-
-    color: black;
-    display: none;
-}
-
-.sucess{
-    outline: 1px solid green;
-    box-shadow: 0 3px 0 -1px rgba(0, 128, 0, 0.521);
-}
-
-.sucess + .mensagem{
-    display: none;
-}
-
-.erro{
-    outline: 1px solid red;
-    box-shadow: 0 3px 0 -1px rgb(255, 0, 0);
-    
-}
-
-.erro + .mensagem{
-    display: block;
-    color: red;
 }

@@ -18,6 +18,7 @@
     <img src="../assets/imagens/logo.png" alt="" srcset="">
         <div class="container">
         <h1>Digite um E-mail de recuperação</h1>
+
         <form action="../Controller/LoginController.php" method="get">
             <div class="animation">
                 <input type="text" name="emailRecuperacao" class="inputEmail">
@@ -28,6 +29,7 @@
         </div>
         
     </main>
+
 </body>
 
 </html>

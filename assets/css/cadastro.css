@@ -225,3 +225,31 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+
+/*Mensagens de erro e sucesso*/
+
+.mensagem{
+    color: black;
+    display: none;
+}
+
+.sucess{
+    outline: 1px solid green;
+    box-shadow: 0 3px 0 -1px rgba(0, 128, 0, 0.521);
+}
+
+.sucess + .mensagem{
+    display: none;
+}
+
+.erro{
+    border: 1px solid red;
+    box-shadow: 0 3px 0 -1px rgb(255, 0, 0);
+    
+}
+
+.erro + .mensagem{
+    display: block;
+    color: red;
+}

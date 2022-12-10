@@ -54,15 +54,18 @@ form {
 
 .animation {
     margin-bottom: .5rem;
-    border: 2px solid #0003;
+    
     border-radius: 2px;
     position: relative;
 }
 
 .inputEmail, .inputSenha {
+    border: 2px solid #0003;
+    border-radius: 2px;
     padding: .2rem .5rem;
     position: relative;
     width: 100%;
+    transition: .3s ease;
 }
 
 .animation::after {
@@ -72,16 +75,19 @@ form {
     border-radius: 0 0 2px 2px;
     transform: scaleX(0);
     transition: transform .3s ease-in-out;
-    bottom: -2px;
-    left: -2px;
+    bottom: 0px;
     width: 100%;
     position: absolute;
 }
 
 .animation:hover::after {
     border-bottom-color: var(--vermelho);
-    transform: scaleX(1.009);
+    transform: scaleX(1.0);
     transform-origin: 0% 50%;
+}
+
+.animation:hover input::placeholder{
+    color: black;
 }
 
 .enviar {
@@ -98,4 +104,30 @@ form {
     background: #f54e4e right;
     font-size: 19px;
     color: #000;
+}
+
+
+
+/*Mensagens de erro e sucesso*/
+
+.mensagem{
+    color: rgba(255, 50, 50, 0.863);
+}
+
+.sucess{
+    border-color: green;
+    
+}
+
+.sucess::placeholder{
+    color: green;
+}
+
+.erro{
+    border-color: rgba(255, 50, 50, 0.863);
+    
+}
+
+.erro::placeholder{
+    color: red;
 }
