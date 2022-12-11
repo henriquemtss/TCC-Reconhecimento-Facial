@@ -20,6 +20,7 @@
     if (isset($_GET['enviarEmail'])) {
         unset($_GET['enviarEmail']);
         enviaLinkEmail($_GET['emailRecuperacao']);
+        header("Location: ../index.php");
         
     }
     
@@ -43,7 +44,7 @@
             $pdo->query("insert into codigolink values (0,'$linkCodigo','$dataExpirar', '$emailCrip');");
             //manda email
             try {
-                enviarEmail("$email", "Link para recuperar", "<a href=\"http://localhost/tcc-reconhecimento/TCC-Reconhecimento-Facial/View/recuperar.php?linkCodigo=$linkCodigo\">Recuperar Senha</a>");
+                enviarEmail("$email", "Link para recuperar", "<a href=\"http://localhost/workspace/View/recuperar.php?linkCodigo=$linkCodigo\">Recuperar Senha</a>");
             }catch (Exception $e) {
                 echo $e->getMessage();
             }

@@ -1,4 +1,39 @@
+<?php
+    include('../Model/DAO/Conexao.php');
+    include('../assets/lib/PHPMailer/conexaoEmail.php');
+    $pdo = conectar();
 
+    if(isset($_POST['enviarSenha'])){
+        if (isset($_GET['linkCodigo'])) {
+            $codigo = $_GET['linkCodigo'];
+            //descriptografaremail
+    
+            $res = $pdo->query("SELECT * from codigolink where codigo = '$codigo' AND data > Now();");
+            $resul = $res->fetch(PDO::FETCH_ASSOC);
+            if (!empty($resul)) {
+                $emailCriptografado = base64_decode($resul['emailCriptografado']);
+            }
+            
+    
+            if (isset($resul['codigo'])) {
+                //
+                if (isset($_POST['novaSenha']) ) {
+                    $novaSenha = password_hash($_POST['novaSenha'], PASSWORD_DEFAULT);
+    
+                    $atualizar = $pdo->query("UPDATE Contas set senha = '$novaSenha' where email = '$emailCriptografado' ;");
+                    if ($atualizar->execute()) {
+                        enviarEmail("testandoophpmaile@gmail.com", "Senha modificada!", "Senha modificada com sucesso!");
+                        $pdo->query("DELETE from codigolink where codigo = '$codigo';");
+                        echo "Senha modificada!";
+                        header("Location: ../index.php");
+                    }
+                }
+    }
+}
+    }
+   
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,41 +49,6 @@
 </head>
 
 <body>
-
-<?php
-    include('../Model/DAO/Conexao.php');
-    include('../assets/lib/PHPMailer/conexaoEmail.php');
-    $pdo = conectar();
-
-    if (isset($_GET['linkCodigo'])) {
-        $codigo = $_GET['linkCodigo'];
-        //descriptografaremail
-
-        $res = $pdo->query("SELECT * from codigolink where codigo = '$codigo' AND data > Now();");
-        $resul = $res->fetch(PDO::FETCH_ASSOC);
-        if (!empty($resul)) {
-            $emailCriptografado = base64_decode($resul['emailCriptografado']);
-        }
-        
-
-        if (isset($resul['codigo'])) {
-            //
-            if (isset($_POST['acao']) && $_POST['acao'] == "mudar") {
-                $novaSenha = password_hash($_POST['novaSenha'], PASSWORD_DEFAULT);
-
-                $atualizar = $pdo->query("UPDATE Contas set senha = '$novaSenha' where email = '$emailCriptografado' ;");
-                if ($atualizar->execute()) {
-                    enviarEmail("testandoophpmaile@gmail.com", "Senha modificada!", "Senha modificada com sucesso!");
-                    $pdo->query("DELETE from codigolink where codigo = '$codigo';");
-                    echo "Senha modificada!";
-                    header("Location: ../index.php");
-                }
-            }else{
-                echo "Não entrou";
-            }
-
-?>
-
     
     <main>
     <img src="../assets/imagens/logo.png" alt="" srcset="">
@@ -58,14 +58,14 @@
         
         <form action="" method="POST" enctype="multipart/form-data">
             <div class="animation">
-                <input type="password" name="acao" value="mudar" class="inputSenha first" placeholder="Nova senha:">
+                <input type="password" class="inputSenha first" placeholder="Nova senha:">
             </div>
 
             <div class="animation">
-                <input type="password" class="inputSenha second" placeholder="Digite a nova senha novamente:">
+                <input type="password" name="novaSenha" class="inputSenha second" placeholder="Digite a nova senha novamente:">
             </div>
 
-            <input type="submit" name="enviarEmail" value="Enviar" class="enviar">
+            <input type="submit" name="enviarSenha" value="Enviar" class="enviar">
         </form>
 
         </div>
@@ -75,13 +75,3 @@
 </body>
 
 </html>
-
-
-
-<?PHP
-}else {
-    echo "<h1>\"Link Expirado\"</h1>";
-}
-}
-
-?>
