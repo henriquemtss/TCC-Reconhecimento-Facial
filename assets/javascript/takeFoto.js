@@ -193,8 +193,6 @@ function takeSnapShot(tirar){
 		document.getElementById('take3').style.display = 'none';
 		document.getElementById('save3').style.display = 'block';
 		document.getElementById('again3').style.display = 'block';
-		document.getElementById('enviar').style.display = 'block';
-		document.getElementById('enviar2').style.display = 'block';
 	}
 	 
 	canvas.height = 300;
@@ -256,6 +254,8 @@ function saveSnapShot(salvar, acao){
 		document.getElementById('take3').style.display = 'none';
 		document.getElementById('save3').style.display = 'none';
 		document.getElementById('again3').style.display = 'none';
+		document.getElementById('enviar').style.display = 'block';
+		document.getElementById('enviar2').style.display = 'block';
 		document.getElementById('enviar').style.display = 'block';
 		document.getElementById('enviar2').style.display = 'block';
 		//Criando o JPG
