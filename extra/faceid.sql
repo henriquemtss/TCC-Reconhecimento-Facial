@@ -37,13 +37,13 @@ VALUES
 CADASTROS PARA TESTE -> ACRESCENTEM MAIS
 INSERT INTO CadastroAluno (nome, rm, email, curso, periodo) 
 VALUES
-('Arnold Schwarzenegger', 2, '2', 'Quimica', 'Manha'),
-('Neymar', 3, '3', 'Administracao', 'Tarde'),
-('Henrique', 4, '4', 'Desenvolvimento de Sistemas', 'Noturno'),
-('Marcinho', 5, '5', 'Desenvolvimento de Sistemas', 'Noturno'),
-('Scarlett Johansson', 6, '6', 'Vingadores', 'Noturno'),
-('Margot Robbie', 7, '7', 'Nutricao', 'Noturno'),
-('Megan Fox', 8, '8', 'Quimica', 'Matutino'),
+('Arnold Schwarzenegger', 12345, '2', 'Quimica', 'Manha'),
+('Neymar', 22222, '3', 'Administracao', 'Tarde'),
+('Henrique', 55555, '4', 'Desenvolvimento de Sistemas', 'Noturno'),
+('Marcinho', 77777, '5', 'Desenvolvimento de Sistemas', 'Noturno'),
+('Scarlett Johansson', 88888, '6', 'Vingadores', 'Noturno'),
+('Margot Robbie', 32154, '7', 'Nutricao', 'Noturno'),
+('Megan Fox', 65498, '8', 'Quimica', 'Matutino'),
 ('Van Dame', 99999, '99999', 'Tecnico em Quimica', '1 Modulo - Tecnico');
 
 create table CadastroFuncionario(
