@@ -61,7 +61,7 @@
                 <!--Inicio Nav Tab-->
                 <div class="tab">
                     <button id="tabpadrao" class="tab-button" onclick="abrirTab(event, 'aluno')">Alunos</button>
-		            <button id="Other"  class="tab-button" onclick="abrirTab(event, 'seg')">Funcionários</button>
+		            <button id="other"  class="tab-button" onclick="abrirTab(event, 'seg')">Funcionários</button>
 		            
                 </div>
 
@@ -77,7 +77,7 @@
                     </div>
                     <form class="cadastro__area alunoForm" action="../Controller/CadastroAlunoController.php" method="GET">
                         <div class="area__dado">
-                            <label for="nome" class="dado__label">Nome</label>
+                            <label for="nomeAluno" class="dado__label">Nome</label>
                             <input type="text" name="nomeAluno" class="inputAluno dado__input" placeholder="Digite seu Nome" id ="nomeAluno">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
@@ -92,8 +92,8 @@
                             <!--  -->
                         </div>
                         <div class="area__dado">
-                            <label for="email" class="dado__label">Email institucional</label>
-                            <input type="text" name="emailAluno" class="inputAluno dado__input" placeholder="Digite seu email institucional" id ="emailAluno">
+                            <label for="emailAluno" class="dado__label">Email institucional</label>
+                            <input type="email" name="emailAluno" class="inputAluno dado__input" placeholder="Digite seu email institucional" id ="emailAluno">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php
@@ -107,7 +107,7 @@
                             <!--  -->
                         </div>
                         <div class="area__dado">
-                            <label for="rm" class="dado__label">RM</label>
+                            <label for="rmAluno" class="dado__label">RM</label>
                             <input maxlength="5"; type="text" name="rmAluno" class="inputAluno dado__input" placeholder="Digite seu RM" id="rmAluno">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
@@ -122,7 +122,7 @@
                             <!--  -->
                         </div>
                         <div class="area__dado">
-                            <label for="cursos" class="dado__label">Cursos</label>
+                            <label for="curAlu" class="dado__label">Cursos</label>
                             <select name="curAlu" id="curAlu" class="inputAluno dado__input" onchange="myFunction(curAlu)">
                                 
                                 <option value="">Selecione o Curso</option>
@@ -148,7 +148,7 @@
                             <!--  -->
                         </div>
                         <div class="area__dado">
-                            <label for="perAlu" class="dado__label" >Período</label>
+                            <label for="perSel" class="dado__label" >Período</label>
                             <select name="perAlu" id="perSel" class="inputAluno dado__input" onchange="myFunction(perSel)">
                                 <option value="">Selecione o Período</option>
                                 <option value="1º Módulo - Técnico">1º Módulo - Técnico</option>
@@ -190,7 +190,7 @@
                     </div>
                     <form class="cadastro__area funcionarioForm"  action="../Controller/CadastroFuncionarioController.php" method="GET">
                         <div class="area__dado">
-                            <label for="nome" class="dado__label">Nome</label>
+                            <label for="nomeSeg" class="dado__label">Nome</label>
                             <input type="text" name="nomeFuncionario" class="inputFuncionario dado__input" placeholder="Digite seu Nome:" id="nomeSeg">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
@@ -206,7 +206,7 @@
                         </div>
                         
                         <div class="area__dado">
-                            <label for="cpf" class="dado__label">CPF</label>
+                            <label for="cpfSeg" class="dado__label">CPF</label>
                             <input type="text" name="cpfFuncionario" class="inputFuncionario dado__input" placeholder="Digite seu CPF" id="cpfSeg">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
@@ -242,7 +242,7 @@
                         </div>
                                 
                         <div class="area__dado">
-                            <label for="tel" class="dado__label">Telefone</label>
+                            <label for="telFunc" class="dado__label">Telefone</label>
                             <input type="text" name="telefoneFuncionario" id="telFunc" class="inputFuncionario dado__input" placeholder="Digite seu DDD + Telefone" maxlength="15">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
@@ -257,8 +257,8 @@
                             <!--  -->
                         </div>
                         <div class="area__dado">
-                            <label for="mail" class="dado__label">E-mail</label>
-                            <input type="text" name="emailFuncionario" class="inputFuncionario dado__input" placeholder="Digite seu E-mail" id="emailFuncionario">
+                            <label for="emailFuncionario" class="dado__label">E-mail</label>
+                            <input type="email" name="emailFuncionario" class="inputFuncionario dado__input" placeholder="Digite seu E-mail" id="emailFuncionario">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php

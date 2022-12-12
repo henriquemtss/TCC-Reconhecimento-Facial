@@ -26,7 +26,7 @@ function editar() {
 	document.getElementById("periodo-select").style.display = 'none';
 	document.getElementById("funcao").style.display = 'none';
 	document.getElementById("funcao").style.display = 'none';
-	document.getElementById('Other').disabled = false;
+	document.getElementById('other').disabled = false;
 	document.getElementById('enviar').style.display = 'none';
 	document.getElementById('tabpadrao').disabled = false;
 	document.getElementById("nomeSeg").readOnly = false;
@@ -39,84 +39,102 @@ function editar() {
 	document.getElementById("funFun").style.display = 'block';
 }
 
-function reconhecer(){
-	document.getElementById('active').style.display = 'block';
-	document.getElementById('recognize').style.display = 'none';
-	document.getElementById('recognize2').style.display = 'none';
-	document.getElementById('Consultar').style.display = 'none';
-	document.getElementById('Consultar2').style.display = 'none';
-	document.getElementById('editar').style.display = 'block';
-	document.getElementById('editar2').style.display = 'block';
-	if(document.getElementById('tabpadrao').classList.contains("ativo")){
-		//Desabilitar Inputs
-		document.getElementById("curAlu").style.display = 'none';
-		document.getElementById("perSel").style.display = 'none';
-		document.getElementById("cursos-select").style.display = 'block';
-		document.getElementById("cursos-select").readOnly = true;
-		document.getElementById("periodo-select").style.display = 'block';
-		document.getElementById("periodo-select").readOnly = true;
-		document.getElementById("rmAluno").readOnly = true;
-		document.getElementById("nomeAluno").readOnly = true;
-		document.getElementById("emailAluno").readOnly = true;
-		document.getElementById('Other').disabled = true;
-	} else {
-		//Desabilitar Inputs
-		document.getElementById("funFun").style.display = 'none';
-		document.getElementById("funcao").style.display = 'block';
-		document.getElementById('tabpadrao').disabled = true;
-		document.getElementById("nomeSeg").readOnly = true;
-		document.getElementById("cpfSeg").readOnly = true;
-		document.getElementById("funcao").readOnly = true;
-		document.getElementById("telFunc").readOnly = true;
-		document.getElementById("emailFuncionario").readOnly = true;
-	}
-}
-
-// EM TESTE
 // function reconhecer(){
-// 	if (
-// 		document.getElementById('tabpadrao').classList.contains("ativo") &&
-// 		document.getElementById("cursos-select").value != "" && 
-// 		document.getElementById("periodo-select").value != "" &&
-// 		document.getElementById("rmAluno").value != "" &&
-// 		document.getElementById("nomeAluno").value != "" &&
-// 		document.getElementById("emailAluno").value != ""
-// 		) {
-// 			document.getElementById('active').style.display = 'block';
-// 			document.getElementById('recognize').style.display = 'none';
-// 			document.getElementById('recognize2').style.display = 'none';
-// 			document.getElementById('Consultar').style.display = 'none';
-// 			document.getElementById('Consultar2').style.display = 'none';
-// 			document.getElementById('editar').style.display = 'block';
-// 			document.getElementById('editar2').style.display = 'block';
-// 	} else if(document.getElementById('other').classList.contains("ativo")) {
-
+// 	document.getElementById('active').style.display = 'block';
+// 	document.getElementById('recognize').style.display = 'none';
+// 	document.getElementById('recognize2').style.display = 'none';
+// 	document.getElementById('Consultar').style.display = 'none';
+// 	document.getElementById('Consultar2').style.display = 'none';
+// 	document.getElementById('editar').style.display = 'block';
+// 	document.getElementById('editar2').style.display = 'block';
+// 	if(document.getElementById('tabpadrao').classList.contains("ativo")){
+// 		//Desabilitar Inputs
+// 		document.getElementById("curAlu").style.display = 'none';
+// 		document.getElementById("perSel").style.display = 'none';
+// 		document.getElementById("cursos-select").style.display = 'block';
+// 		document.getElementById("cursos-select").readOnly = true;
+// 		document.getElementById("periodo-select").style.display = 'block';
+// 		document.getElementById("periodo-select").readOnly = true;
+// 		document.getElementById("rmAluno").readOnly = true;
+// 		document.getElementById("nomeAluno").readOnly = true;
+// 		document.getElementById("emailAluno").readOnly = true;
+// 		document.getElementById('Other').disabled = true;
 // 	} else {
-// 		alert("Por favor Preencher tadas as Informações!");
-// 	}
-
-// 	if (
-// 		document.getElementById('other').classList.contains("ativo") &&
-// 		document.getElementById('tabpadrao').value != "" &&
-// 		document.getElementById("nomeSeg").value != "" &&
-// 		document.getElementById("cpfSeg").value != "" &&
-// 		document.getElementById("funcao").value != "" &&
-// 		document.getElementById("telFunc").value != "" &&
-// 		document.getElementById("emailFuncionario").value != ""
-// 		) {
-// 			document.getElementById('active').style.display = 'block';
-// 			document.getElementById('recognize').style.display = 'none';
-// 			document.getElementById('recognize2').style.display = 'none';
-// 			document.getElementById('Consultar').style.display = 'none';
-// 			document.getElementById('Consultar2').style.display = 'none';
-// 			document.getElementById('editar').style.display = 'block';
-// 			document.getElementById('editar2').style.display = 'block';
-// 	} else if(document.getElementById('tabpadrao').classList.contains("ativo")) {
-
-// 	} else {
-// 		alert("Por favor Preencher todas as Informações!");
+// 		//Desabilitar Inputs
+// 		document.getElementById("funFun").style.display = 'none';
+// 		document.getElementById("funcao").style.display = 'block';
+// 		document.getElementById('tabpadrao').disabled = true;
+// 		document.getElementById("nomeSeg").readOnly = true;
+// 		document.getElementById("cpfSeg").readOnly = true;
+// 		document.getElementById("funcao").readOnly = true;
+// 		document.getElementById("telFunc").readOnly = true;
+// 		document.getElementById("emailFuncionario").readOnly = true;
 // 	}
 // }
+
+// EM TESTE
+function reconhecer(){
+	if (
+		document.getElementById('tabpadrao').classList.contains("ativo") &&
+		document.getElementById("cursos-select").value != "" && 
+		document.getElementById("periodo-select").value != "" &&
+		document.getElementById("rmAluno").value != "" &&
+		document.getElementById("nomeAluno").value != "" &&
+		document.getElementById("emailAluno").value != ""
+		) {
+			document.getElementById("curAlu").style.display = 'none';
+			document.getElementById("perSel").style.display = 'none';
+			document.getElementById("cursos-select").style.display = 'block';
+			document.getElementById("cursos-select").readOnly = true;
+			document.getElementById("periodo-select").style.display = 'block';
+			document.getElementById("periodo-select").readOnly = true;
+			document.getElementById("rmAluno").readOnly = true;
+			document.getElementById("nomeAluno").readOnly = true;
+			document.getElementById("emailAluno").readOnly = true;
+			document.getElementById('other').disabled = true;
+
+			document.getElementById('active').style.display = 'block';
+			document.getElementById('recognize').style.display = 'none';
+			document.getElementById('recognize2').style.display = 'none';
+			document.getElementById('Consultar').style.display = 'none';
+			document.getElementById('Consultar2').style.display = 'none';
+			document.getElementById('editar').style.display = 'block';
+			document.getElementById('editar2').style.display = 'block';
+	} else if(document.getElementById('other').classList.contains("ativo")) {
+
+	} else {
+		alert("Por favor Preencher tadas as Informações!");
+	}
+
+	if (
+		document.getElementById('other').classList.contains("ativo") &&
+		document.getElementById("nomeSeg").value != "" &&
+		document.getElementById("cpfSeg").value != "" &&
+		document.getElementById("funcao").value != "" &&
+		document.getElementById("telFunc").value != "" &&
+		document.getElementById("emailFuncionario").value != ""
+		) {
+			document.getElementById("funFun").style.display = 'none';
+			document.getElementById("funcao").style.display = 'block';
+			document.getElementById('tabpadrao').disabled = true;
+			document.getElementById("nomeSeg").readOnly = true;
+			document.getElementById("cpfSeg").readOnly = true;
+			document.getElementById("funcao").readOnly = true;
+			document.getElementById("telFunc").readOnly = true;
+			document.getElementById("emailFuncionario").readOnly = true;
+			document.getElementById('active').style.display = 'block';
+			document.getElementById('recognize').style.display = 'none';
+			document.getElementById('recognize2').style.display = 'none';
+			document.getElementById('Consultar').style.display = 'none';
+			document.getElementById('Consultar2').style.display = 'none';
+			document.getElementById('editar').style.display = 'block';
+			document.getElementById('editar2').style.display = 'block';
+	} else if (document.getElementById('tabpadrao').classList.contains("ativo")) {
+
+	} else {
+		alert("Por favor Preencher todas as Informações!");
+	}
+}
 
 function loadCameraOne(ativar){
 	if (ativar === active) {
