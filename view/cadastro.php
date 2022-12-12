@@ -34,7 +34,6 @@
     <script src="../assets/javascript/tab.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/javascript/camera.js"></script>
-    <script type="text/javascript" src="../assets/javascript/popup.js"></script>
     <link rel="stylesheet" href="../assets/css/popup.css">
     <title>Reconhecimento facial - Cadastro</title>
 </head>
@@ -272,7 +271,7 @@
                             ?>
                             <!--  -->
                         </div>
-                        <button class="reconhecimento-facial__button" type="button" id="recognize2" onclick="reconhecer()" style="background-color: #F93535; color-contrast(3.72);">FAZER RECONHECIMENTO FACIAL</button>
+                        <button class="reconhecimento-facial__button" type="button" id="recognize2" onclick="reconhecer()" style="background-color: #F93535;">FAZER RECONHECIMENTO FACIAL</button>
                         <input type="submit" value="Enviar" id="enviar2" class="enviarFuncionario" style="display: none">
                     </form>
                 </div>
@@ -319,6 +318,7 @@
             </section>
 
         </main> 
+        <script src="../assets/javascript/popup.js"></script>
         <script type="module" src="../assets/javascript/cadastro.js"></script>
 </body>
 </html>
