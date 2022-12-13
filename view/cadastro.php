@@ -71,7 +71,7 @@
                     <div class="cadastro__header">
                         <h1 class="cadastro__title">Cadastrar</h1>
                         <a href="" class="cadastro__consultar" id="Consultar" onClick="window.open('consulta.php','Janela','toolbar=no,location=0,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1000,height=630,left=150,top=15'); return false;">Consultar</a>
-                        <!--a href="consulta.php" class="cadastro__consultar" id="Consultar">Consultar</a-->
+                        
                         <button class="cadastro__consultar" onclick="editar()" style="display: none" id="editar">
                         Editar
                         </button>
@@ -173,7 +173,7 @@
                             <!--  -->
                         </div>
                         
-                        <button class="reconhecimento-facial__button" type="button" id="recognize" onclick="reconhecer()">FAZER RECONHECIMENTO FACIAL</button>
+                        <button class="reconhecimento-facial__button" type="button" id="recognize">FAZER RECONHECIMENTO FACIAL</button>
                         <input type="submit" value="Enviar" id="enviar" class="enviarAluno" style="display: none">
                     </form>
                 </div>
@@ -184,7 +184,7 @@
                     <div class="cadastro__header">
                         <h1 class="cadastro__title">Cadastrar</h1>
                         <a href="" class="cadastro__consultar" id="Consultar2" onClick="window.open('consulta.php','Janela','toolbar=no,location=0,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1000,height=630,left=150,top=15'); return false;">Consultar</a>
-                        <!--a href="consulta.php" class="cadastro__consultar" id="Consultar2">Consultar</a-->
+                        
                         <link rel="stylesheet" href="../assets/css/consulta.css">
                         <button class="cadastro__consultar" onclick="editar()" style="display: none" id="editar2">
                         Editar
@@ -273,7 +273,7 @@
                             ?>
                             <!--  -->
                         </div>
-                        <button class="reconhecimento-facial__button" type="button" id="recognize2" onclick="reconhecer()" style="background-color: #F93535;">FAZER RECONHECIMENTO FACIAL</button>
+                        <button class="reconhecimento-facial__button" type="button" id="recognize2" style="background-color: #F93535;">FAZER RECONHECIMENTO FACIAL</button>
                         <input type="submit" value="Enviar" id="enviar2" class="enviarFuncionario" style="display: none">
                     </form>
                 </div>

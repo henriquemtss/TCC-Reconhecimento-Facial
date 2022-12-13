@@ -1,3 +1,4 @@
+
 const buttonPesquisa = document.querySelector(".consulta__botao")
 const tableColumns = document.querySelector(".resultado__campos")
 
@@ -6,7 +7,7 @@ buttonPesquisa.addEventListener("click", () => {
     const inputPesquisa = document.querySelector("#consulta__pesquisa").value
     if (inputPesquisa.length > 0) {
         $.ajax({
-            url: "http://localhost/tcc-reconhecimento/TCC-Reconhecimento-Facial/Controller/ConsultaController.php",
+            url: "http://localhost/TCC-Reconhecimento-Facial/controller/ConsultaController.php",
             method: "POST",
             data: { rm: inputPesquisa },
             datatype: "JSON"

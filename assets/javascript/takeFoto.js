@@ -73,14 +73,55 @@ function editar() {
 // }
 
 // EM TESTE
+
+const alunos = document.querySelectorAll(".inputAluno")
+console.log(alunos)
+const funcionarios = document.querySelectorAll(".inputFuncionario")
+
+const enviarAluno = document.querySelector("#recognize");
+const enviarFuncionario = document.querySelector("#recognize2");
+
+
+enviarAluno.addEventListener('click', function (e) {
+	verificacao(alunos)
+})
+
+enviarFuncionario.addEventListener('click', function (e) {
+	verificacao(funcionarios)
+})
+
+const verificacao = (campos) => {
+	var verifica = true;
+
+	for (let i = 0; i < campos.length; i++) {
+		if (campos[i].value.length == 0) {
+			console.log(campos[i])
+			campos[i].classList.remove("sucess")
+			campos[i].classList.add("erro")
+			verifica = false	
+		}
+		else {
+			campos[i].classList.remove("erro")
+			campos[i].classList.add("sucess")
+			
+			
+		}
+	}
+
+	console.log(verifica)
+
+	if (verifica) {
+		
+		reconhecer()
+	}
+
+}
+
+
 function reconhecer(){
+	console.log("epa")
 	if (
-		document.getElementById('tabpadrao').classList.contains("ativo") &&
-		document.getElementById("cursos-select").value != "" && 
-		document.getElementById("periodo-select").value != "" &&
-		document.getElementById("rmAluno").value != "" &&
-		document.getElementById("nomeAluno").value != "" &&
-		document.getElementById("emailAluno").value != ""
+		document.getElementById('tabpadrao').classList.contains("ativo")
 		) {
 			document.getElementById("curAlu").style.display = 'none';
 			document.getElementById("perSel").style.display = 'none';
@@ -100,19 +141,10 @@ function reconhecer(){
 			document.getElementById('Consultar2').style.display = 'none';
 			document.getElementById('editar').style.display = 'block';
 			document.getElementById('editar2').style.display = 'block';
-	} else if(document.getElementById('other').classList.contains("ativo")) {
-
-	} else {
-		alert("Por favor Preencher tadas as Informações!");
 	}
 
 	if (
-		document.getElementById('other').classList.contains("ativo") &&
-		document.getElementById("nomeSeg").value != "" &&
-		document.getElementById("cpfSeg").value != "" &&
-		document.getElementById("funcao").value != "" &&
-		document.getElementById("telFunc").value != "" &&
-		document.getElementById("emailFuncionario").value != ""
+		document.getElementById('other').classList.contains("ativo")
 		) {
 			document.getElementById("funFun").style.display = 'none';
 			document.getElementById("funcao").style.display = 'block';
@@ -129,10 +161,6 @@ function reconhecer(){
 			document.getElementById('Consultar2').style.display = 'none';
 			document.getElementById('editar').style.display = 'block';
 			document.getElementById('editar2').style.display = 'block';
-	} else if (document.getElementById('tabpadrao').classList.contains("ativo")) {
-
-	} else {
-		alert("Por favor Preencher todas as Informações!");
 	}
 }
 
