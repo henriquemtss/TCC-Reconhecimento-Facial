@@ -86,14 +86,15 @@ cam.addEventListener('play', async () => {
 		    request.onload = function() {
 			if (request.status >= 200 && request.status < 400) {
                 console.log(request.responseText);
-                document.getElementById("nome").value = JSON.parse(request.responseText).nome
+                var nome = JSON.parse(request.responseText);
+                document.getElementById("nome").value = JSON.parse(request.responseText).nome;
                 document.getElementById("periodo").style.display = 'block';
                 document.getElementById("curso").style.display = 'block';
                 document.getElementById('rm').style.display = 'block';
                 document.getElementById("funcao").style.display = 'none';
                 document.getElementById("periodo").value = JSON.parse(request.responseText).periodo;
                 document.getElementById("curso").value = JSON.parse(request.responseText).curso;
-                if (JSON.parse(request.responseText).rm > 1 && JSON.parse(request.responseText).rm < 99999) {
+                if (JSON.parse(request.responseText).rm > 1 && JSON.parse(request.responseText).rm < 100000) {
                     document.getElementById("rm").value = JSON.parse(request.responseText).rm;
                 } else if (JSON.parse(request.responseText).cpf > 99999) {
                     document.getElementById("funcao").style.display = 'block';
@@ -116,12 +117,20 @@ cam.addEventListener('play', async () => {
             request.onerror = function() {
                 alert("Erro ao localizar. Back-End inacessível.");
             }
+            //alert(label);
             if (label > 1) {
                 request.send("RM="+label);
             } else {
                 request.send("RM="+1);
             }
-           nome = document.getElementById("nome").value
+
+            if (label != "unknown") {
+                nome = document.getElementById("nome").value;
+            } else if (label == "unknown"){
+                nome = "Não Encontrado";
+            } else {
+                nome = "Aguardando Rosto...";
+            }
             //
 
             new faceapi.draw.DrawTextField([
