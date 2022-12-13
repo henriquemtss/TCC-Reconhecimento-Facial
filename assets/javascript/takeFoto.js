@@ -237,6 +237,7 @@ function saveSnapShot(salvar, acao){
 		document.getElementById('second').style.display = 'block';
 		document.getElementById('active2').style.display = 'block';
 		document.getElementById('editar').style.display = 'none';
+		document.getElementById('editar2').style.display = 'none';
 		//Criando o JPG
 		var canvas = document.querySelector("#canvas"); 
 	} else if (salvar === save2) {
