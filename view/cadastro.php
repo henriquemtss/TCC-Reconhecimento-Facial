@@ -281,7 +281,7 @@
             <div class="area">
             <img style="width: 50%;" id='logoHolder' src="../assets/imagens/logo.png" alt="Logo Sistema Face ID" class="">
                 <canvas id='canvas' style="display: none;"></canvas>
-                <video class="img-flip" autoplay="true" id="first" style="display: none; background-color:black;">
+                <video autoplay="true" id="first" style="height: 300px; width: 400px; isplay: none; background-color:black;">
                 </video>
                 <form target="POST" method="save_photos.php">
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
@@ -292,7 +292,7 @@
                 </form>
     
             <canvas id='canvas2' style="display: none;"></canvas>
-                <video class="img-flip" autoplay="true" id="second" style="display: none; background-color:black;">
+                <video autoplay="true" id="second" style="height: 300px; width: 400px; display: none; background-color:black;">
                 </video>
                 <form target="POST" method="save_photos.php">
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
@@ -303,7 +303,7 @@
                 </form>
     
             <canvas id='canvas3' style="display: none;"></canvas>
-                <video class="img-flip" autoplay="true" id="third" style="display: none; background-color:black;">
+                <video autoplay="true" id="third" style="height: 300px; width: 400px; display: none; background-color:black;">
                 </video>
                 <form target="POST" method="save_photos.php">
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
