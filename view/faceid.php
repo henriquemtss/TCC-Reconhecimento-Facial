@@ -90,19 +90,19 @@
                 <!--<div class="profile-right"> </div>-->
 
                 <div class="container__box">
-                    <input type="text" class="box__input" name="name" placeholder="Nome:" id="nome">
+                    <input type="text" class="box__input" name="name" placeholder="Nome:" id="nome" readonly>
                 </div>
                 <div class="container__box">
-                    <input type="text" class="box__input" name="rm" placeholder="RM:" id="rm">
+                    <input type="text" class="box__input" name="rm" placeholder="RM:" id="rm" readonly>
                 </div>
                 <div class="container__box">
-                    <input type="text" class="box__input" name="periodo" placeholder="Período:" id="periodo">
+                    <input type="text" class="box__input" name="periodo" placeholder="Período:" id="periodo" readonly>
                 </div>
                 <div class="container__box">
-                    <input type="text" class="box__input" name="curso" placeholder="Curso:" id="curso">
+                    <input type="text" class="box__input" name="curso" placeholder="Curso:" id="curso" readonly>
                 </div>
                 <div class="container__box">
-                    <input type="text" class="box__input" name="funcao" placeholder="Função:" id="funcao" style="display: none">
+                    <input type="text" class="box__input" name="funcao" placeholder="Função:" id="funcao" style="display: none" readonly>
                 </div>
             </div>
 
