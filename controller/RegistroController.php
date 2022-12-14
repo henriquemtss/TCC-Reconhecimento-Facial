@@ -65,4 +65,17 @@
                 </li>';
             }
         }
+        
+        
+            
+
+
+    }
+    
+    if(isset($_POST['Registrar'])){
+        $registro = new Registro();
+        if ($registro->verificarRegistrosAnteriores($_POST['Registrar'])) {
+            $registro->registrar($_POST['Registrar']);
+            unset($_POST['Registrar']);
+        }
     }

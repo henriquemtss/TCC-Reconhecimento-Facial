@@ -2,7 +2,7 @@
 function registro() {
   var rm = document.getElementById('rm').value;
   var request = new XMLHttpRequest();
-  request.open('POST', '../model/inserir_registro.php', true);
+  request.open('POST', '../controller/RegistroController.php', true);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
   request.onload = function() {
   if (request.status >= 200 && request.status < 400) {
