@@ -15,7 +15,7 @@ class RegistroDAO{
     function registrar($registro){
         $replaced = str_replace(" ","+",$registro);
         $pdo = conectar();
-        $sql = "INSERT INTO registro (rm, entradaSaida)	VALUES (':replaced', now())";
+        $sql = "INSERT INTO registro (rm, entradaSaida)	VALUES (:replaced, now())";
         $res = $pdo->prepare($sql);
         $res->bindvalue(':replaced', $replaced);
         $res->execute();

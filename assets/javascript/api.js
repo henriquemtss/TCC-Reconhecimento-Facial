@@ -67,7 +67,7 @@ cam.addEventListener('play', async () => {
             .withFaceDescriptors()
         
         const resizedDetections = faceapi.resizeResults(detections, canvasSize)
-        const faceMatcher = new faceapi.FaceMatcher(labels, 0.6)
+        const faceMatcher = new faceapi.FaceMatcher(labels, 0.4)
         const results = resizedDetections.map(d =>
             faceMatcher.findBestMatch(d.descriptor),
         )
