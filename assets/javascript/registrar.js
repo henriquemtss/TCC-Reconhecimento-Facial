@@ -21,5 +21,5 @@ function registro() {
   request.onerror = function() {
       alert("Erro ao localizar. Back-End inacessível.");
   }
-  request.send("RM="+rm);
+  request.send("Registrar="+rm);
 }
