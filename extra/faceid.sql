@@ -21,7 +21,7 @@ create table  Contas(
 
 create table CadastroAluno(
     nome varchar(140) not null,
-    rm int(5) not null primary key check (rm > 0 and rm <= 99999 ),
+    rm int(5) not null primary key check (rm > 0 and rm <= 99999 or rm = 1 ),
     email varchar(100) not null unique key,
     curso varchar(50) not null,
     periodo varchar(50) not null,
@@ -34,7 +34,7 @@ INSERT INTO CadastroAluno (nome, rm, email, curso, periodo)
 VALUES
 ('', 1, '', '', '');
 
-CADASTROS PARA TESTE -> ACRESCENTEM MAIS
+-- CADASTROS PARA TESTE -> ACRESCENTEM MAIS
 INSERT INTO CadastroAluno (nome, rm, email, curso, periodo) 
 VALUES
 ('Arnold Schwarzenegger', 12345, '2', 'Quimica', 'Manha'),

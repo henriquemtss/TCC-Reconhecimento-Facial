@@ -9,6 +9,7 @@ if (!isset($_SESSION)) {
         function pesquisarAlunoPorRM($rm){
             $ConsultaDAO = new ConsultaDAO();
             $aluno = $ConsultaDAO->consultarAlunoPorRM($rm);
+            // 
             if (is_array($aluno)) {
                 foreach ($aluno as $coluna) {
                     if ($coluna == 'Curso' and $aluno['Curso'] == 'quim') {
@@ -32,7 +33,9 @@ if (!isset($_SESSION)) {
                     if ($coluna == 'Curso' and $aluno['Curso'] == 'em-adm') {
                         $aluno['Curso'] = "EM Integrado a Administração";
                     }
+                    
                 }
+                
                 return json_encode($aluno);
             }else{
                 return "";
@@ -41,8 +44,10 @@ if (!isset($_SESSION)) {
         }
 
     }
+    
 
+        $consultaController = new consultaController();
+        echo $consultaController->pesquisarAlunoPorRM($_POST['rm']);
+  
 
-    $consultaController = new consultaController();
-    echo $consultaController->pesquisarAlunoPorRM($_POST['rm']);
 ?>

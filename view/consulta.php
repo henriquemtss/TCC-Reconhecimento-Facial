@@ -9,11 +9,6 @@
 
         include('splash.php');
     }
-    //Remover depois de transformar em tabela
-    if (isset($_SESSION['resultado'])) {
-        print_r($_SESSION['resultado']);
-        unset($_SESSION['resultado']);
-    }
     
 ?>
 

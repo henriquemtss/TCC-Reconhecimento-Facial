@@ -10,10 +10,6 @@
         include('splash.php');
     }
 
-    // if (isset($_SESSION['msgCadastro'])) {
-    //     echo $_SESSION['msgCadastro'];
-    //     unset($_SESSION['msgCadastro']);
-    // }
         
 
 ?>
