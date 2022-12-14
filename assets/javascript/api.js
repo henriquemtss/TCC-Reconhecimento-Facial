@@ -125,7 +125,10 @@ cam.addEventListener('play', async () => {
             }
 
             if (label != "unknown") {
-                nome = document.getElementById("nome").value;
+                var nombre = document.getElementById("nome").value;
+                if (nome != nombre) {
+                    nome = nombre;
+                }
             } else if (label == "unknown"){
                 nome = "Não Encontrado";
             } else {
