@@ -94,7 +94,7 @@
                     <input type="text" class="box__input" name="name" placeholder="Nome:" id="nome" readonly>
                 </div>
                 <div class="container__box">
-                    <input type="text" class="box__input" name="rm" placeholder="RM:" id="rm" onchange="registrar()">
+                    <input type="text" class="box__input" name="rm" placeholder="RM:" id="rm" readonly>
                 </div>
                 <div class="container__box">
                     <input type="text" class="box__input" name="periodo" placeholder="Período:" id="periodo" readonly>

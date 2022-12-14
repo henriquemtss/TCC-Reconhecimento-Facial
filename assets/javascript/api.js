@@ -124,15 +124,22 @@ cam.addEventListener('play', async () => {
                 request.send("RM="+1);
             }
 
+            time = null;
             if (label != "unknown") {
-                var nombre = document.getElementById("nome").value;
-                if (nome != nombre) {
-                    nome = nombre;
+                nome = document.getElementById("nome").value;
+                if (document.getElementById('rm').value != "") {
+                    clearTimeout(time);
+                        time = setTimeout(function(){
+                            registro();
+                            }, 3000);
+                        console.log(document.getElementById('rm').value)
                 }
             } else if (label == "unknown"){
                 nome = "Não Encontrado";
+                clearTimeout(time)
             } else {
                 nome = "Aguardando Rosto...";
+                clearTimeout(time)
             }
             //
 

@@ -1,19 +1,6 @@
-time = null;
-function registrar() {
-	if (document.getElementById('rm').value != "") {
-        clearTimeout( time )
-        time = setTimeout(function(){
-            registrar();
-            registro();
-            }, 3000);
-        function registrar(){
-        }
-        console.log(document.getElementById('rm').value)
-	}
-  }
 
 function registro() {
-    var rm = document.getElementById('rm').value;
+  var rm = document.getElementById('rm').value;
   var request = new XMLHttpRequest();
   request.open('POST', '../model/inserir_registro.php', true);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
