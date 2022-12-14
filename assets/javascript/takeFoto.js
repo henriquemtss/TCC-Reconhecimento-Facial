@@ -92,7 +92,6 @@ enviarFuncionario.addEventListener('click', function (e) {
 
 const verificacao = (campos) => {
 	var verifica = true;
-
 	for (let i = 0; i < campos.length; i++) {
 		if (campos[i].value.length == 0) {
 			console.log(campos[i])
@@ -103,23 +102,18 @@ const verificacao = (campos) => {
 		else {
 			campos[i].classList.remove("erro")
 			campos[i].classList.add("sucess")
-			
-			
 		}
 	}
-
 	console.log(verifica)
-
 	if (verifica) {
 		
 		reconhecer()
 	}
-
 }
 
 
 function reconhecer(){
-	console.log("epa")
+	console.log("epa");
 	if (
 		document.getElementById('tabpadrao').classList.contains("ativo")
 		) {
@@ -165,7 +159,9 @@ function reconhecer(){
 }
 
 function loadCameraOne(ativar){
+	console.log("ativando camera");
 	if (ativar === active) {
+		console.log("ativando camera 1");
 		var video = document.querySelector("#first");
 		statusVerify(document.getElementById('active'), document.getElementById('take') );
 		document.getElementById('first').style.display = 'block';
@@ -252,10 +248,9 @@ function retakeSnapShot(denovo){
 }
 
 function saveSnapShot(salvar, acao){
-	var funcao = 'x'
-	if (acao === A) {
+	var funcao = 'x';
+	if (acao === 'A') {
 		funcao = 'A';
-	}
 	if (salvar === save) {
 		document.getElementById('first').style.display = 'none';
 		document.getElementById('take').style.display = 'none';
@@ -290,17 +285,59 @@ function saveSnapShot(salvar, acao){
 		//Criando o JPG
 		var canvas = document.querySelector("#canvas3"); 
 	}
+
+	} else if (acao === 'B') {
+		funcao = 'B';
+		if (salvar === save) {
+			document.getElementById('first').style.display = 'none';
+			document.getElementById('take').style.display = 'none';
+			document.getElementById('canvas').style.display = 'none';
+			document.getElementById('save').style.display = 'none';
+			document.getElementById('again').style.display = 'none';
+			document.getElementById('second').style.display = 'block';
+			document.getElementById('active2').style.display = 'block';
+			//Criando o JPG
+			var canvas = document.querySelector("#canvas"); 
+		} else if (salvar === save2) {
+			document.getElementById('second').style.display = 'none';
+			document.getElementById('canvas2').style.display = 'none';
+			document.getElementById('take2').style.display = 'none';
+			document.getElementById('save2').style.display = 'none';
+			document.getElementById('again2').style.display = 'none';
+			document.getElementById('third').style.display = 'block';
+			document.getElementById('active3').style.display = 'block';
+			//Criando o JPG
+			var canvas = document.querySelector("#canvas2"); 
+		} else if (salvar === save3) {
+			document.getElementById('third').style.display = 'none';
+			document.getElementById('take3').style.display = 'none';
+			document.getElementById('save3').style.display = 'none';
+			document.getElementById('again3').style.display = 'none';
+			alert("Fotos Atualziadas Com Sucesso");
+			window.open('','_parent',''); 
+    		window.close();
+			//Criando o JPG
+			var canvas = document.querySelector("#canvas3"); 
+		}
+	}
 	//Criando o JPG
 	//var canvas = document.querySelector("#canvas"); 
 	var dataURI = canvas.toDataURL('image/jpeg'); //O resultado é um BASE64 de uma imagem.
 
-	if(document.getElementById('tabpadrao').classList.contains("ativo")){
-		var folder = funcao + document.querySelector("#rmAluno").value;
-		alert('Numero aluno: ' + folder);
+	if (funcao === 'A') {
+		if(document.getElementById('tabpadrao').classList.contains("ativo")){
+			var folder = funcao + document.querySelector("#rmAluno").value;
+			alert('Numero aluno: ' + folder);
+		} else {
+			var folder = funcao + document.querySelector("#cpfSeg").value;
+			alert('Numero Funcionario: ' + folder);
+		}
 	} else {
-		var folder = funcao + document.querySelector("#cpfSeg").value;
-		alert('Numero Funcionario: ' + folder);
+		var folder = funcao + JSON.parse(sessionStorage.getItem("codigo"));
 	}
+	alert(folder);
+	//alert(JSON.parse(sessionStorage.getItem("codigo")));
+	
 	//var folder = funcao + document.querySelector("#rmAluno").value;
 	document.querySelector("#base_img").value = dataURI;
 	sendSnapShot(dataURI, folder); //Gerar Imagem e Salvar Caminho no Banco
@@ -315,7 +352,15 @@ function sendSnapShot(base64, folder){
 			console.log(request);
 			if (request.status >= 200 && request.status < 400) {
 				//Colocar o caminho da imagem no SRC
-				var data = JSON.parse(request.responseText);
+				var data = JSON.parse(request.responseText).error;
+				alert(data);
+				if (data === "Usuário Já Cadastrado!") {
+					document.getElementById('second').style.display = 'none';
+					document.getElementById('active2').style.display = 'none';
+					window.setTimeout( function() {
+						window.location.reload();
+					  }, 1000);
+				}
 				
 				//verificar se houve erro
 				if(data.error){

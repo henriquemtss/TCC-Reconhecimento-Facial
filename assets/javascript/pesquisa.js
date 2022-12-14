@@ -39,6 +39,9 @@ buttonPesquisa.addEventListener("click", () => {
                 tr.appendChild(trStatus)
 
                 tbody.appendChild(tr)
+
+                document.getElementById('editar').style.display='block';
+                document.getElementById('reconhecer').style.display='block';
             } else {
                 window.alert("RM inválido!")
             }
@@ -48,3 +51,7 @@ buttonPesquisa.addEventListener("click", () => {
     }
 
 })
+
+function editar() {
+    sessionStorage.setItem("codigo", document.getElementById('consulta__pesquisa').value);
+}
