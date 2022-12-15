@@ -481,6 +481,7 @@ function verificarCPF(numeroCPF) {
 
 	console.log(v1);
 	console.log(v2);
+	
 	//Resultado
 	if (v1 === d1 && v2 === d2) {
 		console.log("Positivo");
@@ -522,8 +523,6 @@ document.getElementById("emailFuncionario").addEventListener("focusout", functio
 		(dominio.search(".")!=-1) &&
 		(dominio.indexOf(".") >=1)&&
 		(dominio.lastIndexOf(".") < dominio.length - 1)) {
-	//document.getElementById("mail").innerHTML="E-mail válido";
-	//document.getElementById("mail").style.display = 'block';
 	}
 	else if ((mail.length === 0)) {
 		document.getElementById("mail").style.display = 'none';
@@ -548,8 +547,6 @@ document.getElementById("emailAluno").addEventListener("focusout", function() {
 		(dominio.search(".")!=-1) &&
 		(dominio.indexOf(".") >=1)&&
 		(dominio.lastIndexOf(".") < dominio.length - 1)) {
-	//document.getElementById("mail2").innerHTML="E-mail válido";
-	//document.getElementById("mail2").style.display = 'block';
 	}
 	else if ((mail.length === 0)) {
 		document.getElementById("mail2").style.display = 'none';
