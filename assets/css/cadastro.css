@@ -128,7 +128,7 @@ body{
     display: grid;
     grid-template-columns: 40% 40%;
     width: 100%;
-    gap: 2rem 6rem;
+    gap: 1.5rem 6rem;
     justify-content: center;
 }
 
