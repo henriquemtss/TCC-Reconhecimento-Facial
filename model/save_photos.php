@@ -10,7 +10,7 @@
 	if (substr($replaced, -6, 1) === 'A' || substr($replaced, -6, 1) === 'B') {
 		$folder = substr($replaced, -5);
 	} else {
-		$folder = substr($replaced, -14);
+		$folder = substr($replaced, -11);
 	}
 	$data = explode(',',$replaced);
 
@@ -23,25 +23,25 @@
 	}
 
 	if(substr($replaced, -6, 1) === 'A' || 
-	substr($replaced, -15, 1) === 'A' ||
+	substr($replaced, -12, 1) === 'A' ||
 	substr($replaced, -6, 1) === 'B' || 
-	substr($replaced, -15, 1) === 'B'
+	substr($replaced, -12, 1) === 'B'
 	) {
 
 		//Tirar 3 fotos para cada pasta
 		if (!file_exists("../assets/lib/face-api/labels/{$folder}")) {
 			mkdir("../assets/lib/face-api/labels/{$folder}");
-		} else if(substr($replaced, -6, 1) === 'A' || substr($replaced, -15, 1) === 'A' AND $cont < 4) {
+		} else if(substr($replaced, -6, 1) === 'A' || substr($replaced, -12, 1) === 'A' AND $cont < 4) {
 			while (file_exists("../assets/lib/face-api/labels/{$folder}/{$name}.jpg")) {
 				$name++;
 			}
-		} else if (substr($replaced, -6, 1) === 'B' || substr($replaced, -15, 1) === 'B' AND $cont === 4) {
+		} else if (substr($replaced, -6, 1) === 'B' || substr($replaced, -12, 1) === 'B' AND $cont === 4) {
 			$cont = 1;
 			$mask = "*.jpg";
 			array_map("unlink", glob('../assets/lib/face-api/labels/'.$folder.'/'.$mask));
 			rmdir("../assets/lib/face-api/labels/{$folder}");
 			mkdir("../assets/lib/face-api/labels/{$folder}");
-		} else if (substr($replaced, -6, 1) === 'B' || substr($replaced, -15, 1) === 'B' AND $cont < 4) {
+		} else if (substr($replaced, -6, 1) === 'B' || substr($replaced, -12, 1) === 'B' AND $cont < 4) {
 			while (file_exists("../assets/lib/face-api/labels/{$folder}/{$name}.jpg")) {
 				$name++;
 			}

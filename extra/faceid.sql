@@ -50,7 +50,7 @@ create table CadastroFuncionario(
     nome varchar(140) not null,
     cpf varchar(14) not null primary key,
     email varchar(100) not null unique key,
-    funcao varchar(7) not null,
+    funcao varchar(50) not null,
     telefone varchar(15) not null
 );
 INSERT INTO CadastroFuncionario (nome, cpf, email, funcao, telefone) 

@@ -285,7 +285,7 @@
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
                     <button style="display: none;" class="reconhecimento-facial__button buttonCamera" type="button" id="active" onclick="loadCameraOne(active)">Primeira Foto</button>
                     <button style="display: none;" class="reconhecimento-facial__button buttonCamera" type="button" id="take" onclick="takeSnapShot(take)">Tirar foto</button>
-                    <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 20%; left: 3.4rem;" class="reconhecimento-facial__button buttonCamera" type="button" id="save" onclick="saveSnapShot(save, A)"> salvar</button>
+                    <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 20%; left: 3.4rem;" class="reconhecimento-facial__button buttonCamera" type="button" id="save" onclick="saveSnapShot(save, 'A')"> salvar</button>
                     <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 22%;" class="reconhecimento-facial__button buttonCamera" type="button" id="again" onclick="retakeSnapShot(again)"> Cancelar</button>
                 </form>
     
@@ -296,7 +296,7 @@
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
                     <button style="display: none;" class="reconhecimento-facial__button buttonCamera" type="button" id="active2" onclick="loadCameraOne(active2)">Segunda Foto</button>
                     <button style="display: none;" class="reconhecimento-facial__button buttonCamera" type="button" id="take2" onclick="takeSnapShot(take2)">Tirar foto</button>
-                    <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 20%; left: 3.4rem;" class="reconhecimento-facial__button buttonCamera" type="button" id="save2" onclick="saveSnapShot(save2, A)"> salvar</button>
+                    <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 20%; left: 3.4rem;" class="reconhecimento-facial__button buttonCamera" type="button" id="save2" onclick="saveSnapShot(save2, 'A')"> salvar</button>
                     <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 22%;" class="reconhecimento-facial__button buttonCamera" type="button" id="again2" onclick="retakeSnapShot(again2)"> Cancelar</button>
                 </form>
     
@@ -307,7 +307,7 @@
                     <textarea  type="text" id="base_img" name="base_img" style="display: none;"></textarea>
                     <button style="display: none;" class="reconhecimento-facial__button buttonCamera" type="button" id="active3" onclick="loadCameraOne(active3)">Terceira Foto</button>
                     <button style="display: none;" class="reconhecimento-facial__button buttonCamera" type="button" id="take3" onclick="takeSnapShot(take3)">Tirar foto</button>
-                    <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 20%; left: 3.4rem;" class="reconhecimento-facial__button buttonCamera" type="button" id="save3" onclick="saveSnapShot(save3, A)"> salvar</button>
+                    <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 20%; left: 3.4rem;" class="reconhecimento-facial__button buttonCamera" type="button" id="save3" onclick="saveSnapShot(save3, 'A')"> salvar</button>
                     <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 22%;" class="reconhecimento-facial__button buttonCamera" type="button" id="again3" onclick="retakeSnapShot(again3)"> Cancelar</button>
                 </form>
 			<!--Scripts-->
