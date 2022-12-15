@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="../assets/css/cadastro.css">
     <link rel="stylesheet" href="../assets/css/splash.css">
     <link rel="stylesheet" href="../assets/css/tab_cadastro.css">
+    <link rel="stylesheet" href="../assets/css/logout.css">
     <script src="../assets/javascript/tab.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/javascript/camera.js"></script>

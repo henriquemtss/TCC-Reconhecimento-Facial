@@ -254,35 +254,6 @@ body{
     color: red;
 }
 
-.logout{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #C4C4C4;
-    box-shadow: 0px 4px 4px 0px #00000040;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    transition:  .4s all;
-    position: absolute;
-    bottom: 35px;
-    left: 1250px;
-    top: 12px;
-}
-
-.logout:hover{
-    transform: scale(1.05);
-    cursor: pointer;
-}
-.logoutIcon{
-    width: 20px;
-}
-
-.logoutcon:hover{
-    transform: scale(1.05);
-    cursor: pointer;
-}
 
 @media screen and (max-width:1220px) {
     .container{

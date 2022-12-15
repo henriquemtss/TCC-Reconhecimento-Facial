@@ -4,12 +4,12 @@
         if (!isset($_SESSION)) {
             session_start();
         }
-        if(!isset($_SESSION['splash']))
-        {
-            $_SESSION['splash'] = true;
+        // if(!isset($_SESSION['splash']))
+        // {
+        //     $_SESSION['splash'] = true;
 
-            include('splash.php');
-        }
+        //     include('splash.php');
+        // }
         ?>
         <?php
         $pastas = [];
@@ -53,6 +53,7 @@
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/camera.css">
     <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="stylesheet" href="../assets/css/logout.css">
     <script src="../assets/javascript/clock.js" type="text/javascript"></script>
     <script src="../assets/javascript/registrar.js" type="text/javascript"></script>
 </head>
@@ -65,6 +66,12 @@
         <div id="clock" class="header_title">
           <h4 id="date-time"></h4>
         </div>
+
+        <form action="../Controller/LoginController.php" method="get">
+            <button name="logout" class="logout">
+                <img  class="logoutIcon" src="../assets/imagens/logout.png" alt="Sair do Sistema">
+            </button>   
+        </form>
     </header>
 
     <!--Conteúdo principal-->
