@@ -48,6 +48,12 @@
         <header class="header-cadastro">
             <img src="../assets/imagens/logo_icon.png" alt="Logo Sistema Face ID" class="header-cadastro__image">
             <h1 class="header__title">Registros</h1>
+
+            <a href="../index.php" target="_self">
+                <button class="logout">
+                    <img  class="logoutIcon" src="../assets/imagens/logout.png" alt="Sair do Sistema">
+                </button>   
+            </a>
         </header>
 
         <main class="container">
