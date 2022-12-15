@@ -206,7 +206,8 @@
                         <div class="area__dado">
                             <label for="cpfSeg" class="dado__label">CPF</label>
                             <input type="text" name="cpfFuncionario" class="inputFuncionario dado__input" placeholder="Digite seu CPF" id="cpfSeg">
-                            <span class="mensagem">Preencha o campo</span>
+                            <span class="mensagem" id="preencher">Preencha o campo</span>
+                            <span class="mensagem" id="invalido">CPF Inválido!</span>
                             <!--  -->
                             <?php
 

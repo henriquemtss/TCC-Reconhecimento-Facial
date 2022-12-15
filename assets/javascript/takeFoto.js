@@ -73,7 +73,6 @@ function editar() {
 // }
 
 // EM TESTE
-
 const alunos = document.querySelectorAll(".inputAluno")
 console.log(alunos)
 const funcionarios = document.querySelectorAll(".inputFuncionario")
@@ -87,7 +86,21 @@ enviarAluno.addEventListener('click', function (e) {
 })
 
 enviarFuncionario.addEventListener('click', function (e) {
-	verificacao(funcionarios)
+	var cpf = document.querySelector("#cpfSeg").value.replace(/\./g, '');
+	cpf = cpf.replace(/\-/g, '');
+	verificarCPF(cpf);
+	if (verificarCPF(cpf) === true) {
+		verificacao(funcionarios);
+		document.getElementById('preencher').style.display='none';
+		document.getElementById('invalido').style.display='none';
+		document.getElementById('cpfSeg').classList.remove("erro");
+	} else {
+		verificacao(funcionarios);
+		document.getElementById('invalido').style.color = 'red';
+		document.getElementById('preencher').style.display='none';
+		document.getElementById('invalido').style.display='block';
+		document.getElementById('cpfSeg').classList.add("erro");
+	}
 })
 
 const verificacao = (campos) => {
@@ -97,7 +110,7 @@ const verificacao = (campos) => {
 			console.log(campos[i])
 			campos[i].classList.remove("sucess")
 			campos[i].classList.add("erro")
-			verifica = false	
+			verifica = false
 		}
 		else {
 			campos[i].classList.remove("erro")
@@ -105,8 +118,7 @@ const verificacao = (campos) => {
 		}
 	}
 	console.log(verifica)
-	if (verifica) {
-		
+	if (verifica && verificarCPF(cpf)) {
 		reconhecer()
 	}
 }
@@ -329,7 +341,9 @@ function saveSnapShot(salvar, acao){
 			var folder = funcao + document.querySelector("#rmAluno").value;
 			alert('Numero aluno: ' + folder);
 		} else {
-			var folder = funcao + document.querySelector("#cpfSeg").value;
+			var folder = document.querySelector("#cpfSeg").value.replace(/\./g, '');
+			folder = folder.replace(/\-/g, '');
+			folder = funcao + folder;
 			alert('Numero Funcionario: ' + folder);
 		}
 	} else {
@@ -414,4 +428,57 @@ function desabilitarCameras() {
 		document.getElementById('take3').style.display = 'none';
 		document.getElementById('save3').style.display = 'none';
 		document.getElementById('again3').style.display = 'none';
+}
+
+function verificarCPF(numeroCPF) {
+	var cpf = numeroCPF;
+	var v1 = 0;
+	var v2 = 0;
+	var soma = 0;
+	var d1 = parseInt(cpf[9]);
+	var d2 = parseInt(cpf[10]);
+	console.log(d1);
+	console.log(d2);
+
+	//Verificando o Primeiro Digito
+	var x = 10;
+	for (var i = 0; i < 9; i++) {
+		v1 = cpf[i] * x;
+		x--;
+		soma += v1;
+	}
+	soma %= 11;
+	if (soma >= 2) {
+		v1 = 11 - soma;
+	} else {
+		v1 = 0;
+	}
+	
+
+	//Verificando o Segundo Digito
+	x = 11;
+	soma = 0;
+	for (var i = 0; i < 10; i++) {
+		v2 = cpf[i] * x;
+		x--;
+		soma += v2;
+	}
+	console.log(soma);
+	soma %= 11;
+	if (soma >= 2) {
+		v2 = 11 - soma;
+	} else {
+		v2 = 0;
+	}
+
+	console.log(v1);
+	console.log(v2);
+	//Resultado
+	if (v1 === d1 && v2 === d2) {
+		console.log("Positivo");
+		return true;
+	} else {
+		console.log("Negativo");
+		return false;
+	}
 }
