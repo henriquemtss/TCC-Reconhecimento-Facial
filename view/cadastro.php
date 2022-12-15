@@ -49,11 +49,11 @@
             <img src="../assets/imagens/logo_icon.png" alt="Logo Sistema Face ID" class="header-cadastro__image">
             <h1 class="header__title">Registros</h1>
 
-            <a href="../index.php" target="_self">
-                <button class="logout">
+            <form action="../Controller/LoginController.php" method="get">
+                <button name="logout" class="logout">
                     <img  class="logoutIcon" src="../assets/imagens/logout.png" alt="Sair do Sistema">
                 </button>   
-            </a>
+            </form>
         </header>
 
         <main class="container">

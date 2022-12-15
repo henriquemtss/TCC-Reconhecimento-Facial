@@ -23,10 +23,11 @@
         header("Location: ../index.php");
         
     }
+    //botao logout
     if (isset($_GET['logout'])) {
         unset($_GET['logout']);
         session_destroy();
-        header("Location: ../../View\index.php");
+        header("Location:../index.php");
         
     }
     
