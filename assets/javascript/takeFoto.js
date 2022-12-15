@@ -107,6 +107,7 @@ enviarFuncionario.addEventListener('click', function (e) {
 		document.getElementById('preencher').style.display='block';
 		verificacao(funcionarios);
 	}
+
 })
 
 const verificacao = (campos) => {
@@ -133,7 +134,6 @@ const verificacao = (campos) => {
 
 
 function reconhecer(){
-	console.log("epa");
 	if (
 		document.getElementById('tabpadrao').classList.contains("ativo")
 		) {
@@ -492,7 +492,70 @@ function verificarCPF(numeroCPF) {
 }
 
 document.getElementById("rmAluno").addEventListener("change", function() {
-	let v = parseInt(this.value);
-	if (v < 10000) this.value = 10000;
-	if (v > 99999) this.value = 99999;
-  });
+	let rm = parseInt(this.value);
+	if (rm < 10000) this.value = 10000;
+	if (rm > 99999) this.value = 99999;
+});
+
+document.getElementById("telFunc").addEventListener("focusout", function() {
+	let tel = (this.value).length;
+	if (tel < 14 && tel !== 0) {
+		document.getElementById("phone").style.color = 'red';
+		document.getElementById("phone").style.display = 'block';
+		document.getElementById("telFunc").focus();
+	} else {
+		document.getElementById("phone").style.display = 'none';
+	}
+});
+
+document.getElementById("emailFuncionario").addEventListener("focusout", function() {
+	let mail = (this.value);
+	usuario = mail.substring(0, mail.indexOf("@"));
+	dominio = mail.substring(mail.indexOf("@")+ 1, mail.length);
+
+	if ((usuario.length >=1) &&
+		(dominio.length >=3) &&
+		(usuario.search("@")==-1) &&
+		(dominio.search("@")==-1) &&
+		(usuario.search(" ")==-1) &&
+		(dominio.search(" ")==-1) &&
+		(dominio.search(".")!=-1) &&
+		(dominio.indexOf(".") >=1)&&
+		(dominio.lastIndexOf(".") < dominio.length - 1)) {
+	//document.getElementById("mail").innerHTML="E-mail válido";
+	//document.getElementById("mail").style.display = 'block';
+	}
+	else if ((mail.length === 0)) {
+		document.getElementById("mail").style.display = 'none';
+	} else {
+		document.getElementById("mail").innerHTML="<font color='red'>E-mail inválido </font>";
+		document.getElementById("mail").style.display = 'block';
+		document.getElementById("emailFuncionario").focus();
+	}
+});
+
+document.getElementById("emailAluno").addEventListener("focusout", function() {
+	let mail = (this.value);
+	usuario = mail.substring(0, mail.indexOf("@"));
+	dominio = mail.substring(mail.indexOf("@")+ 1, mail.length);
+
+	if ((usuario.length >=1) &&
+		(dominio.length >=3) &&
+		(usuario.search("@")==-1) &&
+		(dominio.search("@")==-1) &&
+		(usuario.search(" ")==-1) &&
+		(dominio.search(" ")==-1) &&
+		(dominio.search(".")!=-1) &&
+		(dominio.indexOf(".") >=1)&&
+		(dominio.lastIndexOf(".") < dominio.length - 1)) {
+	//document.getElementById("mail2").innerHTML="E-mail válido";
+	//document.getElementById("mail2").style.display = 'block';
+	}
+	else if ((mail.length === 0)) {
+		document.getElementById("mail2").style.display = 'none';
+	} else {
+		document.getElementById("mail2").innerHTML="<font color='red'>E-mail inválido </font>";
+		document.getElementById("mail2").style.display = 'block';
+		document.getElementById("emailAluno").focus();
+	}
+});
