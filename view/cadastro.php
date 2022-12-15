@@ -112,7 +112,7 @@
                         </div>
                         <div class="area__dado">
                             <label for="rmAluno" class="dado__label">RM</label>
-                            <input min="10000" max="99999" type="number" name="rmAluno" class="inputAluno dado__input" placeholder="Digite seu RM" id="rmAluno">
+                            <input min="10000" max="99999" type="number" onkeydown="return event.keyCode !== 69" name="rmAluno" class="inputAluno dado__input" placeholder="Digite seu RM" id="rmAluno">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php
