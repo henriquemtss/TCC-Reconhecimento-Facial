@@ -86,8 +86,9 @@ enviarAluno.addEventListener('click', function (e) {
 })
 
 enviarFuncionario.addEventListener('click', function (e) {
-	var cpf = document.querySelector("#cpfSeg").value.replace(/\./g, '');
-	cpf = cpf.replace(/\-/g, '');
+	var cpf = document.querySelector("#cpfSeg").value.replace(/\./g,/\-/g, '');
+	console.log(cpf);
+	//cpf = cpf.replace(/\-/g, '');
 	verificarCPF(cpf);
 	console.log(verificarCPF(cpf));
 	if (verificarCPF(cpf) === true) {
@@ -123,7 +124,9 @@ const verificacao = (campos) => {
 		}
 	}
 	console.log(verifica)
-	if (verifica && verificarCPF(cpf)) {
+	if (document.getElementById('tabpadrao').classList.contains("ativo") && verifica) {
+		reconhecer()
+	} else if (verifica && verificarCPF(document.querySelector("#cpfSeg").value.replace(/\./g,/\-/g, ''))) {
 		reconhecer()
 	}
 }
@@ -487,3 +490,9 @@ function verificarCPF(numeroCPF) {
 		return false;
 	}
 }
+
+document.getElementById("rmAluno").addEventListener("change", function() {
+	let v = parseInt(this.value);
+	if (v < 10000) this.value = 10000;
+	if (v > 99999) this.value = 99999;
+  });
