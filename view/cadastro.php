@@ -189,7 +189,7 @@
                     <form class="cadastro__area funcionarioForm"  action="../Controller/CadastroFuncionarioController.php" method="GET">
                         <div class="area__dado">
                             <label for="nomeSeg" class="dado__label">Nome</label>
-                            <input type="text" name="nomeFuncionario" class="inputFuncionario dado__input" placeholder="Digite seu Nome:" id="nomeSeg">
+                            <input type="text" name="nomeFuncionario" class="inputFuncionario dado__input" placeholder="Digite seu Nome" id="nomeSeg">
                             <span class="mensagem">Preencha o campo</span>
                             <!--  -->
                             <?php

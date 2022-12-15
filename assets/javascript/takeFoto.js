@@ -89,17 +89,22 @@ enviarFuncionario.addEventListener('click', function (e) {
 	var cpf = document.querySelector("#cpfSeg").value.replace(/\./g, '');
 	cpf = cpf.replace(/\-/g, '');
 	verificarCPF(cpf);
+	console.log(verificarCPF(cpf));
 	if (verificarCPF(cpf) === true) {
 		verificacao(funcionarios);
 		document.getElementById('preencher').style.display='none';
 		document.getElementById('invalido').style.display='none';
 		document.getElementById('cpfSeg').classList.remove("erro");
-	} else {
+	} else if (verificarCPF(cpf) === false && document.getElementById('cpfSeg').value !== "") {
 		verificacao(funcionarios);
 		document.getElementById('invalido').style.color = 'red';
 		document.getElementById('preencher').style.display='none';
 		document.getElementById('invalido').style.display='block';
 		document.getElementById('cpfSeg').classList.add("erro");
+	} else if (document.getElementById('cpfSeg') !== ""){
+		document.getElementById('invalido').style.display='none';
+		document.getElementById('preencher').style.display='block';
+		verificacao(funcionarios);
 	}
 })
 
