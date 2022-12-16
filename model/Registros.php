@@ -11,7 +11,9 @@ class Registro {
     
     function registrar($registro){
         $registroDAO = new RegistroDAO();
-        $registroDAO->registrar($registro);
+        if($registroDAO->registrar($registro)){
+            return true;
+        }
     }
 
     function verificarRegistrosAnteriores($rm){

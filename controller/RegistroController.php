@@ -75,8 +75,8 @@
     if(isset($_POST['Registrar'])){
         $registro = new Registro();
         if ($registro->verificarRegistrosAnteriores($_POST['Registrar'])) {
-            $registro->registrar($_POST['Registrar']);
+            $resultado = $registro->registrar($_POST['Registrar']);
             unset($_POST['Registrar']);
-            return true;
+            // return true;
         }
     }
