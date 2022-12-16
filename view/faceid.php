@@ -119,11 +119,11 @@
             <!--a href="registro.php" target="_self">
                 <button class="btn-registros">Registros</button>
             </a-->
-            <a href="" style="text-decoration: none; text-align: center" class="btn-registros" onClick="window.open('registroFaceid.php','Janela','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1000,height=630,left=150,top=15'); return false;">Registros</a>
+            <a href="" style="text-decoration: none; text-align: center" class="btn-registros" onclick="window.open('registroFaceid.php','Janela','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1000,height=630,left=150,top=15'); return false;">Registros</a>
             <!--a href="cadastro.php" target="_self">
                 <button class="btn-cadastrar">Cadastrar</button>
             </a-->
-            <a href="" style="text-decoration: none; text-align: center" class="btn-cadastrar" onClick="window.open('cadastro.php','Janela','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1000,height=630,left=150,top=15'); return false;">Cadastrar</a>
+            <a href="" style="text-decoration: none; text-align: center" class="btn-cadastrar" onclick="window.open('cadastro.php','Janela','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1000,height=630,left=150,top=15'); return false;">Cadastrar</a>
         </div>
         
         </article>

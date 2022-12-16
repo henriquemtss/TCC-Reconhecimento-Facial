@@ -65,5 +65,9 @@
     </form>
 
     <script  type="module" src="assets/javascript/login.js"></script>
+    <!-- botão flutuante whatsapp -->
+    <a href="https://api.whatsapp.com/send?phone=51000000000&text=olá" class="whatsapp-button" target="_blank" style="position: fixed;  right: 15px; bottom: 15px;">
+    <img src="https://i.ibb.co/VgSspjY/whatsapp-button.png" alt="botão whatsapp">
+    </a>
 </body>
 </html>

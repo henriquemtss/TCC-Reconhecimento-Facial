@@ -55,8 +55,8 @@
             </tr> -->
         </table>
 
-        <a href="" style="border-radius: 25px 25px 25px 25px; display: none;" class="consulta__botao" id="editar" onClick= "editar(); window.open('update.php','Janela','toolbar=no,location=0,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=550,height=630,left=150,top=15'); return false;">Atualizar Foto</a>
-        <a href="" style="border-radius: 25px 25px 25px 25px; display: none;" class="consulta__botao" id="reconhecer" onClick= "window.open('reconhecer.php','Janela','toolbar=no,location=0,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=550,height=400,left=150,top=15'); return false;">Reconhecer</a>
+        <a href="" style="border-radius: 25px 25px 25px 25px; display: none;" class="consulta__botao" id="editar" onclick= "editar(); window.open('update.php','Janela','toolbar=no,location=0,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=550,height=630,left=150,top=15'); return false;">Atualizar Foto</a>
+        <a href="" style="border-radius: 25px 25px 25px 25px; display: none;" class="consulta__botao" id="reconhecer" onclick= "window.open('reconhecer.php','Janela','toolbar=no,location=0,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=550,height=400,left=150,top=15'); return false;">Reconhecer</a>
 
         <a href="cadastro.php" target="_self">
         <button class="voltar">

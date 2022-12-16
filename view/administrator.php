@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="../assets/css/splash.css">
     <link rel="stylesheet" href="../assets/css/tab_cadastro.css">
     <link rel="stylesheet" href="../assets/css/logout.css">
+    <script src="../assets/javascript/manager.js" type="text/javascript"></script>
     <title>Reconhecimento facial - Cadastro</title>
 </head>
 <body>
@@ -55,19 +56,25 @@
 
             <section class="container__cadastro">
             <h1 class="header__title" style="margin-top: 5%;" >Conexão</h1>
-            <a href="cadastro.php" style="margin-top: 10%; margin-right: 12%; width: 60%; text-align: center" class="cadastro__consultar">Tela de Cadastro</a>
-            <a href="fadceid.php" style="margin-top: 20%; margin-right: 12%; width: 60%; text-align: center" class="cadastro__consultar">Reconhecimento Facil</a>
-            <a href="Consulta.php" style="margin-top: 30%; margin-right: 12%; width: 60%; text-align: center" class="cadastro__consultar">Consulta</a>
-            <a href="registro.php" style="margin-top: 40%; margin-right: 12%; width: 60%; text-align: center" class="cadastro__consultar">Registro</a>
+            <button style="margin-top: 10%; margin-right: 12%; width: 60%; text-align: center" class="cadastro__consultar" onclick="windowCad()">Tela de Cadastro</button>
+            <button style="margin-top: 20%; margin-right: 12%; width: 60%; text-align: center" class="cadastro__consultar" onclick="windowId()">Reconhecimento Facil</button>
+            <button style="margin-top: 30%; margin-right: 12%; width: 60%; text-align: center" class="cadastro__consultar" onclick="windowCon()">Consulta</button>
+            <button style="margin-top: 40%; margin-right: 12%; width: 60%; text-align: center" class="cadastro__consultar" onclick="windowReg()">Registro</button>
             <h1 class="header__title" style="margin-top: 50%;">Hardware</h1>
-            <button style="margin-bottom: 10%" class="reconhecimento-facial__button" type="button" id="recognize">Teste Camera</button>
+            <button style="margin-bottom: 10%" class="reconhecimento-facial__button" type="button" id="recognize" onclick="windowCam()">Teste Camera</button>
             <button style="background-color: black" class="reconhecimento-facial__button" type="button" id="recognize">Solicitar Suporte</button>
             </section>
+
             <section class="container__reconhecimento-facial">
+            <!--iframe src="cadastro.php" width="680" height="480" style="display: none" id="cad"></iframe-->
             <div class="area">
             <img style="width: 50%;" id='logoHolder' src="../assets/imagens/logo.png" alt="Logo Sistema Face ID" class="">
 		    </div>
             </section>
+            <!-- botão flutuante whatsapp -->
+            <a href="https://api.whatsapp.com/send?phone=51000000000&text=olá" class="whatsapp-button" target="_blank" style="position: fixed;  right: 15px; bottom: 15px;">
+            <img src="https://i.ibb.co/VgSspjY/whatsapp-button.png" alt="botão whatsapp">
+            </a>
 
         </main> 
 </body>
