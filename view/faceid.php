@@ -87,7 +87,7 @@
                     muted      
                         ></video>
                         <script src="../assets/lib/face-api/face-api.min.js"></script>
-                        <script src="../assets/javascript/api.js"></script>
+                        <!--script src="../assets/javascript/api.js"></script-->
             </div>
         </aside>
 
@@ -102,6 +102,9 @@
                 </div>
                 <div class="container__box">
                     <input type="text" class="box__input" name="rm" placeholder="RM:" id="rm" readonly>
+                </div>
+                <div class="container__box">
+                    <input type="text" class="box__input" name="rm" placeholder="RM:" id="rmMan" style="display: none">
                 </div>
                 <div class="container__box">
                     <input type="text" class="box__input" name="periodo" placeholder="Período:" id="periodo" readonly>
@@ -125,6 +128,8 @@
             </a-->
             <a href="" style="text-decoration: none; text-align: center" class="btn-cadastrar" onclick="window.open('cadastro.php','Janela','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1000,height=630,left=150,top=15'); return false;">Cadastrar</a>
         </div>
+        <button class="btn-cadastrar" style="width: 54%" id="manual" onclick="register()">Registro Manual</button>
+        <button class="btn-cadastrar" style="width: 54%; display: none" id="sendRm" onclick="registro('sendRm')">Enviar RM</button>
         
         </article>
 
