@@ -78,7 +78,6 @@
         function Cadastrar(){
             if($this->cadastroAlunoDAO->Cadastrar($this->rm, $this->nome, $this->email, $this->curso, $this->periodo)){
                 return true;
-                header("Location: ../view/cadastro.php");
             }
         }
 

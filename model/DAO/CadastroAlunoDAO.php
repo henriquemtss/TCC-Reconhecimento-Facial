@@ -16,7 +16,9 @@ class CadastroAlunoDAO{
                 $res->bindValue(':curso', $curso);
                 $res->bindValue(':periodo', $periodo);
                 $res->execute();
-                return true;
+                $_SESSION['msgCadastro'] = "Cadastro concluido!";
+                
+
 
             } catch (\Throwable $th) {
                 echo $th->getMessage();

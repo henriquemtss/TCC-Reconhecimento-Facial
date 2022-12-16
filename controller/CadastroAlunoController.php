@@ -16,7 +16,9 @@
     if ($cadastro->verificarCampos()) {
 
         if ($cadastro->verificarRMeEmail()) {
-            $cadastro->Cadastrar();
+            if($cadastro->Cadastrar()){
+                header("Location: ../view/cadastro.php");
+            }
         }
 
     }
