@@ -87,7 +87,7 @@
                     muted      
                         ></video>
                         <script src="../assets/lib/face-api/face-api.min.js"></script>
-                        <!--script src="../assets/javascript/api.js"></script-->
+                        <script src="../assets/javascript/api.js"></script>
             </div>
         </aside>
 

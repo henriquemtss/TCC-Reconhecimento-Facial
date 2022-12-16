@@ -19,6 +19,10 @@ if (API === 'api') {
   if (request.status >= 200 && request.status < 400) {
       console.log(request.responseText);
       if (JSON.parse(request.responseText).ok === 1) {
+        document.getElementById('rm').style.display = 'block';
+        document.getElementById('rmMan').style.display = 'none';
+        document.getElementById('manual').style.display = 'block';
+        document.getElementById('sendRm').style.display = 'none';
         alert("Registrado Com Sucesso!");
       }
       if(request.error){
