@@ -76,13 +76,17 @@
 
 
         function Cadastrar(){
-            $this->cadastroAlunoDAO->Cadastrar($this->rm, $this->nome, $this->email, $this->curso, $this->periodo);
+            if($this->cadastroAlunoDAO->Cadastrar($this->rm, $this->nome, $this->email, $this->curso, $this->periodo)){
+                return true;
+                header("Location: ../view/cadastro.php");
+            }
         }
 
         function verificarRMeEmail(){
             
             if ($this->cadastroAlunoDAO->verificarRMeEmail($this->rm, $this->email)) {
                 return true;
+                
             }
             
             

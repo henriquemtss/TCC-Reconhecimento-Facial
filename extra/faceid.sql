@@ -3,22 +3,6 @@ CREATE DATABASE  IF NOT EXISTS  FACEID;
 
 use FACEID;
 
-create table niveisContas(
-    id int not null primary key auto_increment,
-    nome varchar(20) not null
-);
-
-create table  Contas(
-    id int not null primary key auto_increment,
-    nome varchar(140) not null,
-    usuario varchar(140) not null unique key,
-    senha varchar(160) not null,
-    nivelConta int not null,
-    email varchar(150) not null unique key,
-    foreign key(nivelconta) references niveisContas(id)
-);
-
-
 create table CadastroAluno(
     nome varchar(140) not null,
     rm int(5) not null primary key check (rm > 0 and rm <= 99999 or rm = 1 ),
@@ -28,24 +12,6 @@ create table CadastroAluno(
     status varchar(10) not null default 'Ativo'
 );
 
--- Cadstro Para Evitar Erro Quando Nao Há Ninguem Na Camera
--- CADASTROS PARA TESTE -> ACRESCENTEM MAIS
-INSERT INTO CadastroAluno (nome, rm, email, curso, periodo) 
-VALUES
-('', 1, '', '', '');
-
--- CADASTROS PARA TESTE -> ACRESCENTEM MAIS
-INSERT INTO CadastroAluno (nome, rm, email, curso, periodo) 
-VALUES
-('Arnold Schwarzenegger', 12345, '2', 'Quimica', 'Manha'),
-('Neymar', 22222, '3', 'Administracao', 'Tarde'),
-('Henrique', 55555, '4', 'Desenvolvimento de Sistemas', 'Noturno'),
-('Marcinho', 77777, '5', 'Desenvolvimento de Sistemas', 'Noturno'),
-('Scarlett Johansson', 88888, '6', 'Vingadores', 'Noturno'),
-('Margot Robbie', 32154, '7', 'Nutricao', 'Noturno'),
-('Megan Fox', 65498, '8', 'Quimica', 'Matutino'),
-('Van Dame', 99999, '99999', 'Tecnico em Quimica', '1 Modulo - Tecnico');
-
 create table CadastroFuncionario(
     nome varchar(140) not null,
     cpf varchar(14) not null primary key,
@@ -53,18 +19,20 @@ create table CadastroFuncionario(
     funcao varchar(50) not null,
     telefone varchar(15) not null
 );
-INSERT INTO CadastroFuncionario (nome, cpf, email, funcao, telefone) 
-VALUES
-('', 1, '', '', '');
 
-INSERT INTO CadastroFuncionario (nome, cpf, email, funcao, telefone) 
-VALUES
-('Joao', 11144477735, 'joao@joao', 'zelador', '55123456789');
+create table niveisContas(
+    id int not null primary key auto_increment,
+    nome varchar(20) not null
+);
 
-create table registro (
-    rm int not null,
-    entradaSaida datetime not null,
-    foreign key(rm) references CadastroAluno(rm)
+create table  Contas(
+    id int not null primary key auto_increment,
+    nome varchar(140) not null,
+    usuario varchar(140) not null unique key,
+    senha varchar(250) not null,
+    nivelConta int not null,
+    email varchar(150) not null unique key,
+    foreign key(nivelconta) references niveisContas(id)
 );
 
 create table codigoLink(
@@ -74,20 +42,44 @@ create table codigoLink(
     emailCriptografado varchar(250)
 );
 
+create table registro (
+    rm int not null,
+    entradaSaida datetime not null,
+    foreign key(rm) references CadastroAluno(rm)
+);
+
+
+-- Cadstro Para Evitar Erro Quando Nao Há Ninguem Na Camera
+-- CADASTROS PARA TESTE -> ACRESCENTEM MAIS
+INSERT INTO CadastroAluno (nome, rm, email, curso, periodo) 
+VALUES
+('', 1, '', '', '');
+
+-- Cadstro Para Evitar Erro Quando Nao Há Ninguem Na Camera
+INSERT INTO CadastroFuncionario (nome, cpf, email, funcao, telefone) 
+VALUES
+('', 1, '', '', '');
+
 insert into niveisContas values
 (0, 'Administrador'), 
 (0, 'Seguranca'),
 (0, 'Secretaria');
--- (0, 'aluno');
+
+--
+
+-- CADASTROS PARA TESTE -> ACRESCENTEM MAIS
+INSERT INTO CadastroAluno (nome, rm, email, curso, periodo) 
+VALUES
+('Arnold Schwarzenegger', 55555, 'Arnold@gmail.com', 'Desenvolvimento de Sistemas', '3º Módulo - Técnico'),
+('Marcinho', 21577, 'Marcinho@gmail.com', 'Desenvolvimento de Sistemas', '3º Módulo - Técnico'),
+('Wesley Michael', 21808, 'Wesley@gmail.com', 'Desenvolvimento de Sistemas', '3º Módulo - Técnico'),
+('Victor Laguna Rodrigues', 21589, 'laguna@gmail.com', 'Desenvolvimento de Sistemas', '3º Módulo - Técnico');
 
 insert into Contas values(0,'admin', 'admin', '$2y$10$hxb5L22B/FJmZyLx.MM8JuJ8v7vXI1GjTMRva3LGgRdu5Ws8DtDo2', 1, 'testandoophpmaile@gmail.com');
-insert into Contas values(0,'seg', 'seg', '$2y$10$vsxlxcWN3TzqQXvfRvkgHuCKFiEam2pxtVfx4RWkFUPhOOXthId1u', 2, 'Email@teste');
-insert into Contas values(0,'sec', 'sec', '$2y$10$wPsVn9xYdkpYlztGS8Dmc.Irfm6HdjE23MjziUxAioJnH/6ds2poy', 3, 'Email@teste2');
+insert into Contas values(0,'seg', 'seg', '$2y$10$RgEB/nsG26qfUrDecEfdCudENT1pB0i.DqqgYGRM6jS2dHGsvPLte', 2, 'Email@teste');
+insert into Contas values(0,'sec', 'sec', '$2y$10$aJuKpOP8ncGl1n9du8GJneTkhI7Ni35PBkgmLAdXCdCNm8kpt7fgm', 3, 'Email@teste2');
 
-insert into cadastroaluno values('wes', 12345, 'wes@wes', 'nut', 'pr-modulo', default);
-insert into cadastroaluno values('Victor Laguna Rodrigues', 21589, 'laguna.vitorc@gmail.com', 'ds', 'seg-modulo', default);
-
-insert into registro values(12345, now());
-insert into registro values(12345, DATE_ADD(NOW(), interval +1 HOUR));
-insert into registro values(12345, DATE_SUB(NOW(), interval +1 HOUR));
+insert into registro values(21808, now());
+insert into registro values(21808, DATE_ADD(NOW(), interval +1 HOUR));
+insert into registro values(21808, DATE_SUB(NOW(), interval +1 HOUR));
 insert into registro values(21589, DATE_SUB(NOW(), interval +3 HOUR));
