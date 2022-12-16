@@ -19,17 +19,16 @@ if (API === 'api') {
   request.onload = function() {
   if (request.status >= 200 && request.status < 400) {
       console.log(request.responseText);
-      if (request.response != "") {
-        if (JSON.parse(request.responseText).ok === 1 && API === 'sendRm') {
+        if (JSON.parse(request.responseText) === false && API === 'sendRm') {
           document.getElementById('rm').style.display = 'block';
           document.getElementById('rmMan').style.display = 'none';
           document.getElementById('manual').style.display = 'block';
           document.getElementById('sendRm').style.display = 'none';
           alert("Registrado Com Sucesso!");
-        } else if (JSON.parse(request.responseText).ok === 1 && API === 'api') {
+        } else if (JSON.parse(request.responseText) === false && API === 'api') {
           alert("Registrado Com Sucesso!");
-        }        
-      }
+        } else {
+        }
       if(request.error){
           alert(request.error);
           return false;

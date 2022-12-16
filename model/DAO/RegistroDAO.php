@@ -19,9 +19,6 @@ class RegistroDAO{
         $res = $pdo->prepare($sql);
         $res->bindvalue(':replaced', $replaced);
         $res->execute();
-        
-        $array = array('ok' => 1);
-        echo json_encode($array, JSON_PRETTY_PRINT);
     }
 
     function verificarRegistrosAnteriores($rm){
@@ -30,6 +27,7 @@ class RegistroDAO{
         $res = $pdo->prepare($sql);
         $res->execute();
         $resul = $res->fetch(PDO::FETCH_ASSOC);
+        echo json_encode($resul, JSON_PRETTY_PRINT);
         return $resul;
     }
 }

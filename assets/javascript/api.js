@@ -140,10 +140,6 @@ cam.addEventListener('play', async () => {
             if (label != "unknown") {
                 nome = document.getElementById("nome").value;
                 if (document.getElementById('rm').value != "") {
-                    clearTimeout(time1);
-                    clearTimeout(time2);
-                    clearTimeout(time3);
-                    clearTimeout(time4);
                     console.log("Iniciando Tempo");
                         time1 = setTimeout(function(){
                             console.log("time1");
@@ -159,15 +155,28 @@ cam.addEventListener('play', async () => {
                         }, 3000);
                         time4 = setTimeout(function(){
                             console.log("time4");
-                            if (verName1 === verName2 && verName2 === verName3 && verName3 === verName1) {
-                                registro('api');                           
-                            } else {
-                                clearTimeout(time1);
-                                clearTimeout(time2);
-                                clearTimeout(time3);
-                                clearTimeout(time4);
+                            if (verName1 !== "") {
+                                if (verName1 === verName2 && verName2 === verName3 && verName3 === verName1) {
+                                    registro('api');
+                                    verName1 = "1";
+                                    verName2 = "2";
+                                    verName3 = "3";
+                                    clearTimeout(time1);
+                                    clearTimeout(time2);
+                                    clearTimeout(time3);
+                                    clearTimeout(time4);                         
+                                } else {
+                                    verName1 = "1";
+                                    verName2 = "2";
+                                    verName3 = "3";
+                                    clearTimeout(time1);
+                                    clearTimeout(time2);
+                                    clearTimeout(time3);
+                                    clearTimeout(time4);
+                                }                                
                             }
-                        }, 4000);
+                            
+                        }, 3000);
                         console.log(document.getElementById('rm').value)
                 }
             } else if (label == "unknown"){
@@ -175,11 +184,16 @@ cam.addEventListener('play', async () => {
                 clearTimeout(time1);
                 clearTimeout(time2);
                 clearTimeout(time3);
+                clearTimeout(time4);
             } else {
                 nome = "Necessário Recadastrar!";
                 clearTimeout(time1);
                 clearTimeout(time2);
                 clearTimeout(time3);
+                clearTimeout(time4); 
+                verName1 = "1";
+                verName2 = "2";
+                verName3 = "3";
             }
             //
 

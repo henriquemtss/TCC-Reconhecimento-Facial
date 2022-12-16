@@ -12,6 +12,8 @@ class Registro {
     function registrar($registro){
         $registroDAO = new RegistroDAO();
         if($registroDAO->registrar($registro)){
+            $array = array('ok' => 1);
+            echo json_encode($array, JSON_PRETTY_PRINT);
             return true;
         }
     }
