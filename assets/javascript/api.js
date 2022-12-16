@@ -23,7 +23,7 @@ const startVideo = () => {
 }
 
 const loadLabels = () => {
-    alert(sessionStorage.getItem("folders"));
+    //alert(sessionStorage.getItem("folders"));
     const labels = JSON.parse(sessionStorage.getItem("folders"));
     return Promise.all(labels.map(async label => {
         const descriptions = []

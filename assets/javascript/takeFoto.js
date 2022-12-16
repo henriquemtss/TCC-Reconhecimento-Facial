@@ -86,9 +86,9 @@ enviarAluno.addEventListener('click', function (e) {
 })
 
 enviarFuncionario.addEventListener('click', function (e) {
-	var cpf = document.querySelector("#cpfSeg").value.replace(/\./g,/\-/g, '');
+	var cpf = document.querySelector("#cpfSeg").value.replace(/\./g, '');
+	cpf = cpf.replace(/\-/g, '');
 	console.log(cpf);
-	//cpf = cpf.replace(/\-/g, '');
 	verificarCPF(cpf);
 	console.log(verificarCPF(cpf));
 	if (verificarCPF(cpf) === true) {
@@ -125,9 +125,11 @@ const verificacao = (campos) => {
 		}
 	}
 	console.log(verifica)
+	var cpf = document.querySelector("#cpfSeg").value.replace(/\./g, '');
+	cpf = cpf.replace(/\-/g, '');
 	if (document.getElementById('tabpadrao').classList.contains("ativo") && verifica) {
 		reconhecer()
-	} else if (verifica && verificarCPF(document.querySelector("#cpfSeg").value.replace(/\./g,/\-/g, ''))) {
+	} else if (verifica && verificarCPF(cpf)) {
 		reconhecer()
 	}
 }
@@ -333,7 +335,7 @@ function saveSnapShot(salvar, acao){
 			document.getElementById('take3').style.display = 'none';
 			document.getElementById('save3').style.display = 'none';
 			document.getElementById('again3').style.display = 'none';
-			alert("Fotos Atualziadas Com Sucesso");
+			alert("Fotos Atualizadas Com Sucesso");
 			window.open('','_parent',''); 
     		window.close();
 			//Criando o JPG
@@ -347,17 +349,17 @@ function saveSnapShot(salvar, acao){
 	if (funcao === 'A') {
 		if(document.getElementById('tabpadrao').classList.contains("ativo")){
 			var folder = funcao + document.querySelector("#rmAluno").value;
-			alert('Numero aluno: ' + folder);
+			//alert('Numero aluno: ' + folder);
 		} else {
 			var folder = document.querySelector("#cpfSeg").value.replace(/\./g, '');
 			folder = folder.replace(/\-/g, '');
 			folder = funcao + folder;
-			alert('Numero Funcionario: ' + folder);
+			//alert('Numero Funcionario: ' + folder);
 		}
 	} else {
 		var folder = funcao + JSON.parse(sessionStorage.getItem("codigo"));
 	}
-	alert(folder);
+	//alert(folder);
 	//alert(JSON.parse(sessionStorage.getItem("codigo")));
 	
 	//var folder = funcao + document.querySelector("#rmAluno").value;
@@ -375,7 +377,7 @@ function sendSnapShot(base64, folder){
 			if (request.status >= 200 && request.status < 400) {
 				//Colocar o caminho da imagem no SRC
 				var data = JSON.parse(request.responseText).error;
-				alert(data);
+				//alert(data);
 				if (data === "Usuário Já Cadastrado!") {
 					document.getElementById('second').style.display = 'none';
 					document.getElementById('active2').style.display = 'none';
@@ -385,8 +387,8 @@ function sendSnapShot(base64, folder){
 				}
 				
 				//verificar se houve erro
-				if(data.error){
-					alert(data.error);
+				if(request.error){
+					alert(request.error);
 					return false;
 				}
 			} else {

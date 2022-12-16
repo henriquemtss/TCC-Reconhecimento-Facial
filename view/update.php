@@ -22,12 +22,8 @@
     <link rel="stylesheet" href="../assets/css/variaveis.css">
     <link rel="stylesheet" href="../assets/css/header-cadastro.css">
     <link rel="stylesheet" href="../assets/css/cadastro.css">
-    <link rel="stylesheet" href="../assets/css/splash.css">
-    <link rel="stylesheet" href="../assets/css/tab_cadastro.css">
-    <script src="../assets/javascript/tab.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/javascript/camera.js"></script>
-    <link rel="stylesheet" href="../assets/css/popup.css">
     <title>Reconhecimento facial - Atualização de Foto</title>
 </head>
 <body>
@@ -72,7 +68,7 @@
                     <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 22%;" class="reconhecimento-facial__button buttonCamera" type="button" id="again3" onclick="retakeSnapShot(again3)"> Cancelar</button>
                 </form>
 			<!--Scripts-->
-			<script src="../assets/javascript/takeFoto.js"></script>
+			<script src="../assets/javascript/updateFoto.js"></script>
 		    </div>
             </section>
 
