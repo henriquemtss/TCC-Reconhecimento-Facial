@@ -17,7 +17,7 @@ if (API === 'api') {
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
   request.onload = function() {
   if (request.status >= 200 && request.status < 400) {
-      console.log(JSON.parse(request.responseText));
+      console.log(request.responseText);
       if (JSON.parse(request.responseText).ok === 1) {
         alert("Registrado Com Sucesso!");
       }
