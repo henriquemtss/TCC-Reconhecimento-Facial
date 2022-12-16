@@ -1,12 +1,24 @@
 function register() {
-  document.getElementById('rm').style.display = 'none';
-  document.getElementById('rmMan').style.display = 'block';
-  document.getElementById("rmMan").focus();
-  document.getElementById('manual').style.display = 'none';
-  document.getElementById('sendRm').style.display = 'block';
+  var time =null;
+  document.getElementById('cam').pause();
+  document.getElementById('cam').src = "";
+  document.getElementById('cam').srcObject.getTracks()[0].stop();
+  console.log("Vid off");
+  time = setTimeout(function(){
+    document.getElementById('rm').style.display = 'none';
+    document.getElementById('nome').style.display = 'none';
+    document.getElementById('periodo').style.display = 'none';
+    document.getElementById('curso').style.display = 'none';
+    document.getElementById('rmMan').style.display = 'block';
+    document.getElementById("rmMan").focus();
+    document.getElementById('manual').style.display = 'none';
+    document.getElementById('sendRm').style.display = 'block';
+}, 1000);
+  
 }
 
 function registro(API) {
+
 if (API === 'api') {
   var rm = document.getElementById('rm').value;
 } else if (API === 'sendRm') {
@@ -21,9 +33,31 @@ if (API === 'api') {
       console.log(request.responseText);
         if (JSON.parse(request.responseText) === false && API === 'sendRm') {
           document.getElementById('rm').style.display = 'block';
+          document.getElementById('nome').style.display = 'block';
+          document.getElementById('periodo').style.display = 'block';
+          document.getElementById('curso').style.display = 'block';
           document.getElementById('rmMan').style.display = 'none';
           document.getElementById('manual').style.display = 'block';
           document.getElementById('sendRm').style.display = 'none';
+          navigator.mediaDevices.enumerateDevices()
+          .then(devices => {
+              console.log(devices)
+              if (Array.isArray(devices)) {
+                 
+                  devices.forEach(device => {
+                      if(device.kind == 'videoinput'){
+                          console.log(device);                        
+                          navigator.getUserMedia(
+                              {video: {
+                                  deviceId: device.deviceId,
+                              }},
+                              stream => cam.srcObject = stream,
+                              error => console.log(error)
+                          )
+                      }
+                  })
+              }
+          })
           alert("Registrado Com Sucesso!");
         } else if (JSON.parse(request.responseText) === false && API === 'api') {
           alert("Registrado Com Sucesso!");

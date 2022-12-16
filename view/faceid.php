@@ -79,7 +79,7 @@
         <!--Tag aside para definir o lado da página onde ficará a câmera-->
         <aside class="main__camera">
             <div class="area">
-                <video 
+                <video
                     autoplay
                     id="cam"
                     width="480"
@@ -92,7 +92,7 @@
         </aside>
 
         <!--Tag semântica para definir o conteúdo independente do outro lado onde ficará as infos do aluno-->
-        <article class="main__cadastro">
+        <article class="main__cadastro" id="sumir">
             <div class="conteudo-right"></div>
 
                 <!--<div class="profile-right"> </div>-->
@@ -132,8 +132,6 @@
         <button class="btn-cadastrar" style="width: 54%; display: none" id="sendRm" onclick="registro('sendRm')">Enviar RM</button>
         
         </article>
-
     </main>
-
 </body>
 </html>
