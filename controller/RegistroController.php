@@ -77,5 +77,6 @@
         if ($registro->verificarRegistrosAnteriores($_POST['Registrar'])) {
             $registro->registrar($_POST['Registrar']);
             unset($_POST['Registrar']);
+            return true;
         }
     }
