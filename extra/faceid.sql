@@ -11,7 +11,7 @@ create table niveisContas(
 create table  Contas(
     id int not null primary key auto_increment,
     nome varchar(140) not null,
-    usuario varchar(140) not null,
+    usuario varchar(140) not null unique key,
     senha varchar(160) not null,
     nivelConta int not null,
     email varchar(150) not null unique key,
