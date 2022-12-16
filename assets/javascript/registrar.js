@@ -12,18 +12,23 @@ if (API === 'api') {
 } else if (API === 'sendRm') {
   var rm = document.getElementById('rmMan').value;
 }
+  //alert(rm);
   var request = new XMLHttpRequest();
   request.open('POST', '../controller/RegistroController.php', true);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
   request.onload = function() {
   if (request.status >= 200 && request.status < 400) {
       console.log(request.responseText);
-      if (JSON.parse(request.responseText).ok === 1) {
-        document.getElementById('rm').style.display = 'block';
-        document.getElementById('rmMan').style.display = 'none';
-        document.getElementById('manual').style.display = 'block';
-        document.getElementById('sendRm').style.display = 'none';
-        alert("Registrado Com Sucesso!");
+      if (request.response != "") {
+        if (JSON.parse(request.responseText).ok === 1 && API === 'sendRm') {
+          document.getElementById('rm').style.display = 'block';
+          document.getElementById('rmMan').style.display = 'none';
+          document.getElementById('manual').style.display = 'block';
+          document.getElementById('sendRm').style.display = 'none';
+          alert("Registrado Com Sucesso!");
+        } else if (JSON.parse(request.responseText).ok === 1 && API === 'api') {
+          alert("Registrado Com Sucesso!");
+        }        
       }
       if(request.error){
           alert(request.error);

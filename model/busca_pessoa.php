@@ -10,6 +10,7 @@
 		die("{\"error\": \" Não Localizado!\"}");
 	} else {
 		$replaced = str_replace(" ","+",$_POST['RM']); //O envio do dado pelo XMLHttpRequest tende a trocar o + por espaço, por isso a necessidade de substituir.
+		//die("{\"error\": \" $replaced\"}");
 		if (strlen($replaced) < 11) {
 			//die("{\"error\": \" strlen($replaced)\"}");
 			$sql = "SELECT *

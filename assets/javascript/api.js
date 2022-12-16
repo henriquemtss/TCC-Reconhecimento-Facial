@@ -85,31 +85,37 @@ cam.addEventListener('play', async () => {
 		    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 		    request.onload = function() {
 			if (request.status >= 200 && request.status < 400) {
-                console.log(request.responseText);
+                //console.log(request.responseText);
                 var nome = JSON.parse(request.responseText);
-                document.getElementById("nome").value = JSON.parse(request.responseText).nome;
-                document.getElementById("periodo").style.display = 'block';
-                document.getElementById("curso").style.display = 'block';
-                document.getElementById('rm').style.display = 'block';
-                document.getElementById("funcao").style.display = 'none';
-                document.getElementById("periodo").value = JSON.parse(request.responseText).periodo;
-                document.getElementById("curso").value = JSON.parse(request.responseText).curso;
-                if (JSON.parse(request.responseText).rm > 1 && JSON.parse(request.responseText).rm < 100000) {
-                    document.getElementById("rm").value = JSON.parse(request.responseText).rm;
-                } else if (JSON.parse(request.responseText).cpf > 99999) {
-                    document.getElementById("funcao").style.display = 'block';
-                    document.getElementById("funcao").value = JSON.parse(request.responseText).funcao;
-                    document.getElementById('periodo').style.display = 'none';
-                    document.getElementById('rm').style.display = 'none';
-                    document.getElementById('curso').style.display = 'none';
+                if (request.responseText !== null) {
+                    //console.log("not null");
+                    document.getElementById("nome").value = JSON.parse(request.responseText).nome;
+                    document.getElementById("periodo").style.display = 'block';
+                    document.getElementById("curso").style.display = 'block';
+                    document.getElementById('rm').style.display = 'block';
+                    document.getElementById("funcao").style.display = 'none';
+                    document.getElementById("periodo").value = JSON.parse(request.responseText).periodo;
+                    document.getElementById("curso").value = JSON.parse(request.responseText).curso;
+                    if (JSON.parse(request.responseText).rm > 1 && JSON.parse(request.responseText).rm < 100000) {
+                        document.getElementById("rm").value = JSON.parse(request.responseText).rm;
+                    } else if (JSON.parse(request.responseText).cpf > 99999) {
+                        document.getElementById("funcao").style.display = 'block';
+                        document.getElementById("funcao").value = JSON.parse(request.responseText).funcao;
+                        document.getElementById('periodo').style.display = 'none';
+                        document.getElementById('rm').style.display = 'none';
+                        document.getElementById('curso').style.display = 'none';
+                    } else {
+                        document.getElementById("rm").value = ""
+                    }
+                    
+                    if(nome.error){
+                        alert(nome.error);
+                        return false;
+                    }
                 } else {
-                    document.getElementById("rm").value = ""
+                    label = "";
                 }
                 
-				if(nome.error){
-					alert(nome.error);
-					return false;
-			    }
 			} else {
 				alert( "Erro ao localizar. Tipo:" + request.status );
 			}
@@ -124,22 +130,56 @@ cam.addEventListener('play', async () => {
                 request.send("RM="+1);
             }
 
-            time = null;
+            time1 = null;
+            time2 = null;
+            time3 = null;
+            time4 = null;
+            verName1 = "1";
+            verName2 = "2";
+            verName3 = "3";
             if (label != "unknown") {
                 nome = document.getElementById("nome").value;
                 if (document.getElementById('rm').value != "") {
-                    clearTimeout(time);
-                        time = setTimeout(function(){
-                            registro();
-                            }, 3000);
+                    clearTimeout(time1);
+                    clearTimeout(time2);
+                    clearTimeout(time3);
+                    clearTimeout(time4);
+                    console.log("Iniciando Tempo");
+                        time1 = setTimeout(function(){
+                            console.log("time1");
+                            verName1 = document.getElementById('rm').value;
+                        }, 1000);
+                        time2 = setTimeout(function(){
+                            console.log("time2");
+                            verName2 = document.getElementById('rm').value;
+                        }, 2000);
+                        time3 = setTimeout(function(){
+                            console.log("time3");
+                            verName3 = document.getElementById('rm').value;
+                        }, 3000);
+                        time4 = setTimeout(function(){
+                            console.log("time4");
+                            if (verName1 === verName2 && verName2 === verName3 && verName3 === verName1) {
+                                registro('api');                           
+                            } else {
+                                clearTimeout(time1);
+                                clearTimeout(time2);
+                                clearTimeout(time3);
+                                clearTimeout(time4);
+                            }
+                        }, 4000);
                         console.log(document.getElementById('rm').value)
                 }
             } else if (label == "unknown"){
                 nome = "Não Encontrado";
-                clearTimeout(time)
+                clearTimeout(time1);
+                clearTimeout(time2);
+                clearTimeout(time3);
             } else {
-                nome = "Aguardando Rosto...";
-                clearTimeout(time)
+                nome = "Necessário Recadastrar!";
+                clearTimeout(time1);
+                clearTimeout(time2);
+                clearTimeout(time3);
             }
             //
 
