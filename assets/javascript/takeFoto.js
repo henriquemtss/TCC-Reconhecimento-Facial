@@ -379,6 +379,7 @@ function sendSnapShot(base64, folder){
 				var data = JSON.parse(request.responseText).error;
 				//alert(data);
 				if (data === "Usuário Já Cadastrado!") {
+					alert(data);
 					document.getElementById('second').style.display = 'none';
 					document.getElementById('active2').style.display = 'none';
 					window.setTimeout( function() {
@@ -525,8 +526,8 @@ document.getElementById("emailFuncionario").addEventListener("focusout", functio
 		(dominio.search(".")!=-1) &&
 		(dominio.indexOf(".") >=1)&&
 		(dominio.lastIndexOf(".") < dominio.length - 1)) {
-	}
-	else if ((mail.length === 0)) {
+		document.getElementById("mail").style.display = 'none';
+	} else if ((mail.length === 0)) {
 		document.getElementById("mail").style.display = 'none';
 	} else {
 		document.getElementById("mail").innerHTML="<font color='red'>E-mail inválido </font>";
@@ -549,6 +550,7 @@ document.getElementById("emailAluno").addEventListener("focusout", function() {
 		(dominio.search(".")!=-1) &&
 		(dominio.indexOf(".") >=1)&&
 		(dominio.lastIndexOf(".") < dominio.length - 1)) {
+		document.getElementById("mail2").style.display = 'none';
 	}
 	else if ((mail.length === 0)) {
 		document.getElementById("mail2").style.display = 'none';
