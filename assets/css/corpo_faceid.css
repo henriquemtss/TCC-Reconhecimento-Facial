@@ -65,7 +65,7 @@ main{
 }
 
 .buttons{
-    margin-top: .5rem;
+    margin-top: 4rem;
     display: flex;
     gap: .5rem;
     width: 100%;

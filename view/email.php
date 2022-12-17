@@ -8,12 +8,20 @@
     <link rel="stylesheet" href="../assets/css/variaveis.css">
     <link rel="stylesheet" href="../assets/css/corpo.css">
     <link rel="stylesheet" href="../assets/css/recuperacao.css">
+    <link rel="stylesheet" href="../assets/css/logout.css">
     <script src="../assets/javascript/emailRec.js"></script>
     <title>Reconhecimento facial - Recuperação de E-mail </title>
 </head>
 
 <body>
     
+    <header>
+    <form action="../Controller/LoginController.php" method="get">
+            <button name="logout" class="logout">
+                <img  class="logoutIcon" src="../assets/imagens/logout.png" alt="Sair do Sistema">
+            </button>   
+        </form>
+    </header>
     <main>
     <img src="../assets/imagens/logo.png" alt="" srcset="">
         <div class="container">
