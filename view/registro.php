@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="../assets/fontes/PTSans-Regular.ttf">
 
-    <title>Registro de horário</title>
+    <title>Reconhecimento facial - Registro de horário</title>
 </head>
 <body>
 

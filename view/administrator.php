@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="../assets/css/tab_cadastro.css">
     <link rel="stylesheet" href="../assets/css/logout.css">
     <script src="../assets/javascript/manager.js" type="text/javascript"></script>
-    <title>Reconhecimento facial - Cadastro</title>
+    <title>Reconhecimento facial - Administrador</title>
 </head>
 <body>
         <?php
@@ -47,9 +47,11 @@
             <img src="../assets/imagens/logo_icon.png" alt="Logo Sistema Face ID" class="header-cadastro__image">
             <h1 class="header__title">Teste de Funcionalidades</h1>
 
-                <button name="logout" class="logout">
-                    <img  class="logoutIcon" src="../assets/imagens/logout.png" alt="Sair do Sistema">
-                </button>
+            <form action="../Controller/LoginController.php" method="get">
+            <button name="logout" class="logout">
+                <img  class="logoutIcon" src="../assets/imagens/logout.png" alt="Sair do Sistema">
+            </button>   
+            </form>
         </header>
 
         <main class="container">

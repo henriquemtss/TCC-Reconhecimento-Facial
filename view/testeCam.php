@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../assets/css/variaveis.css">
     <link rel="stylesheet" href="../assets/css/header-cadastro.css">
     <link rel="stylesheet" href="../assets/css/cadastro.css">
-    <title>Reconhecimento facial - Atualização de Foto</title>
+    <title>Reconhecimento facial - Camera</title>
 
     <script>
 	function loadCameraOne(ativar){

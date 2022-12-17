@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../assets/css/variaveis.css">
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/consulta.css">
-    <title>FaceID - Consulta</title>
+    <title>Reconhecimento facial - Consulta</title>
 </head>
 <body>
     <!--Cabeçalho da página-->

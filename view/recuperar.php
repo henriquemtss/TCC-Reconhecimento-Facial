@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="../assets/css/corpo.css">
     <link rel="stylesheet" href="../assets/css/recuperacao.css">
 
-    <title>E-mail de recuperação</title>
+    <title>Reconhecimento facial - recuperação Senha</title>
 </head>
 
 <body>

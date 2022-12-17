@@ -42,12 +42,13 @@ create table codigoLink(
     emailCriptografado varchar(250)
 );
 
+drop table registro;
+
 create table registro (
     rm int not null,
     entradaSaida datetime not null,
     foreign key(rm) references CadastroAluno(rm)
 );
-
 
 -- Cadstro Para Evitar Erro Quando Nao Há Ninguem Na Camera
 -- CADASTROS PARA TESTE -> ACRESCENTEM MAIS

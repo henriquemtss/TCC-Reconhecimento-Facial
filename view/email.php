@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../assets/css/variaveis.css">
     <link rel="stylesheet" href="../assets/css/corpo.css">
     <link rel="stylesheet" href="../assets/css/recuperacao.css">
-
-    <title>E-mail de recuperação</title>
+    <script src="../assets/javascript/emailRec.js"></script>
+    <title>Reconhecimento facial - Recuperação de E-mail </title>
 </head>
 
 <body>
@@ -17,15 +17,18 @@
     <main>
     <img src="../assets/imagens/logo.png" alt="" srcset="">
         <div class="container">
-        <h1>Digite um E-mail de recuperação</h1>
+        <h1>Digite um E-mail para recuperação</h1>
 
         <form action="../Controller/LoginController.php" method="get">
             <div class="animation">
-                <input type="text" name="emailRecuperacao" class="inputEmail">
+                <input type="text" name="emailRecuperacao" class="inputEmail" id="emailRecuperar">
             </div>
-
-            <input type="submit" name="enviarEmail" value="Enviar" class="enviar">
+            
+            <input style="display: none"  type="submit" name="enviarEmail" value="Enviar" class="enviar" id="envEmail">
+            
         </form>
+            <button id="eRec" type="submit" name="enviarEmail" class="enviar" onclick="emailVer()">Confirmar</button>
+            <span style="width: 100%; height: 10px;" class="mensagem" id = "mail3" value=empty></span>
         </div>
         
     </main>

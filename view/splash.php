@@ -20,6 +20,7 @@
     <script type="text/javascript" src="../assets/javascript/popup.js"></script>
     <script type="text/javascript" src="../assets/javascript/camera.js"></script>
     <link rel="stylesheet" href="../assets/css/popup.css">
+    <title>Reconhecimento facial - Welcome</title>
 </head>
 <body>
 <div class="splash">

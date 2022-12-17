@@ -26,7 +26,7 @@ class ContasDAO{
                 
                 // session_set_cookie_params(0);
                 if ($conta['nivelConta'] == 1) {
-                    return header("Location: ../view/cadastro.php");
+                    return header("Location: ../view/administrator.php");
                 }
                 if ($conta['nivelConta'] == 2) {
                     return header("Location: ../view/faceid.php");
