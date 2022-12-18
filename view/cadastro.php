@@ -301,8 +301,7 @@
                     <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 20%; left: 3.4rem;" class="reconhecimento-facial__button buttonCamera" type="button" id="save" onclick="saveSnapShot(save, 'A')"> salvar</button>
                     <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 22%;" class="reconhecimento-facial__button buttonCamera" type="button" id="again" onclick="retakeSnapShot(again)"> Cancelar</button>
                 </form>
-                <img src="anatomia.png" alt="Posicao Anatomica" style = "position: absolute; width: 35%; margin-top: 70px; display:none" id="posAn1">
-    
+                <img src="../assets/imagens/faceidFrontal.png" alt="Posicao Anatomica" style = "position: absolute; width: 35%; margin-top: 70px; display:none" id="posAn1">
             <canvas id='canvas2' style="display: none;"></canvas>
                 <video autoplay="true" id="second" style="height: 300px; width: 400px; display: none; background-color:black;">
                 </video>
@@ -313,7 +312,7 @@
                     <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 20%; left: 3.4rem;" class="reconhecimento-facial__button buttonCamera" type="button" id="save2" onclick="saveSnapShot(save2, 'A')"> salvar</button>
                     <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 22%;" class="reconhecimento-facial__button buttonCamera" type="button" id="again2" onclick="retakeSnapShot(again2)"> Cancelar</button>
                 </form>
-                <img src="anatomia.png" alt="Posicao Anatomica" style = "position: absolute; width: 35%; margin-top: 105px; display:none" id="posAn2">
+                <img src="../assets/imagens/faceidRigth.png" alt="Posicao Anatomica" style = "position: absolute; width: 35%; margin-top: 105px; display:none" id="posAn2">
     
             <canvas id='canvas3' style="display: none;"></canvas>
                 <video autoplay="true" id="third" style="height: 300px; width: 400px; display: none; background-color:black;">
@@ -325,7 +324,7 @@
                     <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 20%; left: 3.4rem;" class="reconhecimento-facial__button buttonCamera" type="button" id="save3" onclick="saveSnapShot(save3, 'A')"> salvar</button>
                     <button style="width: 30%; background-color: #3D4B56; padding-top: 5px; display: none; margin-left: 22%;" class="reconhecimento-facial__button buttonCamera" type="button" id="again3" onclick="retakeSnapShot(again3)"> Cancelar</button>
                 </form>
-                <img src="anatomia.png" alt="Posicao Anatomica" style = "position: absolute; width: 35%; margin-top: 140px; display:none" id="posAn3">
+                <img src="../assets/imagens/faceidLeft.png" alt="Posicao Anatomica" style = "position: absolute; width: 35%; margin-top: 140px; display:none" id="posAn3">
                 
 			<!--Scripts-->
 			<script src="../assets/javascript/takeFoto.js"></script>

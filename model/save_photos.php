@@ -36,7 +36,7 @@
 				$name++;
 			}
 		} else if (substr($replaced, -6, 1) === 'B' || substr($replaced, -12, 1) === 'B' AND $cont === 4) {
-			$cont = 1;
+			$cont=1;
 			$mask = "*.jpg";
 			array_map("unlink", glob('../assets/lib/face-api/labels/'.$folder.'/'.$mask));
 			rmdir("../assets/lib/face-api/labels/{$folder}");
@@ -54,7 +54,7 @@
 	$path = "../assets/lib/face-api/labels/{$folder}/{$name}.jpg";	
 		file_put_contents($path, base64_decode(trim($data[1])));
 
-		$array = array('ok' => 1);
+		$array = array('ok' => $cont);
         echo json_encode($array, JSON_PRETTY_PRINT);
 		//die("{\"error\": \" $cont\"}");	
 ?>
