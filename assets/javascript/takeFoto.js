@@ -527,11 +527,18 @@ document.getElementById("emailFuncionario").addEventListener("focusout", functio
 		(dominio.indexOf(".") >=1)&&
 		(dominio.lastIndexOf(".") < dominio.length - 1)) {
 		document.getElementById("mail").style.display = 'none';
+		document.getElementById("recognize2").disabled = false;
 	} else if ((mail.length === 0)) {
 		document.getElementById("mail").style.display = 'none';
+		if (document.getElementById("fmail").style.display === 'none') {
+			document.getElementById("fmail").style.display = 'block';
+		}
+		document.getElementById("recognize2").disabled = false;
 	} else {
 		document.getElementById("mail").innerHTML="<font color='red'>E-mail inválido </font>";
 		document.getElementById("mail").style.display = 'block';
+		document.getElementById("fmail").style.display = 'none';
+		document.getElementById("recognize2").disabled = true;
 		document.getElementById("emailFuncionario").focus();
 	}
 });
@@ -551,12 +558,19 @@ document.getElementById("emailAluno").addEventListener("focusout", function() {
 		(dominio.indexOf(".") >=1)&&
 		(dominio.lastIndexOf(".") < dominio.length - 1)) {
 		document.getElementById("mail2").style.display = 'none';
+		document.getElementById("recognize").disabled = false;
 	}
 	else if ((mail.length === 0)) {
 		document.getElementById("mail2").style.display = 'none';
+		if (document.getElementById("amail2").style.display === 'none') {
+			document.getElementById("amail2").style.display = 'block';
+		}
+		document.getElementById("recognize").disabled = false;
 	} else {
 		document.getElementById("mail2").innerHTML="<font color='red'>E-mail inválido </font>";
 		document.getElementById("mail2").style.display = 'block';
+		document.getElementById("amail2").style.display = 'none';
+		document.getElementById("recognize").disabled = true;
 		document.getElementById("emailAluno").focus();
 	}
 });

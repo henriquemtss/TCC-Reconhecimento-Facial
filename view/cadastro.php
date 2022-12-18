@@ -99,7 +99,7 @@
                         <div class="area__dado">
                             <label for="emailAluno" class="dado__label">Email institucional</label>
                             <input type="email" name="emailAluno" class="inputAluno dado__input" placeholder="Digite seu email institucional" id ="emailAluno">
-                            <span class="mensagem">Preencha o campo</span>
+                            <span class="mensagem" id="amail2">Preencha o campo</span>
                             <span class="mensagem" id = "mail2"></span>
                             <!--  -->
                             <?php
@@ -268,7 +268,7 @@
                         <div class="area__dado">
                             <label for="emailFuncionario" class="dado__label">E-mail</label>
                             <input type="email" name="emailFuncionario" class="inputFuncionario dado__input" placeholder="Digite seu E-mail" id="emailFuncionario">
-                            <span class="mensagem">Preencha o campo</span>
+                            <span class="mensagem" id="fmail">Preencha o campo</span>
                             <span class="mensagem" id="mail"></span>
                             <!--  -->
                             <?php
