@@ -39,40 +39,6 @@ function editar() {
 	document.getElementById("funFun").style.display = 'block';
 }
 
-// function reconhecer(){
-// 	document.getElementById('active').style.display = 'block';
-// 	document.getElementById('recognize').style.display = 'none';
-// 	document.getElementById('recognize2').style.display = 'none';
-// 	document.getElementById('Consultar').style.display = 'none';
-// 	document.getElementById('Consultar2').style.display = 'none';
-// 	document.getElementById('editar').style.display = 'block';
-// 	document.getElementById('editar2').style.display = 'block';
-// 	if(document.getElementById('tabpadrao').classList.contains("ativo")){
-// 		//Desabilitar Inputs
-// 		document.getElementById("curAlu").style.display = 'none';
-// 		document.getElementById("perSel").style.display = 'none';
-// 		document.getElementById("cursos-select").style.display = 'block';
-// 		document.getElementById("cursos-select").readOnly = true;
-// 		document.getElementById("periodo-select").style.display = 'block';
-// 		document.getElementById("periodo-select").readOnly = true;
-// 		document.getElementById("rmAluno").readOnly = true;
-// 		document.getElementById("nomeAluno").readOnly = true;
-// 		document.getElementById("emailAluno").readOnly = true;
-// 		document.getElementById('Other').disabled = true;
-// 	} else {
-// 		//Desabilitar Inputs
-// 		document.getElementById("funFun").style.display = 'none';
-// 		document.getElementById("funcao").style.display = 'block';
-// 		document.getElementById('tabpadrao').disabled = true;
-// 		document.getElementById("nomeSeg").readOnly = true;
-// 		document.getElementById("cpfSeg").readOnly = true;
-// 		document.getElementById("funcao").readOnly = true;
-// 		document.getElementById("telFunc").readOnly = true;
-// 		document.getElementById("emailFuncionario").readOnly = true;
-// 	}
-// }
-
-// EM TESTE
 const alunos = document.querySelectorAll(".inputAluno")
 console.log(alunos)
 const funcionarios = document.querySelectorAll(".inputFuncionario")
@@ -187,12 +153,15 @@ function loadCameraOne(ativar){
 		var video = document.querySelector("#first");
 		statusVerify(document.getElementById('active'), document.getElementById('take') );
 		document.getElementById('first').style.display = 'block';
+		document.getElementById('posAn1').style.display = 'block';
 	} else if (ativar === active2) {
 		var video = document.querySelector("#second");
 		statusVerify(document.getElementById('active2'), document.getElementById('take2'), null );
+		document.getElementById('posAn2').style.display = 'block';
 	} else if (ativar === active3) {
 		var video = document.querySelector("#third");
 		statusVerify(document.getElementById('active3'), document.getElementById('take3'), null );
+		document.getElementById('posAn3').style.display = 'block';
 	}
 		//As opções abaixo são necessárias para o funcionamento correto no iOS
 		video.setAttribute('autoplay', '');
@@ -215,6 +184,7 @@ function loadCameraOne(ativar){
 
 function takeSnapShot(tirar){
 	if (tirar === take) {
+		document.getElementById('posAn1').style.display = 'none';
 		var video = document.querySelector("#first");
 		var canvas = document.querySelector("#canvas");
 		document.getElementById('first').style.display = 'none';
@@ -224,6 +194,7 @@ function takeSnapShot(tirar){
 		document.getElementById('again').style.display = 'block';
 		
 	} else if (tirar === take2) {
+		document.getElementById('posAn2').style.display = 'none';
 		var video = document.querySelector("#second");
 		var canvas = document.querySelector("#canvas2");
 		document.getElementById('second').style.display = 'none';
@@ -232,6 +203,7 @@ function takeSnapShot(tirar){
 		document.getElementById('save2').style.display = 'block';
 		document.getElementById('again2').style.display = 'block';
 	} else if (tirar === take3) {
+		document.getElementById('posAn3').style.display = 'none';
 		var video = document.querySelector("#third");
 		var canvas = document.querySelector("#canvas3");
 		document.getElementById('third').style.display = 'none';
@@ -254,18 +226,21 @@ function retakeSnapShot(denovo){
 		document.getElementById('take').style.display = 'block';
 		document.getElementById('save').style.display = 'none';
 		document.getElementById('again').style.display = 'none';
+		document.getElementById('posAn1').style.display = 'block';
 	} else if (denovo === again2) {
 		document.getElementById('second').style.display = 'block';
 		document.getElementById('canvas2').style.display = 'none';
 		document.getElementById('take2').style.display = 'block';
 		document.getElementById('save2').style.display = 'none';
 		document.getElementById('again2').style.display = 'none';
+		document.getElementById('posAn2').style.display = 'block';
 	} else if (denovo === again3) {
 		document.getElementById('third').style.display = 'block';
 		document.getElementById('canvas3').style.display = 'none';
 		document.getElementById('take3').style.display = 'block';
 		document.getElementById('save3').style.display = 'none';
 		document.getElementById('again3').style.display = 'none';
+		document.getElementById('posAn3').style.display = 'block';
 	}
 }
 
@@ -274,6 +249,7 @@ function saveSnapShot(salvar, acao){
 	if (acao === 'A') {
 		funcao = 'A';
 	if (salvar === save) {
+		document.getElementById('posAn1').style.display = 'none';
 		document.getElementById('first').style.display = 'none';
 		document.getElementById('take').style.display = 'none';
 		document.getElementById('canvas').style.display = 'none';
@@ -286,6 +262,7 @@ function saveSnapShot(salvar, acao){
 		//Criando o JPG
 		var canvas = document.querySelector("#canvas"); 
 	} else if (salvar === save2) {
+		document.getElementById('posAn2').style.display = 'none';
 		document.getElementById('second').style.display = 'none';
 		document.getElementById('canvas2').style.display = 'none';
 		document.getElementById('take2').style.display = 'none';
@@ -296,6 +273,7 @@ function saveSnapShot(salvar, acao){
 		//Criando o JPG
 		var canvas = document.querySelector("#canvas2"); 
 	} else if (salvar === save3) {
+		document.getElementById('posAn3').style.display = 'none';
 		document.getElementById('third').style.display = 'none';
 		document.getElementById('take3').style.display = 'none';
 		document.getElementById('save3').style.display = 'none';
