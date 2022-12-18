@@ -78,7 +78,7 @@ VALUES
 
 insert into Contas values(0,'admin', 'admin', '$2y$10$hxb5L22B/FJmZyLx.MM8JuJ8v7vXI1GjTMRva3LGgRdu5Ws8DtDo2', 1, 'testandoophpmaile@gmail.com');
 insert into Contas values(0,'seg', 'seg', '$2y$10$RgEB/nsG26qfUrDecEfdCudENT1pB0i.DqqgYGRM6jS2dHGsvPLte', 2, 'Email@teste');
-insert into Contas values(0,'sec', 'sec', '$2y$10$aJuKpOP8ncGl1n9du8GJneTkhI7Ni35PBkgmLAdXCdCNm8kpt7fgm', 3, 'Email@teste2');
+insert into Contas values(0,'sec', 'sec', '$2y$10$aJuKpOP8ncGl1n9du8GJneTkhI7Ni35PBkgmLAdXCdCNm8kpt7fgm', 3, 'henrique.sec.etec2022@gmail.com');
 
 insert into registro values(21808, now());
 insert into registro values(21808, DATE_ADD(NOW(), interval +1 HOUR));
