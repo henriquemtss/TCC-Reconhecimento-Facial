@@ -54,6 +54,8 @@
     <link rel="stylesheet" href="../assets/css/camera.css">
     <link rel="stylesheet" href="../assets/css/article.css">
     <link rel="stylesheet" href="../assets/css/logout.css">
+    <script src="../assets/javascript/sweetalert2.all.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="../assets/javascript/clock.js" type="text/javascript"></script>
     <script src="../assets/javascript/registrar.js" type="text/javascript"></script>
 </head>
@@ -130,7 +132,6 @@
         </div>
         <button class="btn-cadastrar" style="width: 54%" id="manual" onclick="register()">Registro Manual</button>
         <button class="btn-cadastrar" style="width: 54%; display: none" id="sendRm" onclick="registro('sendRm')">Enviar RM</button>
-        
         </article>
     </main>
 </body>

@@ -379,12 +379,28 @@ function sendSnapShot(base64, folder){
 				var data = JSON.parse(request.responseText).error;
 				//alert(data);
 				if (data === "Usuário Já Cadastrado!") {
-					alert(data);
+					//alert(data);
+					const Toast = Swal.mixin({
+						toast: true,
+						position: 'top',
+						showConfirmButton: false,
+						timer: 3000,
+						timerProgressBar: true,
+						didOpen: (toast) => {
+						  toast.addEventListener('mouseenter', Swal.stopTimer)
+						  toast.addEventListener('mouseleave', Swal.resumeTimer)
+						}
+					  })
+					  
+					  Toast.fire({
+						icon: 'error',
+						title: 'Usuário Já Cadastrado!'
+					  })
 					document.getElementById('second').style.display = 'none';
 					document.getElementById('active2').style.display = 'none';
 					window.setTimeout( function() {
 						window.location.reload();
-					  }, 1000);
+					  }, 3000);
 				}
 				
 				//verificar se houve erro
@@ -582,3 +598,13 @@ document.getElementById("emailAluno").addEventListener("focusout", function() {
 		document.getElementById("emailAluno").focus();
 	}
 });
+
+var cpf = document.getElementById('cpfSeg');
+cpf.addEventListener("blur", function(){
+	
+	if(cpf.value) cpf.value = cpf.value.match(/.{1,3}/g).join(".").replace(/\.(?=[^.]*$)/,"-");
+ });
+
+ document.getElementById('cpfSeg').addEventListener("input", function(){
+	var cpf = document.querySelector("#cpfSeg").value.replace(/\D/g,"");
+ });

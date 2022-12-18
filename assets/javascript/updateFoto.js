@@ -153,11 +153,30 @@ function saveSnapShot(salvar, acao){
 			document.getElementById('take3').style.display = 'none';
 			document.getElementById('save3').style.display = 'none';
 			document.getElementById('again3').style.display = 'none';
-			alert("Fotos Atualizadas Com Sucesso");
+			const Toast = Swal.mixin({
+				toast: true,
+				position: 'top',
+				showConfirmButton: false,
+				timer: 3000,
+				timerProgressBar: true,
+				didOpen: (toast) => {
+				  toast.addEventListener('mouseenter', Swal.stopTimer)
+				  toast.addEventListener('mouseleave', Swal.resumeTimer)
+				}
+			  })
+			  
+			  Toast.fire({
+				icon: 'success',
+				title: 'Fotos Atualizadas Com Sucesso!'
+			  })
+			//alert("Fotos Atualizadas Com Sucesso!");
+			var time = null;
+			time = setTimeout(function(){
 			window.open('','_parent',''); 
     		window.close();
 			//Criando o JPG
-			var canvas = document.querySelector("#canvas3"); 
+			var canvas = document.querySelector("#canvas3");
+			}, 3000);
 		}
 	}
 	//Criando o JPG

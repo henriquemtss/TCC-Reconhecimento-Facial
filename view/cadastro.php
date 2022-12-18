@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="../assets/css/tab_cadastro.css">
     <link rel="stylesheet" href="../assets/css/logout.css">
     <script src="../assets/javascript/tab.js" type="text/javascript"></script>
+    <script src="../assets/javascript/sweetalert2.all.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/javascript/camera.js"></script>
     <link rel="stylesheet" href="../assets/css/popup.css">
@@ -214,7 +215,7 @@
                         
                         <div class="area__dado">
                             <label for="cpfSeg" class="dado__label">CPF</label>
-                            <input type="text" name="cpfFuncionario" class="inputFuncionario dado__input" placeholder="Digite seu CPF" id="cpfSeg">
+                            <input onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="11" type="text" name="cpfFuncionario" class="inputFuncionario dado__input" placeholder="Digite seu CPF" id="cpfSeg">
                             <span class="mensagem" id="preencher">Preencha o campo</span>
                             <span class="mensagem" id="invalido">CPF Inválido!</span>
                             <!--  -->

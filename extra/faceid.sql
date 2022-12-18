@@ -42,7 +42,7 @@ create table codigoLink(
     emailCriptografado varchar(250)
 );
 
-drop table registro;
+drop table if exists registro;
 
 create table registro (
     rm int not null,

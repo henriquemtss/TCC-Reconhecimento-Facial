@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../assets/css/header-cadastro.css">
     <link rel="stylesheet" href="../assets/css/cadastro.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../assets/javascript/sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="../assets/javascript/camera.js"></script>
     <title>Reconhecimento facial - Atualização de Foto</title>
 </head>

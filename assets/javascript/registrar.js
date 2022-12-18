@@ -1,6 +1,9 @@
 function register() {
   var time =null;
-  document.getElementById('cam').srcObject.getTracks()[0].enabled = false;
+  if (document.getElementById('cam').srcObject !== null) {
+    document.getElementById('cam').srcObject.getTracks()[0].enabled = false
+  }
+  //document.getElementById('cam').srcObject.getTracks()[0].enabled = false;
   console.log("Vid off");
   time = setTimeout(function(){
     document.getElementById('rm').style.display = 'none';
@@ -38,10 +41,45 @@ if (API === 'api') {
           document.getElementById('rmMan').value = "";
           document.getElementById('manual').style.display = 'block';
           document.getElementById('sendRm').style.display = 'none';
-          document.getElementById('cam').srcObject.getTracks()[0].enabled = true;
-          alert("Registrado Com Sucesso!");
+          if (document.getElementById('cam').srcObject !== null) {
+            document.getElementById('cam').srcObject.getTracks()[0].enabled = true
+          }
+          //document.getElementById('cam').srcObject.getTracks()[0].enabled = true;
+          //alert("Registrado Com Sucesso!");
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'success',
+            title: 'Registrado Com Sucesso!'
+          })
         } else if (JSON.parse(request.responseText) === false && API === 'api') {
-          alert("Registrado Com Sucesso!");
+          //alert("Registrado Com Sucesso!");
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'success',
+            title: 'Registrado Com Sucesso!'
+          })
         } else {
         }
       if(request.error){
