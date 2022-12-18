@@ -252,7 +252,7 @@
                         <div class="area__dado">
                             <label for="telFunc" class="dado__label">Telefone</label>
                             <input type="text" name="telefoneFuncionario" id="telFunc" class="inputFuncionario dado__input" placeholder="Digite seu DDD + Telefone" maxlength="15">
-                            <span class="mensagem">Preencha o campo</span>
+                            <span class="mensagem" id="telFun">Preencha o campo</span>
                             <span class="mensagem" id="phone">Verifique o Telefone</span>
                             <!--  -->
                             <?php

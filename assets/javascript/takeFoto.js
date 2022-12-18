@@ -507,8 +507,16 @@ document.getElementById("telFunc").addEventListener("focusout", function() {
 		document.getElementById("phone").style.color = 'red';
 		document.getElementById("phone").style.display = 'block';
 		document.getElementById("telFunc").focus();
-	} else {
+		document.getElementById("recognize2").disabled = true;
+		document.getElementById("telFun").style.display = 'none';
+	} else if (tel === 0){
+		document.getElementById("recognize2").disabled = false;
 		document.getElementById("phone").style.display = 'none';
+		document.getElementById("telFun").style.display = 'block';
+	} else {
+		document.getElementById("recognize2").disabled = false;
+		document.getElementById("phone").style.display = 'none';
+		document.getElementById("telFun").style.display = 'none';
 	}
 });
 
