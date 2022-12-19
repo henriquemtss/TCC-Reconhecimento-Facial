@@ -1,3 +1,15 @@
+@keyframes left-to-right {
+    from {
+        transform: translate(0,100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+}
+
 .titulo{
     text-align: center;
     color: var(--cor-botao-escuro);
@@ -18,6 +30,7 @@
     margin: 0 auto;
     background-color: var(--cor-fundo-container);
     width: fit-content;
+    animation: left-to-right 1.2s ease;
 }
 
 .main-login__container{
