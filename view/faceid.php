@@ -144,6 +144,7 @@
         </div>
         <button class="btn-cadastrar" style="width: 54%" id="manual" onclick="register()">Registro Manual</button>
         <button class="btn-cadastrar" style="width: 54%; display: none" id="sendRm" onclick="registro('sendRm')">Enviar RM</button>
+        <button class="btn-cadastrar" style="width: 54%; display: none;" id="cancel" onclick="cancelar()">Cancelar</button>
         </article>
     </main>
 </body>

@@ -14,8 +14,23 @@ function register() {
     document.getElementById("rmMan").focus();
     document.getElementById('manual').style.display = 'none';
     document.getElementById('sendRm').style.display = 'block';
-}, 1000);
-  
+    document.getElementById('cancel').style.display = 'block';
+}, 1000); 
+}
+
+function cancelar() {
+  document.getElementById('rm').style.display = 'block';
+  document.getElementById('nome').style.display = 'block';
+  document.getElementById('periodo').style.display = 'block';
+  document.getElementById('curso').style.display = 'block';
+  document.getElementById('rmMan').style.display = 'none';
+  document.getElementById('rmMan').value = "";
+  document.getElementById('manual').style.display = 'block';
+  document.getElementById('sendRm').style.display = 'none';
+  document.getElementById('cancel').style.display = 'none';
+  if (document.getElementById('cam').srcObject !== null) {
+    document.getElementById('cam').srcObject.getTracks()[0].enabled = true
+  }
 }
 
 function registro(API) {
