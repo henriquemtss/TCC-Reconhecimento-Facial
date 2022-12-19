@@ -1,5 +1,5 @@
 function windowCad() {
-	window.open('cadastro.php','Janela','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1000,height=630,left=150,top=15'); return false;
+	window.open('cadastro.php','Janela','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1300,height=700,left=150,top=20'); return false;
 }
 
 function windowId() {
@@ -11,7 +11,7 @@ function windowCon() {
 }
 
 function windowReg() {
-	window.open('registroFaceid.php','Janela','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1000,height=630,left=150,top=15'); return false;
+	window.open('registroFaceid.php','Janela','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1300,height=630,left=150,top=15'); return false;
 }
 
 function windowCam() {

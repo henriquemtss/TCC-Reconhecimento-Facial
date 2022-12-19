@@ -59,7 +59,7 @@
             <section class="container__cadastro">
             <h1 class="header__title" style="margin-top: 5%;" >Conexão</h1>
             <button style="margin-top: 10%; margin-right: 12%; width: 60%; text-align: center" class="cadastro__consultar" onclick="windowCad()">Tela de Cadastro</button>
-            <button style="margin-top: 20%; margin-right: 12%; width: 60%; text-align: center" class="cadastro__consultar" onclick="windowId()">Reconhecimento Facil</button>
+            <button style="margin-top: 20%; margin-right: 12%; width: 60%; text-align: center" class="cadastro__consultar" onclick="windowId()">Reconhecimento Facial</button>
             <button style="margin-top: 30%; margin-right: 12%; width: 60%; text-align: center" class="cadastro__consultar" onclick="windowCon()">Consulta</button>
             <button style="margin-top: 40%; margin-right: 12%; width: 60%; text-align: center" class="cadastro__consultar" onclick="windowReg()">Registro</button>
             <h1 class="header__title" style="margin-top: 50%;">Hardware</h1>
