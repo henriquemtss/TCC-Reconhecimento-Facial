@@ -54,6 +54,7 @@
     <img src="../assets/imagens/logo.png" alt="" srcset="">
         <div class="container">
         <h1>Digite a sua nova senha</h1>
+        <h2>Senha</h2>
         <span class="mensagem"></span>
         
         <form action="" method="POST" enctype="multipart/form-data">

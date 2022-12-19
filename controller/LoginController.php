@@ -51,7 +51,7 @@
             $pdo->query("insert into codigolink values (0,'$linkCodigo','$dataExpirar', '$emailCrip');");
             //manda email
             try {
-                enviarEmail("$email", "Link para recuperar", "<a href=\"http://localhost/workspace/View/recuperar.php?linkCodigo=$linkCodigo\">Recuperar Senha</a>");
+                enviarEmail("$email", "Link para recuperar", "<a href=\"http://localhost/TCC-Reconhecimento-Facial/View/recuperar.php?linkCodigo=$linkCodigo\">Recuperar Senha</a>");
             }catch (Exception $e) {
                 echo $e->getMessage();
             }
