@@ -144,3 +144,18 @@ button:hover{
     display: flex;
     justify-content: center;
 }
+
+.manual{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgb(252, 57, 57);
+    box-shadow: 0px 4px 4px 0px #00000040;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    transition:  .4s all;
+    
+    
+}
