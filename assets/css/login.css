@@ -18,6 +18,8 @@
     font-size: 35px;
     margin-bottom: 1rem;
     text-transform: uppercase;
+    transition: all ease 1s;
+    animation: left-to-right 1.2s ease;
 }
 
 .main-login{
