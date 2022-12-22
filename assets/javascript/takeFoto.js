@@ -37,6 +37,8 @@ function editar() {
 	document.getElementById("perSel").style.display = 'block';
 	document.getElementById("curAlu").style.display = 'block';
 	document.getElementById("funFun").style.display = 'block';
+	document.getElementById("posAn1").style.display = 'none';
+
 }
 
 const alunos = document.querySelectorAll(".inputAluno")
@@ -115,7 +117,7 @@ function reconhecer(){
 			document.getElementById("nomeAluno").readOnly = true;
 			document.getElementById("emailAluno").readOnly = true;
 			document.getElementById('other').disabled = true;
-
+			document.getElementById('amail2').style.display = 'none';
 			document.getElementById('active').style.display = 'block';
 			document.getElementById('recognize').style.display = 'none';
 			document.getElementById('recognize2').style.display = 'none';

@@ -19,6 +19,7 @@ function register() {
 }
 
 function cancelar() {
+  document.getElementById('cancel').style.display = 'none';
   document.getElementById('rm').style.display = 'block';
   document.getElementById('nome').style.display = 'block';
   document.getElementById('periodo').style.display = 'block';
